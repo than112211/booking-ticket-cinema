@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url(../src/resourses/img/bg-body.png ) repeat-y left top;
 }
 
 code {

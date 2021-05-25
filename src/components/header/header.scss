@@ -1,0 +1,79 @@
+@import '../base';
+@import '../variables';
+.header__nav{
+    height: 70px;
+    @include displayFlex(space-between);
+    .header__logo{
+        @include w-h(10rem,5rem);
+        img{
+            @include w-h(100%,100%)
+        }
+    }
+    .header__search{
+        @include displayFlex(space-between);
+        background-color: black;
+        @include w-h(25rem,2.5rem);
+        border-radius: 25px;
+        input{
+            width: 80%;
+            background-color:transparent;
+            outline: none;
+            border: none;
+            padding: .2rem 1rem;
+            color: white;
+            opacity:.8;
+        }
+        svg{
+            color: white;
+            margin-right: 1rem;
+            opacity: .8;
+        }
+    }
+    .header__btn{
+        @include displayFlex(flex-end);
+        .btn__changelanguage{
+            border-radius: 50%;
+            @include w-h(2.5rem,2.5rem);
+            @include btn();
+            text-transform: uppercase;
+        }
+        .btn__login{
+            margin-right: 1rem;
+            border-radius: 25px;
+            @include w-h(8rem,2.5rem);
+            @include btn();
+            text-transform: uppercase;
+        }
+    }
+}
+.header__bottom{
+    padding: 3px; 
+    border: 1px solid $main-color;
+    border-radius: 25px;
+    margin-top: 2rem;
+    ul{
+        @include displayFlex(center);
+        margin: 0;
+        padding: 0;
+        background-color: $main-color;
+        border-radius: 25px;
+        li{
+            font-size: 1rem;
+            padding: .6rem 1.6rem;
+            cursor: pointer;
+            list-style: none;
+            text-transform: uppercase;
+            border-radius: 25px;
+            min-width: 2rem;
+            text-align: center;
+            &:hover {
+                background-color:orange ;
+            }
+        }
+    }
+}
+.btn__changelanguage{
+    border-radius: 50%;
+    @include w-h(3rem,3rem);
+
+}

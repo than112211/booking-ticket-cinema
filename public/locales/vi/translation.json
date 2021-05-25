@@ -1,0 +1,35 @@
+{
+    "header":{
+       "search":"Tìm kiếm...",
+       "login":"Đăng nhập",
+       "nav":{
+          "movie":"Phim",
+          "promotion":"Khuyến mãi",
+          "news":"Tin tức",
+          "intro":"Giới thiệu"
+       }
+    },
+    "footer":{
+        "ul-1":{
+           "theater":"HỆ THỐNG RẠP"
+        },
+        "ul-2":{
+           "now_show":"Phim đang chiếu",
+           "comming_soon":"Phim sắp chiếu",
+           "news":"Tin tức",
+           "promotion":"Khuyến mãi"
+        },
+        "ul-3":{
+           "info":"THÔNG TIN",
+           "question":"Hỏi & đáp",
+           "contact":"Liên hệ",
+           "intro":"Giới thiệu"
+        },
+        "ul-4":{
+           "policy":"CHÍNH SÁCH & QUY ĐỊNH",
+           "general":"Quy định chung",
+           "security":"Chính sách bảo mật",
+           "transaction":"Điều khoản giao dịch"
+        }
+     }
+ }

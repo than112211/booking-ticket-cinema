@@ -1,0 +1,14 @@
+@mixin displayFlex($justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}
+@mixin w-h($w,$h){
+    width: $w;
+    height: $h;
+}
+@mixin btn(){
+    outline: none;
+    border: none;
+    background-color:$main-color;
+}

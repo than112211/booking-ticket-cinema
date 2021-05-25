@@ -1,0 +1,35 @@
+{
+   "header":{
+      "search":"Search...",
+      "login":"Login",
+      "nav":{
+         "movie":"Movie",
+         "promotion":"Promotion",
+         "news":"News",
+         "intro":"Introduce"
+      }
+   },
+   "footer":{
+      "ul-1":{
+         "theater":"Theater System"
+      },
+      "ul-2":{
+         "now_show":"Now showing",
+         "comming_soon":"Comming Soon",
+         "news":"News",
+         "promotion":"Promotion"
+      },
+      "ul-3":{
+         "info":"Infomation",
+         "question":"Question & Answer",
+         "contact":"Contact",
+         "intro":"Introduce"
+      },
+      "ul-4":{
+         "policy":"Policies & Regulation",
+         "general":"General Policies",
+         "tran":"Terms of Transaction",
+         "security":"Privacy Policy"
+      }
+   }
+}

@@ -1,0 +1,53 @@
+@import '../base';
+@import '../variables';
+.footer__line{
+    margin-top: 5rem;
+    img{
+        @include w-h(100%,100%);
+    }
+}
+.footer__logo{
+    margin-top: 1rem;
+    text-align: center;
+    img{
+        @include w-h(15rem,6rem)
+    }
+}
+.footer__content{
+    margin: 4rem 0;
+    @include displayFlex(space-between);
+    align-items: flex-start;
+    &-item {
+        margin: 0;
+        padding: 0;
+        li{
+            &:nth-child(1){
+                background-color: rgba(255,255,255,0.1);
+                font-size: 1.4rem;
+                text-transform: uppercase;
+            }
+            cursor: pointer;
+            opacity: .8;
+            color: white;
+            list-style: none;
+            font-size: 1rem;
+            text-align: center;
+            padding: .6rem 1rem;
+            transition: all .3s ease-in;
+            &:hover{
+                color: $text-color-hover;
+            }
+        }
+    }
+}
+.footer__contact{
+    margin-bottom: 2rem;
+    @include displayFlex(center);
+    svg{
+        font-size: 2rem;
+        color: $main-color;
+        margin: 0 1rem;
+        cursor: pointer;
+    }
+
+}
