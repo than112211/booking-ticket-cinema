@@ -31,5 +31,11 @@
          "tran":"Terms of Transaction",
          "security":"Privacy Policy"
       }
-   }
+   },
+   "show_movie":{
+      "now":"Now Showing",
+      "comming":"Comming Soon"
+   },
+   "event":"event"
+
 }

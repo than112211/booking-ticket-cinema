@@ -1,15 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Container from '@material-ui/core/Container';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faFacebook,faYoutube,faGoogle,faTwitter} from '@fortawesome/free-brands-svg-icons'
 import './footer.scss'
 import line from '../../resourses/img/line-bg.png'
-
-Footer.propTypes = {
-    
-};
 
 function Footer(props) {
     const {t} = useTranslation();
@@ -48,7 +43,7 @@ function Footer(props) {
                         <li>{t('footer.ul-4.policy')}</li>
                         <li>{t('footer.ul-4.general')}</li>
                         <li>{t('footer.ul-4.security')}</li>
-                        <li>{t('footer.ul-4.transaction')}</li>
+                        <li>{t('footer.ul-4.tran')}</li>
                     </ul>
                 </div>
                 <div className="footer__contact">

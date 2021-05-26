@@ -31,5 +31,10 @@
            "security":"Chính sách bảo mật",
            "transaction":"Điều khoản giao dịch"
         }
-     }
+     },
+     "show_movie":{
+      "now":"Phim đang chiếu",
+      "comming":"Phim sắp chiếu"
+   },
+   "event":"sự kiện"
  }

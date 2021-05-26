@@ -1,9 +1,9 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 const loading = createSlice({
-    name:'loading',
-    initialState:false,
-    reducers:{
+    name: 'loading',
+    initialState: false,
+    reducers: {
         showLoading: () => {
            return true
         },

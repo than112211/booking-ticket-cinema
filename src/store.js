@@ -3,16 +3,20 @@ import {configureStore,getDefaultMiddleware} from '@reduxjs/toolkit'
 import rootSaga from './sagas'
 import languageReducer from './redux/languageSlice'
 import loadingReducer from './redux/loadingSlice'
+import movieReducer from './redux/movieSlice'
+import eventReducer from './redux/eventSlice'
 
 const rootReducer = {
-    language:languageReducer,
-    loading:loadingReducer
+    language: languageReducer,
+    loading: loadingReducer,
+    movie: movieReducer,
+    event: eventReducer
 }
 const sagaMiddleware = createSagaMiddleware()
 const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
 
 const store = configureStore({
-    reducer:rootReducer,
+    reducer: rootReducer,
     middleware
 })
 

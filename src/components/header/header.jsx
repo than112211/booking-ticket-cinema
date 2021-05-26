@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Container from '@material-ui/core/Container';
 import {changeLanguage} from '../../redux/languageSlice'
@@ -7,10 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import './header.scss'
 import { useDispatch, useSelector } from 'react-redux';
-
-Header.propTypes = {
-    
-};
 
 function Header(props) {
     const {t} = useTranslation();
