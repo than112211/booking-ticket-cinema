@@ -2,6 +2,8 @@ import React from 'react';
 import EventSlide from './eventSlide/event';
 import './home.scss'
 import MovieShow from './movieShow/movieshow';
+import News from './news/news';
+import Promotion from './promotion/promotion';
 
 function Home(props) {
     return (
@@ -14,10 +16,10 @@ function Home(props) {
             </div>
             <div className="container">
                 <div className="promotion">
-
+                    <Promotion></Promotion>
                 </div>
                 <div className="news">
-
+                    <News></News>
                 </div>
             </div>
         </div>

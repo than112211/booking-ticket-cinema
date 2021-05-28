@@ -14,8 +14,8 @@ function EventSlide(props) {
     const dispatch = useDispatch()
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
-    const event = useSelector(state => state.event)
-
+    const event = useSelector(state => state.event.event)
+    
     useEffect(() => {
         dispatch(getEventInit())
     },[])

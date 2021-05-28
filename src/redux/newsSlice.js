@@ -1,42 +1,40 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-const event = createSlice({
-    name: 'event',
+const news = createSlice({
+    name: 'news',
     initialState: {
         pending: false,
-        event: [],
-        error: null,
+        news: [],
+        error: null
     },
     reducers: {
-        addEvent: (state,action) => {
+        addNews: (state,action) => {
             return {
                 ...state,
                 pending: false,
-                event: action.payload
+                news: action.payload
             }
         },
+        getNewsInit: () => {
 
-        getEventInit: () => {
-            
         },
 
-        getEventPending: (state,action) => {
+        getNewsPending: (state,action) => {
             return {
                 ...state,
                 pending: true
             }
         },
-
-        getEventError: (state,action) => {
+        
+        getNewsError: (state,action) => {
             return {
                 ...state,
                 error: action.payload
             }
         }
-
     }
 })
 
-const {reducer,actions} = event
-export const {getEventInit,addEvent,getEventPending,getEventError} = actions
+const {reducer,actions} = news
+export const {getNewsInit,addNews,getNewsPending,getNewsError} = actions
 export default reducer

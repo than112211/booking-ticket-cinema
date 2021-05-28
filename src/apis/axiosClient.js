@@ -1,6 +1,6 @@
 import axios from 'axios';
 import queryString from 'query-string';
-import {HOST_SERVER,FETCH_DATA_SUCCESS} from '../constants/index'
+import {HOST_SERVER,FETCH_DATA_SUCCESS, FETCH_DATA_FAIL} from '../constants/index'
 
 const axiosClient = axios.create({
     baseURL: HOST_SERVER,
@@ -23,7 +23,10 @@ axiosClient.interceptors.response.use((response) => {
   }
     return response;
 }, (error) => {
-    throw error;
+    return  {
+        error:error,
+        status:FETCH_DATA_FAIL
+};
 });
 
 export default axiosClient;
