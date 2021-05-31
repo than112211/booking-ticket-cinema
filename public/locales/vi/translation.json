@@ -37,6 +37,34 @@
       "comming":"Phim sắp chiếu"
    },
    "event":"sự kiện",
-   "news":"Tin tức"
+   "news":"Tin tức",
+   "login":{
+      "login":"Đăng nhập",
+      "email":"Email",
+      "input_email":"Nhập email",
+      "password":"Mật khẩu",
+      "input_password":"Nhập mật khẩu",
+      "require":"Bắt buộc nhập trường này"
+   },
+   "register":{
+      "register":"Đăng kí",
+      "fullname":"Họ và tên",
+      "input_fullname":"Nhập họ và tên",
+      "date":"Ngày sinh",
+      "input_date":"Nhập ngày sinh",
+      "email":"Email",
+      "input_email":"Nhập email",
+      "password":"Mật khẩu",
+      "input_password":"Nhập mật khẩu",
+      "repassword":"Xác nhận mật khẩu",
+      "input_repassword":"Nhập lại mật khẩu",
+      "require":"Bắt buộc nhập trường này",
+      "cancel":"Hủy"
+   },
+   "info":{
+      "info_person":"Thông tin cá nhân",
+      "help":"Trợ giúp",
+      "logout":"Đăng xuất"
+   }
 
  }

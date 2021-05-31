@@ -37,6 +37,33 @@
       "comming":"Comming Soon"
    },
    "event":"event",
-   "news":"news"
-
+   "news":"news",
+   "login":{
+      "login":"Sign In",
+      "email":"Email",
+      "input_email":"Enter email",
+      "password":"Password",
+      "input_password":"Enter password",
+      "require":"This field is required"
+   },
+   "register":{
+      "register":"Sign Up",
+      "fullname":"Fullname",
+      "input_fullname":"Enter fullname",
+      "date":"Date of birth",
+      "input_date":"Enter date",
+      "email":"Email",
+      "input_email":"Enter email",
+      "password":"Password",
+      "input_password":"Enter password",
+      "repassword":"Re-password",
+      "input_repassword":"Enter repassword",
+      "require":"This field is required",
+      "cancel":"Cancel"
+   },
+   "info":{
+      "info_person":"Personal Information",
+      "help":"Help",
+      "logout":"Logout"
+   }
 }

@@ -47,6 +47,47 @@
             @include btn();
             text-transform: uppercase;
         }
+        .user__info{
+            position: relative;
+            margin-right: 1rem;
+            @include w-h(8rem,2.5rem);
+            @include displayFlex(space-between);
+            h1{
+                font-size: $font-size-s;
+                margin: 0;
+                color: $text-color-white;
+            }
+            img{
+                @include w-h(2.5rem,100%);
+                border-radius:50%;
+                overflow: hidden;
+            }
+            &-detail{
+                width: 12rem;
+                position: absolute;
+                background-color: $movie-show-active;
+                border-radius: 4px;
+                top: 40px;
+                left: 100px;
+                display: none;
+                transition: all 2s ease-in;
+                ul{
+                    margin: 0;
+                    padding: 0;
+                    li{
+                        list-style: none;
+                        padding: .4rem 1rem;
+                        &:hover{
+                            background-color: $movie-show-color;
+                            border-left: 4px solid $text-color-black;
+                        }
+                    }
+                }
+            }
+            &:hover > .user__info-detail{
+                    display: block;
+            }
+        }
     }
 }
 .header__bottom{
