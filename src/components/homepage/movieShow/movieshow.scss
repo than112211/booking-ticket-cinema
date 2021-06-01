@@ -65,7 +65,10 @@
                 border-radius: 25px;
                 padding: .4rem 1rem;
                 border: none;
-                color: $text-color-white;
+                a{
+                    color: $text-color-white;
+                    text-decoration: none;
+                }
             }
         }
     }

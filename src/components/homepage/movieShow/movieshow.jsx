@@ -4,32 +4,29 @@ import classNames from 'classnames';
 import {COMMING_SOON_MOVIE,NOW_MOVIE,HOST_SERVER,NUMBER_MOVIE_HOME} from '../../../constants/index'
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import {statusMovie,getMovieInit} from '../../../redux/movieSlice'
+import {statusMovieHome} from '../../../redux/movieSlice'
 import {Button} from 'reactstrap'
 import './movieshow.scss'
 
 function MovieShow(props) {
     const {t} = useTranslation();
     const dispatch = useDispatch()
-    const [movieClick,setMovieClick] = useState(NOW_MOVIE)
-    const movies = useSelector(state => state.movie.movie)
+    const movies = useSelector(state => state.movie)
 
     useEffect(() => {
-       dispatch(getMovieInit())
+       dispatch(statusMovieHome(NOW_MOVIE))
     },[])
 
     function handleClickNowMovie(){
-        if(movieClick !== NOW_MOVIE) {
-            setMovieClick(NOW_MOVIE)
-            const action = statusMovie(NOW_MOVIE)
+        if(movies.status !== NOW_MOVIE) {
+            const action = statusMovieHome(NOW_MOVIE)
             dispatch(action)
         }
     }
 
     function handleClickCommingMovie(){
-        if(movieClick !== COMMING_SOON_MOVIE) {
-            setMovieClick(COMMING_SOON_MOVIE)
-            const action = statusMovie(COMMING_SOON_MOVIE)
+        if(movies.status !== COMMING_SOON_MOVIE) {
+            const action = statusMovieHome(COMMING_SOON_MOVIE)
             dispatch(action)
         }
     }
@@ -37,14 +34,14 @@ function MovieShow(props) {
         <div className="movieshow__container">
             <div className="show__tab">
                 <ul>
-                    <li className={classNames({'active__movieshow':movieClick === NOW_MOVIE ? true : false})} onClick={handleClickNowMovie}><Link>{t('show_movie.now')}</Link></li>
-                    <li className={classNames({'active__movieshow':movieClick === COMMING_SOON_MOVIE ? true : false})} onClick={handleClickCommingMovie} ><Link>{t('show_movie.comming')}</Link></li>
+                    <li className={classNames({'active__movieshow':movies.status === NOW_MOVIE ? true : false})} onClick={handleClickNowMovie}><Link>{t('show_movie.now')}</Link></li>
+                    <li className={classNames({'active__movieshow':movies.status === COMMING_SOON_MOVIE ? true : false})} onClick={handleClickCommingMovie} ><Link>{t('show_movie.comming')}</Link></li>
                 </ul>
             </div>
             <div className="show__content">
                 <div className="container">
                     <div className="row">
-                        {movies && movies.length ? movies.map((movie,index) => {
+                        {movies.movie && movies.movie.length ? movies.movie.map((movie,index) => {
                             return <div className="col-6 col-sm-4 col-md-3 col-lg-2">
                                         <div className="movie__show-item">
                                             <img src={`${HOST_SERVER}/${movie.image}`} alt="" />
@@ -54,7 +51,7 @@ function MovieShow(props) {
                         }) : <></> }
                     </div>
                     <div className="btn__extend">
-                        <Button >Xem thêm</Button>
+                        <Button><Link to="/movie">{t('movie.see_more')}</Link></Button>
                     </div>
                 </div>
             </div>

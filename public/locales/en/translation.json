@@ -65,5 +65,9 @@
       "info_person":"Personal Information",
       "help":"Help",
       "logout":"Logout"
+   },
+   "movie":{
+      "buy":"Buy ticket",
+      "see_more":"See more"
    }
 }

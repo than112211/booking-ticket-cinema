@@ -10,7 +10,14 @@ const movie = createSlice({
         error: null
     },
     reducers: {
-        statusMovie: (state,action) => {
+        statusMovieHome: (state,action) => {
+            return {
+                ...state,
+                status: action.payload
+            }
+        },
+
+        statusMoviePage: (state,action) => {
             return {
                 ...state,
                 status: action.payload
@@ -24,11 +31,7 @@ const movie = createSlice({
                 movie: action.payload
             }
         },
-        
-        getMovieInit: () => {
-
-        },
-
+      
         getMoviePending: (state,action) => {
             return {
                 ...state,
@@ -46,5 +49,5 @@ const movie = createSlice({
 })
 
 const {reducer,actions} = movie
-export const {statusMovie,addMovie,getMovieInit,getMoviePending,getMovieError} = actions
+export const {statusMovieHome,addMovie,getMoviePending,getMovieError,statusMoviePage} = actions
 export default reducer

@@ -65,6 +65,10 @@
       "info_person":"Thông tin cá nhân",
       "help":"Trợ giúp",
       "logout":"Đăng xuất"
+   },
+   "movie":{
+      "buy":"Mua vé",
+      "see_more":"Xem thêm"
    }
 
  }
