@@ -7,6 +7,7 @@ const movie = createSlice({
         status: NOW_MOVIE,
         movie: [],
         pending: false,
+        movie_detail:[],
         error: null
     },
     reducers: {
@@ -31,6 +32,18 @@ const movie = createSlice({
                 movie: action.payload
             }
         },
+
+        addMovieDetail: (state,action) => {
+            return {
+                ...state,
+                pending: false,
+                movie_detail: action.payload
+            }
+        },
+
+        getMovieDetail: () => {
+            
+        },
       
         getMoviePending: (state,action) => {
             return {
@@ -49,5 +62,5 @@ const movie = createSlice({
 })
 
 const {reducer,actions} = movie
-export const {statusMovieHome,addMovie,getMoviePending,getMovieError,statusMoviePage} = actions
+export const {statusMovieHome,addMovie,getMoviePending,getMovieError,statusMoviePage,getMovieDetail,addMovieDetail} = actions
 export default reducer

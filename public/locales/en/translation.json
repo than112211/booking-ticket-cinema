@@ -69,5 +69,13 @@
    "movie":{
       "buy":"Buy ticket",
       "see_more":"See more"
+   },
+   "movie_detail":{
+      "start":"Start",
+      "type":"Type",
+      "actor":"Actor",
+      "director":"Director",
+      "rating":"Rating",
+      "length":"Length"
    }
 }

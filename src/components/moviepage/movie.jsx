@@ -10,6 +10,7 @@ import PaginationPage from '../pagination/pagination';
 import { Button } from 'reactstrap';
 
 function MoviePage(props) {
+
     const {t} = useTranslation();
     const dispatch = useDispatch()
     const movies = useSelector(state => state.movie)
@@ -35,7 +36,7 @@ function MoviePage(props) {
     const moiveItem = movies.movie.map((movie,index) => {
         return  <div key={movie._id} className="col-12 col-sm-12 col-md-6">
                     <div className="movie__item">
-                        <Link>
+                        <Link to={`/movie/${movie.slug}`}>
                             <div className="movie__img">
                                 <img src={`${HOST_SERVER}/${movie.image}`} alt="" />
                             </div>
@@ -45,7 +46,7 @@ function MoviePage(props) {
                                     <h1>{movie.name}</h1>
                                     <p>{movie.decription}</p>
                             </div>
-                            <Button className="btn__buy">{t('movie.buy')}</Button>
+                            <Button className="btn__buy"><Link to={`/movie/${movie.slug}`}>{t('movie.buy')}</Link></Button>
                         </div>
                     </div>
                 </div>

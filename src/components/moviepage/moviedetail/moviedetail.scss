@@ -1,0 +1,87 @@
+@import '../../base';
+@import '../../variables';
+
+.movie__detail{
+    margin-top: 4rem;
+    padding: 2rem 0;
+    @include w-h(100%,40rem);
+    background-color: $movie-show-active;
+    .moviedetail__container{
+        @include w-h(100%,100%);
+        .moviedetail__row{
+            @include w-h(100%,100%);
+            .moviedetail__col{
+                height: 100%;
+                .moviedetail__img{
+                    @include w-h(100%,100%);
+                    border: 8px solid $movie-show-color;
+                    position: relative;
+                    img{
+                        @include w-h(100%,100%)
+                    }
+                    .view__trailer{
+                        background-color: rgba($color: black, $alpha: .4);
+                        position: absolute;
+                        opacity: 0;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        text-align: center;
+                        transition: all .2s ease-in;
+                        svg {
+                            cursor: pointer;
+                            position: absolute;
+                            font-size: $font-size-xxxl;
+                            color: $movie-show-active;
+                            top: calc(50% - 20px);
+                            left: calc(50% - 20px);
+                        }
+                    }
+                    &:hover > .view__trailer {
+                        opacity: 1;
+                    }
+                }   
+                .moviedetail__info{
+                    @include w-h(100%,100%);
+                    background-color: $movie-show-color ;
+                    padding: 1rem;
+                    box-shadow: 10px 10px 10px 0 rgb(0 0 0 / 30%), 0 0 50px 0 rgb(0 0 0 / 40%) inset;
+                    .moviedetail__title{
+                        font-size: $font-size-xxl;
+                        color: $text-color-white;
+                        margin-bottom: 1.2rem;
+                    }
+                    &-item{
+                        @include displayFlex(start);
+                        margin-bottom: 1.4rem;
+                        h2{
+                            font-size: $font-size-m;
+                            margin: 0;
+                            color: $text-color-white;
+                            line-height: 100%;
+                        }
+                        span{
+                            margin-left: 1rem;
+                            background-color: $text-color-white;
+                            color: $text-color-black;
+                            padding: .4rem 1rem;
+                            box-shadow: 5px 5px 10px rgb(0 0 0 / 30%);
+                            border-radius: 20px 0 20px 0;
+                        }
+                        .rating__group{
+                            margin-left: 1rem;
+                        }
+                    }
+                    p{
+                        font-size: $font-size-s;
+                        color: $text-color-white;
+                        @include w-h(100%,6rem);
+                        text-align: justify;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -69,6 +69,14 @@
    "movie":{
       "buy":"Mua vé",
       "see_more":"Xem thêm"
+   },
+   "movie_detail":{
+      "start":"Khởi chiếu",
+      "type":"Thể loại",
+      "actor":"Diễn viên",
+      "director":"Đạo diễn",
+      "rating":"Đánh giá",
+      "length":"Độ dài"
    }
 
  }

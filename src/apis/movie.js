@@ -14,6 +14,11 @@ const movieAPI = {
         }
         const url = `/movie/${status === NOW_MOVIE ? 'playing' : 'soon'}`
         return axiosClient.get(url,{params})
+    },
+
+    getMovieDetail: (slug) => {
+        const url = `/movie/${slug}`
+        return axiosClient.get(url)
     }
 }
 export default movieAPI

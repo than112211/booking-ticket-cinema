@@ -34,11 +34,19 @@ const pagination = createSlice({
                 ...state,
                 total: action.payload
             }
+        },
+
+        resetPage: (state,action) => {
+            return {
+                ...state,
+                total: 0,
+                page: 1,
+            }
         }
 
     }
 })
 
 const {reducer,actions} = pagination
-export const {increasePage,decreasePage,setPage,setTotal} = actions
+export const {increasePage,decreasePage,setPage,setTotal,resetPage} = actions
 export default reducer

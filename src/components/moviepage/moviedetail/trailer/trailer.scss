@@ -1,0 +1,5 @@
+@import '../../../base';
+
+iframe{
+    @include w-h(100%,20rem)
+}
