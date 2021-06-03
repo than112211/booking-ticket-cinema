@@ -52,9 +52,9 @@ function Header(props) {
                         <img src={`${HOST_SERVER}/${user.user.avartar}`} alt="Avatar" />
                         <div className="user__info-detail">
                             <ul>
-                                <li>{t('info.info_person')}</li>
-                                <li>{t('info.help')}</li>
-                                <li onClick={handleClickLogout}>{t('info.logout')}</li>
+                                <li><Link to="/user">{t('info.info_person')}</Link></li>
+                                <li><Link>{t('info.help')}</Link></li>
+                                <li onClick={handleClickLogout}><Link>{t('info.logout')}</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -64,10 +64,11 @@ function Header(props) {
             </div>
             <div className="header__bottom">
                 <ul>
+                    <li><Link to="/">{t('header.nav.home')}</Link></li>
                     <li><Link to="/movie">{t('header.nav.movie')}</Link></li>
                     <li><Link>{t('header.nav.promotion')}</Link></li>
                     <li><Link>{t('header.nav.news')}</Link></li>
-                    <li><Link>{t('header.nav.intro')}</Link></li>
+                    <li><Link>{t('header.nav.gift')}</Link></li>
                 </ul>
             </div>
         </Container>

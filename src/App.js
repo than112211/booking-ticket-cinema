@@ -6,6 +6,9 @@ import {BrowserRouter as Router,Switch, Route} from "react-router-dom";
 import Home from './components/homepage/home';
 import MoviePage from './components/moviepage/movie';
 import MovieDetail from './components/moviepage/moviedetail/moviedetail';
+import PrivateRoute from './routes/private/private';
+import UserPage from './components/userpage/user';
+import { useSelector } from 'react-redux';
 
 function App() {
   return (
@@ -23,6 +26,8 @@ function App() {
                 <Route exact path="/movie/:slug">
                     <MovieDetail></MovieDetail>
                 </Route>
+                <PrivateRoute exact path="/user" component={UserPage}>
+                </PrivateRoute>
             </Switch>
           <Footer></Footer>
         </Router>

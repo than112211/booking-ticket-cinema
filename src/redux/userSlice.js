@@ -1,8 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit';
+import { TAB_USER_INFOMATION } from '../constants';
 
 const user = createSlice({
     name: 'user',
     initialState: {
+        tab: TAB_USER_INFOMATION,
         isLogin: false,
         user: {},
         pending: false,
@@ -10,6 +12,13 @@ const user = createSlice({
         status: null,
     },
     reducers: {
+        chooseTab: (state,action) => {
+            return {
+                ...state,
+                tab: action.payload
+            }
+        },
+
         loginUser: () => {
 
         },
@@ -68,5 +77,5 @@ const user = createSlice({
 })
 
 const {reducer,actions} = user
-export const {loginUser,registerUser,loginError,loginPending,loginSuccess,getUser,loginStatus,logoutUser} = actions
+export const {loginUser,registerUser,loginError,loginPending,loginSuccess,getUser,loginStatus,logoutUser,chooseTab} = actions
 export default reducer

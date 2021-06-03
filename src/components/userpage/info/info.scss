@@ -1,0 +1,68 @@
+@import '../../base';
+@import '../../variables';
+
+.user__info{
+    .info__left{
+        width: 100%;
+        &-img{
+            
+            @include w-h(10rem,10rem);
+            margin: 2rem auto;
+            position: relative;
+            img{
+                @include w-h(100%,100%);
+                border-radius: 50%;
+            }
+            svg{
+                position: absolute;
+                right: -10px;
+                font-size: $font-size-xl;
+            }
+        }
+        h1{
+            text-align: center;
+            font-size: $font-size-xl;
+            margin: 0;
+        }
+    }
+    .info__right{
+        width: 100%;
+        h1{
+            font-size: $font-size-xxl;
+            margin-bottom: 2rem;
+            color: $text-color-black;
+        }
+        &-item{
+            @include displayFlex(start);
+            margin-bottom: 1.4rem;
+            h2{
+                margin: 0;
+                font-size: $font-size-m;
+                color: $text-color-black;
+            }
+            span{
+                margin-left: 1rem;
+                background-color: $movie-item-color;
+                color: $text-color-white;
+                padding: .4rem 1rem;
+                box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
+                border-radius: 20px 0 20px 0;
+                .icon_check{
+                    color: $icon-green;
+                }
+                .icon_times{
+                    color: $icon-red;
+                }
+            }
+        }
+        button{
+            margin-top: .6rem;
+            @include w-h(12rem,2.5rem);
+            background-color: $movie-item-color;
+            color: $text-color-white;
+            font-size: $font-size-s;
+            border-radius: 20px 0 20px 0;
+            box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
+        }
+    }
+}

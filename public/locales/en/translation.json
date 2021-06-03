@@ -3,10 +3,11 @@
       "search":"Search...",
       "login":"Login",
       "nav":{
+         "home":"Home",
          "movie":"Movie",
          "promotion":"Promotion",
          "news":"News",
-         "intro":"Introduce"
+         "gift":"Gift"
       }
    },
    "footer":{
@@ -77,5 +78,18 @@
       "director":"Director",
       "rating":"Rating",
       "length":"Length"
+   },
+   "user":{
+      "info":"Account Infomation",
+      "change_password":"Change Password",
+      "gift":"Gift",
+      "history":"History",
+      "user_info": {
+         "email":"Email",
+         "dob":"Date of birth",
+         "point":"Point",
+         "verify":"Verify",
+         "edit":"Edit Infomation"
+      }
    }
 }

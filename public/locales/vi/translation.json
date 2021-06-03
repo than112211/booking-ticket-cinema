@@ -3,10 +3,11 @@
        "search":"Tìm kiếm...",
        "login":"Đăng nhập",
        "nav":{
+          "home":"Trang chủ",
           "movie":"Phim",
           "promotion":"Khuyến mãi",
           "news":"Tin tức",
-          "intro":"Giới thiệu"
+          "gift":"Đổi quà"
        }
     },
     "footer":{
@@ -77,6 +78,19 @@
       "director":"Đạo diễn",
       "rating":"Đánh giá",
       "length":"Độ dài"
+   },
+   "user":{
+      "info":"Thông tin tài khoản",
+      "change_password":"Thay đổi mật khẩu",
+      "gift":"Mã quà tặng",
+      "history":"Lịch sử giao dịch",
+      "user_info": {
+         "email":"Email",
+         "dob":"Ngày sinh",
+         "point":"Điểm thưởng",
+         "verify":"Xác minh",
+         "edit":"Chỉnh sửa thông tin"
+      }
    }
 
  }
