@@ -9,6 +9,7 @@ import MovieDetail from './components/moviepage/moviedetail/moviedetail';
 import PrivateRoute from './routes/private/private';
 import UserPage from './components/userpage/user';
 import { useSelector } from 'react-redux';
+import MovieTime from './components/movietime/movietime';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
                 </Route>
                 <Route exact path="/movie/:slug">
                     <MovieDetail></MovieDetail>
+                </Route>
+                <Route exact path="/movietime/:slug">
+                    <MovieTime></MovieTime>
                 </Route>
                 <PrivateRoute exact path="/user" component={UserPage}>
                 </PrivateRoute>

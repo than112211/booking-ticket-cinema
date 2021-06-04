@@ -91,6 +91,11 @@
          "verify":"Xác minh",
          "edit":"Chỉnh sửa thông tin"
       }
+   },
+   "movietime":{
+      "choose_date":"Chọn ngày",
+      "choose_theater":"Chọn rạp",
+      "choose_hour":"Chọn giờ"
    }
 
  }

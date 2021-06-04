@@ -8,6 +8,8 @@ import eventReducer from './redux/eventSlice'
 import newsReducer from './redux/newsSlice'
 import userReducer from './redux/userSlice'
 import paginationReducer from './redux/paginationSlice'
+import movietimeReducer from './redux/movietimeSlice'
+import theaterReducer from './redux/theaterSlice'
 
 const rootReducer = {
     language: languageReducer,
@@ -17,7 +19,8 @@ const rootReducer = {
     news: newsReducer,
     user: userReducer,
     pagination: paginationReducer,
-    
+    movietime: movietimeReducer,
+    theater: theaterReducer,
 }
 const sagaMiddleware = createSagaMiddleware()
 const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
