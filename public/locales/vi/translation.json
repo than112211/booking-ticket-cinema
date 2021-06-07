@@ -96,6 +96,11 @@
       "choose_date":"Chọn ngày",
       "choose_theater":"Chọn rạp",
       "choose_hour":"Chọn giờ"
+   },
+   "seat":{
+      "picked":"Ghế đã chọn",
+      "available":"Ghế chưa chọn",
+      "choosing":"Ghế đang chọn"
    }
 
  }

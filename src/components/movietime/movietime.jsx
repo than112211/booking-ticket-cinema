@@ -4,8 +4,10 @@ import { useParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { HOST_SERVER } from '../../constants';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { addDate, addTheater, getMovietimeInit,addHour } from '../../redux/movietimeSlice';
+import { addDate, addTheater, getMovietimeInit,addHour, resetDate, resetHour } from '../../redux/movietimeSlice';
 import './movietime.scss'
+import Seat from './seat/seat';
+import classNames from 'classnames';
 
 function MovieTime(props) {
     const dispatch = useDispatch()
@@ -28,6 +30,8 @@ function MovieTime(props) {
         if(movietime.theater){
             if(movietime.theater._id !== theater._id){
                 dispatch(addTheater(theater))
+                dispatch(resetDate())
+                dispatch(resetHour())
             }
         }
         else{
@@ -39,6 +43,7 @@ function MovieTime(props) {
         if(movietime.date){
             if(movietime.date !== date){
                 dispatch(addDate(date))
+                dispatch(resetHour())
             }
         }
         else{
@@ -56,15 +61,19 @@ function MovieTime(props) {
             dispatch(addHour(hour))
         }
     }
+
     const listTheater = theater.map((theater) =>{
         return <DropdownItem key={theater._id} onClick={() => handleClickTheater(theater)} >{theater.name}</DropdownItem>
     })
+
     const listDate = movietime.date_list.map((date,index) =>{
         return <DropdownItem key={index} onClick={() => handleClickDate(date)} >{date.split('T').slice(0,1)}</DropdownItem>
     })
+
     const listHour = movietime.hour_list.map((hour,index) =>{
         return <DropdownItem key={index} onClick={() => handleClickHour(hour)} >{hour}</DropdownItem>
     })
+
     return (
         <div className="movietime">
             <div className="container">
@@ -110,7 +119,10 @@ function MovieTime(props) {
                                     </div>
                                 </div>
                             </div>
-
+                            <div className={classNames({'movietime__ticket-active': movietime.movie_time,
+                                                        'movietime__ticket-disable': movietime.movie_time ? false : true})}>
+                                <Seat></Seat>
+                            </div>
                         </div>
                 </div>
             </div>

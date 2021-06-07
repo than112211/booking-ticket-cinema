@@ -4,6 +4,7 @@
 .movietime{
     padding: 1rem;
     background-color: $movie-show-active;
+    margin-top: 4rem;
     .movietime__img{
         border: 8px solid $movie-show-color;
         @include w-h(100%,auto);
@@ -12,7 +13,7 @@
         }
     }
     .movietime__info{
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         h1{
             text-align: center;
             margin-bottom: 1rem;
@@ -52,5 +53,11 @@
             }
         }
 
+    }
+    .movietime__ticket-active{
+        display: block;
+    }
+    .movietime__ticket-disable{
+        display: none;
     }
 }

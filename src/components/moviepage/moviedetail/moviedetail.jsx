@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { getMovieDetail } from '../../../redux/movieSlice'
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import star from '../../../resourses/img/start.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPlayCircle} from '@fortawesome/free-solid-svg-icons'
 import { HOST_SERVER } from '../../../constants';
 import './moviedetail.scss'
 import Trailer from './trailer/trailer';
+import { Button } from 'reactstrap';
 
 function MovieDetail(props) {
     const {t} = useTranslation();
@@ -68,6 +70,9 @@ function MovieDetail(props) {
                                 <div className="rating__group">
                                     {rating}
                                 </div>
+                            </div>
+                            <div className="btn__ticket">
+                                <Link to={`/movietime/${movie.slug}`}><Button>{t('movie.buy')}</Button></Link>
                             </div>
                         </div>
                     </div>

@@ -53,7 +53,6 @@ function* trackingChangePageMovie(){
     yield put(hidenLoading())
 }
 
-
 function* trackingMovieDetail(action){
     yield put(showLoading())
     const data = yield call(movieAPI.getMovieDetail,action.payload.slug)
@@ -67,8 +66,6 @@ function* trackingMovieDetail(action){
     yield delay(300)
     yield put(hidenLoading())
 }
-
-
 
 function* movieSaga() {
     yield takeEvery(statusMovieHome,trackingChangeStatusMovieHome)

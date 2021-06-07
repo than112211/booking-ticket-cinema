@@ -3,7 +3,7 @@ import {createSlice} from '@reduxjs/toolkit';
 const movietime = createSlice({
     name: 'movietime',
     initialState: {
-        movie_time: [],
+        movie_time: null,
         theater: null,
         date_list: [],
         date: null,
@@ -14,6 +14,21 @@ const movietime = createSlice({
         error: null,
     },
     reducers: {
+        getMovietime: (state,action) => {
+            return {
+                ...state,
+                pending: true,
+            }
+        },
+
+        addMovietime: (state,action) => {
+            return {
+                ...state,
+                pending: false,
+                movie_time: action.payload
+            }
+        },
+        
         addHourList: (state,action) => {
             return {
                 ...state,
@@ -27,6 +42,21 @@ const movietime = createSlice({
                 hour: action.payload
             }
         },
+        
+        resetHour: (state,action) => {
+            return {
+                ...state,
+                hour: null
+            }
+        },
+
+        resetDate: (state,action) => {
+            return {
+                ...state,
+                date: null
+            }
+        },
+
         addDateList: (state,action) => {
             return {
                 ...state,
@@ -78,5 +108,5 @@ const movietime = createSlice({
 })
 
 const {reducer,actions} = movietime
-export const {getMovietimeInit,getMovietimeError,getMovietimePending,addMovieToMovietime,addHour,addTheater,addDate,addDateList,addHourList} = actions
+export const {getMovietimeInit,getMovietimeError,getMovietimePending,addMovieToMovietime,addHour,addTheater,addDate,addDateList,addHourList,resetDate,resetHour,getMovietime,addMovietime} = actions
 export default reducer

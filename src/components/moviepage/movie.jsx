@@ -46,7 +46,7 @@ function MoviePage(props) {
                                     <h1>{movie.name}</h1>
                                     <p>{movie.decription}</p>
                             </div>
-                            <Button className="btn__buy"><Link to={`/movie/${movie.slug}`}>{t('movie.buy')}</Link></Button>
+                            <Button className="btn__buy"><Link to={`/movietime/${movie.slug}`}>{t('movie.buy')}</Link></Button>
                         </div>
                     </div>
                 </div>

@@ -96,5 +96,10 @@
       "choose_date":"Select date",
       "choose_theater":"Select theater",
       "choose_hour":"Select hour"
+   },
+   "seat":{
+      "picked":"Selected chair",
+      "available":"Available chair",
+      "choosing":"Selecting chair"
    }
 }

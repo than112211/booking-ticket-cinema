@@ -5,7 +5,6 @@ import {FETCH_DATA_FAIL, FETCH_DATA_SUCCESS } from '../constants/index'
 import theaterAPI from '../apis/theater'
 import { addTheaterList, getTheaterError, getTheaterPending } from '../redux/theaterSlice'
 
-
 function* trackingGetTheater(){
     yield put(showLoading())
     const data = yield call(theaterAPI.getInit)
@@ -19,8 +18,6 @@ function* trackingGetTheater(){
     yield delay(300)
     yield put(hidenLoading())
 }
-
-
 
 function* theaterSaga() {
     yield takeEvery(getMovietimeInit,trackingGetTheater)

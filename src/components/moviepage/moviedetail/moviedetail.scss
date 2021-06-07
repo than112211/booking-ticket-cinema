@@ -4,7 +4,7 @@
 .movie__detail{
     margin-top: 4rem;
     padding: 2rem 0;
-    @include w-h(100%,40rem);
+    @include w-h(100%,42rem);
     background-color: $movie-show-active;
     .moviedetail__container{
         @include w-h(100%,100%);
@@ -79,6 +79,14 @@
                         @include w-h(100%,6rem);
                         text-align: justify;
                         overflow: hidden;
+                    }
+                    .btn__ticket{
+                        text-align: center;
+                        button{
+                            background-color: $movie-item-color;
+                            @include w-h(10rem,2.5rem);
+                            border-radius: 20px 0 20px 0;
+                        }
                     }
                 }
             }
