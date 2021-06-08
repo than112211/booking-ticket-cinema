@@ -1,0 +1,106 @@
+@import '../../../base';
+@import '../../../variables';
+
+.info__ticket{
+    width: 24rem;
+    padding: 1rem 0;
+    background-color: $movie-item-color;
+    margin: 0 auto;
+    text-align: center;
+    color: $text-color-white;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
+    border: 4px solid $movie-item-boder;
+    h1{
+        font-size: $font-size-xxl;
+        margin: 0;
+        padding-bottom: 1rem;
+        border-bottom: 4px solid $movie-item-boder;
+    }
+    .ticket__title{
+        margin-top: 1rem;
+        h2{
+            font-size: $font-size-l;
+            margin: 0;
+        }
+        span{
+            display: block;
+            margin-top: .4rem;
+        }
+    }
+    .ticket__time{
+        @include displayFlex(space-around);
+        padding: 1rem 1rem;
+        border-bottom: 4px solid $movie-item-boder;
+        &-item{
+            @include displayFlex(start);
+            h3{
+                font-size: $font-size-s;
+                margin: 0;
+            }
+            svg{
+                margin-right: .4rem;
+            }
+        }
+    }
+    .ticket__seat{
+        padding: 1rem;
+        border-bottom: 4px solid $movie-item-boder;
+        h2{
+            font-size: $font-size-xl;
+        }
+        span{
+            margin-top: .4rem;
+            font-size: $font-size-l;
+        }
+    }
+    .ticket__price{
+        padding: 1rem 1.4rem;
+        border-bottom: 4px solid $movie-item-boder;
+        .price__item{
+            @include displayFlex(space-between);
+            .dropdown{
+                margin: 0 auto;
+                margin-top: .4rem;
+                button{
+                    background-color: $movie-show-active;
+                    min-width: 10rem;
+                    color: $text-color-black;
+                    font-size: $font-size-s;
+                }
+                .dropdown-menu{
+                    padding: 0;
+                }
+            }
+            h3{
+                font-size: $font-size-s;
+            }
+            span{
+                font-size: $font-size-s;
+            }
+        }
+        .choose__gift{
+            display: none
+        }
+    }
+    .ticket__price-total{
+        @include displayFlex(space-between);
+        padding: 1rem 1.4rem;
+        h3{
+            font-size: $font-size-l;
+        }
+        span{
+            font-size: $font-size-s;
+        }
+    }
+    .btn__payment{
+        align-items: center;
+        button{
+            min-width: 10rem;
+            border-radius: 20px 0 20px 0;
+            background-color: $movie-show-color;
+            color: $text-color-black;
+            font-size: $font-size-m;
+        }
+    }
+}

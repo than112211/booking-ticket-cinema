@@ -10,8 +10,16 @@ const user = createSlice({
         pending: false,
         error: null,
         status: null,
+        requireLogin: null,
     },
     reducers: {
+        requireLogin: (state,action) => {
+            return {
+                ...state,
+                requireLogin: action.payload
+            }
+        },
+
         chooseTab: (state,action) => {
             return {
                 ...state,
@@ -77,5 +85,5 @@ const user = createSlice({
 })
 
 const {reducer,actions} = user
-export const {loginUser,registerUser,loginError,loginPending,loginSuccess,getUser,loginStatus,logoutUser,chooseTab} = actions
+export const {loginUser,registerUser,loginError,loginPending,loginSuccess,getUser,loginStatus,logoutUser,chooseTab,requireLogin} = actions
 export default reducer

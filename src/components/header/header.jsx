@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import { useTranslation } from 'react-i18next';
 import Container from '@material-ui/core/Container';
 import {changeLanguage} from '../../redux/languageSlice'
-import {getUser,logoutUser} from '../../redux/userSlice'
+import {getUser,logoutUser,requireLogin} from '../../redux/userSlice'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
@@ -28,6 +28,7 @@ function Header(props) {
         if(localStorage.getItem('token')){
             dispatch(getUser())
         }
+        else dispatch(requireLogin(toggleLogin))
      },[])
 
     function handleClickLogout(){

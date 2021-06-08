@@ -101,5 +101,18 @@
       "picked":"Selected chair",
       "available":"Available chair",
       "choosing":"Selecting chair"
+   },
+   "ticket":{
+      "title":"Ticket Infomation",
+      "minute":"Minute",
+      "seat":"Seat",
+      "empty_seat":"Empty seat",
+      "clear_code":"Clear",
+      "unit_price":"Unit price",
+      "number_ticket":"Number ticket",
+      "gift_code":"Gift code",
+      "select_gift":"Select gift",
+      "total_price":"Total price",
+      "payment":"Payment"
    }
 }

@@ -101,6 +101,19 @@
       "picked":"Ghế đã chọn",
       "available":"Ghế chưa chọn",
       "choosing":"Ghế đang chọn"
+   },
+   "ticket":{
+      "title":"Thông tin vé",
+      "minute":"Phút",
+      "seat":"Ghế",
+      "empty_seat":"Chưa chọn ghế",
+      "clear_code":"Hủy",
+      "unit_price":"Đơn giá vé",
+      "gift_code":"Mã giảm giá",
+      "select_gift":"Chọn mã giảm giá",
+      "number_ticket":"Số lượng vé",
+      "total_price":"Tổng tiền",
+      "payment":"Thanh toán"
    }
 
  }

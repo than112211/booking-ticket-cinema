@@ -27,33 +27,36 @@
                 }
             }
         }
-    }
-    .seat__note{
-        @include displayFlex(space-around);
-        border: 4px solid $movie-item-color;
-        margin-top: 2rem;
-        background-color: $movie-show-color; 
-        padding: 1rem 0;  
-        &-item{
-            @include displayFlex(start);
-            h1{
-                font-size: $font-size-m;
-                color: $text-color-black;
-                margin: 0;
+        .seat__note{
+            @include displayFlex(space-around);
+            border: 4px solid $movie-item-color;
+            margin-top: 2rem;
+            background-color: $movie-show-color; 
+            padding: 1rem 0;  
+            &-item{
+                @include displayFlex(start);
+                h1{
+                    font-size: $font-size-m;
+                    color: $text-color-black;
+                    margin: 0;
+                }
+                svg{
+                    font-size: $font-size-xxl;
+                    margin-right: 1rem;
+                }
+                .seat__choosed{
+                    color: $seat-choosed;
+                }
+                .seat__available{
+                    color: $seat-available;
+                }
+                .seat__selecting{
+                    color: $seat-selecting;
             }
-            svg{
-                font-size: $font-size-xxl;
-                margin-right: 1rem;
-            }
-            .seat__choosed{
-                color: $seat-choosed;
-            }
-            .seat__available{
-                color: $seat-available;
-            }
-            .seat__selecting{
-                color: $seat-selecting;
+            }     
         }
-        }     
+    }
+    .info__payment{
+        margin: 4rem 0;
     }
 }
