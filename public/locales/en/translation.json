@@ -95,7 +95,8 @@
    "movietime":{
       "choose_date":"Select date",
       "choose_theater":"Select theater",
-      "choose_hour":"Select hour"
+      "choose_hour":"Select hour",
+      "notify":"Please select theater,date,hour to show the movietime"
    },
    "seat":{
       "picked":"Selected chair",
@@ -113,6 +114,14 @@
       "gift_code":"Gift code",
       "select_gift":"Select gift",
       "total_price":"Total price",
-      "payment":"Payment"
+      "payment":"Payment",
+      "method":"Method payment",
+      "select":"Select"
+   },
+   "toast":{
+      "method":"Please select method payment",
+      "seat":"Please select seat",
+      "payment_success":"Payment success",
+      "payment_fail":"Payment fail"
    }
 }

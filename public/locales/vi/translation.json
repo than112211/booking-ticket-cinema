@@ -95,7 +95,8 @@
    "movietime":{
       "choose_date":"Chọn ngày",
       "choose_theater":"Chọn rạp",
-      "choose_hour":"Chọn giờ"
+      "choose_hour":"Chọn giờ",
+      "notify":"Hãy chọn rạp,ngày,giờ để hiển thị suất chiếu"
    },
    "seat":{
       "picked":"Ghế đã chọn",
@@ -113,7 +114,14 @@
       "select_gift":"Chọn mã giảm giá",
       "number_ticket":"Số lượng vé",
       "total_price":"Tổng tiền",
-      "payment":"Thanh toán"
+      "payment":"Thanh toán",
+      "method":"Phương thức thanh toán",
+      "select":"Select"
+   },
+   "toast":{
+      "method":"Hãy chọn phương thức thanh toán",
+      "seat":"Hãy chọn ghế",
+      "payment_success":"Thanh toán thành công",
+      "payment_fail":"Thanh toán thất bại"
    }
-
  }

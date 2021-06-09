@@ -93,6 +93,29 @@
             font-size: $font-size-s;
         }
     }
+    .ticket__methodpayment{
+        @include displayFlex(space-between);
+        padding: 0 1.4rem;
+        padding-bottom: 1rem;
+        h3{
+            font-size: $font-size-s;
+        }
+        .dropdown{
+            button{
+                background-color: $movie-show-color;
+                color: $text-color-black;
+                font-size: $font-size-s;
+                text-align: center;
+            }
+            .dropdown-item:hover{
+                transition: all .2s ease-in;
+                background-color: $movie-show-active;
+            }
+            .dropdown-menu{
+                padding: 0;
+            }
+        }
+    }
     .btn__payment{
         align-items: center;
         button{

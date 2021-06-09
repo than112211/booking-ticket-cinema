@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import {faMapMarkerAlt,faCalendarAlt,faClock} from '@fortawesome/free-solid-svg-icons'
@@ -6,8 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Button } from 'reactstrap';
 import './infopayment.scss'
-import { addGiftCode,removeGift } from '../../../../redux/ticketSlice';
+import { addGiftCode,addMethod,clearTicket,payment,removeGift } from '../../../../redux/ticketSlice';
 import classNames from 'classnames';
+import { ToastContainer, toast } from 'react-toastify';
+import { METHOD_PAYMENT_AIRPAY, METHOD_PAYMENT_MOMO, METHOD_PAYMENT_VIETTELPAY, METHOD_PAYMENT_ZALOPAY } from '../../../../constants';
+import { getMovietime } from '../../../../redux/movietimeSlice';
 
 function InfoPayment(props) {
     const dispatch = useDispatch()
@@ -15,9 +18,33 @@ function InfoPayment(props) {
     const movie = useSelector(state => state.movietime.movie)
     const movietime = useSelector(state => state.movietime)
     const ticket = useSelector(state => state.ticket)
-    const [dropdownOpen, setDropdownOpen] = useState(false);
     const user = useSelector(state => state.user)
+    const [dropdownOpen, setDropdownOpen] = useState(false);
     const toggle = () => setDropdownOpen(prevState => !prevState);
+    const [dropmethodPayment, setdropmethodPayment] = useState(false);
+    const togglemethodPayment = () => setdropmethodPayment(prevState => !prevState);
+    const notifyMethod = () => toast.error(t('toast.method'));
+    const notifySeat = () => toast.error(t('toast.seat'));
+
+    useEffect(() =>{
+        if(ticket.payment){
+           window.open(ticket.payment.link)
+           dispatch(getMovietime())
+           dispatch(clearTicket())
+        }
+    },[ticket.payment])
+
+    const methodPayment =   <Dropdown isOpen={dropmethodPayment} toggle={togglemethodPayment}>
+                                <DropdownToggle caret>
+                                    {ticket.method ? ticket.method : t('ticket.select')}
+                                </DropdownToggle>
+                                <DropdownMenu>
+                                    <DropdownItem onClick={() => handleAddMethod(METHOD_PAYMENT_AIRPAY)}>{METHOD_PAYMENT_AIRPAY}</DropdownItem>
+                                    <DropdownItem onClick={() => handleAddMethod(METHOD_PAYMENT_MOMO)}>{METHOD_PAYMENT_MOMO}</DropdownItem>
+                                    <DropdownItem onClick={() => handleAddMethod(METHOD_PAYMENT_VIETTELPAY)}>{METHOD_PAYMENT_VIETTELPAY}</DropdownItem>
+                                    <DropdownItem onClick={() => handleAddMethod(METHOD_PAYMENT_ZALOPAY)}>{METHOD_PAYMENT_ZALOPAY}</DropdownItem>
+                                </DropdownMenu>
+                            </Dropdown>
 
     const coupon = user.isLogin && ticket.seat.length ? <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                                                             <DropdownToggle caret>
@@ -46,6 +73,28 @@ function InfoPayment(props) {
     function handleClickPayment() {
         if(!user.isLogin){
             user.requireLogin()
+        }
+        else if(!ticket.method){
+            notifyMethod()
+        }
+            else if(ticket.seat.length == 0){
+                notifySeat()
+            }
+                else {
+                    const body = {
+                        gift: ticket.gift_code,
+                        number: ticket.number_ticket,
+                        price: ticket.price,
+                        seat: ticket.seat
+                    }
+                    const id = movietime.movie_time._id
+                    dispatch(payment({id,body}))
+                }
+    }
+
+    function handleAddMethod(method) {
+        if(ticket.method !== method){
+            dispatch(addMethod(method))
         }
     }
     return (
@@ -95,9 +144,24 @@ function InfoPayment(props) {
                 <h3>{t('ticket.total_price')} :</h3>
                 <span>{ticket.price} VNĐ</span>
             </div>
+            <div className="ticket__methodpayment">
+                <h3>{t('ticket.method')} :</h3>
+                {methodPayment}
+            </div>
             <div className="btn__payment">
                 <Button onClick={handleClickPayment}>{t('ticket.payment')}</Button>
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            ></ToastContainer>
         </div>
     );
 }

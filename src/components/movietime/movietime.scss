@@ -60,4 +60,17 @@
     .movietime__ticket-disable{
         display: none;
     }
+    .movietime__notify-active,.movietime__notify-disable{
+        text-align: center;
+        p{
+            color: $text-color-black;
+            font-size: $font-size-s;
+        }
+    }
+    .movietime__notify-active{
+        display: block;
+    }
+    .movietime__notify-disable{
+        display: none;
+    }
 }

@@ -6,6 +6,7 @@ import newsSaga from './news'
 import userSaga from './user'
 import movietimeSaga from './movietime'
 import theaterSaga from './theater'
+import ticketSaga from './ticket'
 
 function* rootSaga() {
     yield all([
@@ -16,6 +17,7 @@ function* rootSaga() {
         userSaga(),
         movietimeSaga(),
         theaterSaga(),
+        ticketSaga(),
     ]);
 }
 export default rootSaga

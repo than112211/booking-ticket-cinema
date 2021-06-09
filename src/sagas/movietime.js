@@ -1,5 +1,5 @@
 import {put, delay,call, takeEvery, select} from 'redux-saga/effects'
-import { addMovieToMovietime, getMovietimeInit, getMovietimeError, getMovietimePending, addHourList,addTheater,addDateList, addDate, addHour, addMovietime } from '../redux/movietimeSlice'
+import { addMovieToMovietime, getMovietimeInit, getMovietimeError, getMovietimePending, addHourList,addTheater,addDateList, addDate, addHour, addMovietime, getMovietime } from '../redux/movietimeSlice'
 import {showLoading,hidenLoading} from '../redux/loadingSlice'
 import movieAPI from '../apis/movie'
 import {FETCH_DATA_FAIL, FETCH_DATA_SUCCESS} from '../constants/index'
@@ -50,12 +50,13 @@ function* trackingGetHourList(action){
     yield put(hidenLoading())
 }
 
-function* trackingGetMovietime(action){
+function* trackingGetMovietime(){
     yield put(showLoading())
     const idMovie = yield select(state => state.movietime.movie._id)
     const idTheater = yield select(state => state.movietime.theater._id)
     const date = yield select(state => state.movietime.date)
-    const data = yield call(movietimeAPI.getMovietime,idMovie,idTheater,date,action.payload)
+    const hour = yield select(state => state.movietime.hour)
+    const data = yield call(movietimeAPI.getMovietime,idMovie,idTheater,date,hour)
     yield put(getMovietimePending())     
     if(data.status === FETCH_DATA_SUCCESS){
         yield put(addMovietime(data.data))
@@ -71,7 +72,7 @@ function* movietimeSaga() {
     yield takeEvery(getMovietimeInit,trackingGetMovie)
     yield takeEvery(addTheater,trackingGetDateList)
     yield takeEvery(addDate,trackingGetHourList)
-    yield takeEvery(addHour,trackingGetMovietime)
+    yield takeEvery(getMovietime,trackingGetMovietime)
 }
 
 export default movietimeSaga

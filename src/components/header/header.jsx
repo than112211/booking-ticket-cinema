@@ -25,10 +25,10 @@ function Header(props) {
       }
 
     useEffect(() => {
+        dispatch(requireLogin(toggleLogin))
         if(localStorage.getItem('token')){
             dispatch(getUser())
         }
-        else dispatch(requireLogin(toggleLogin))
      },[])
 
     function handleClickLogout(){

@@ -6,9 +6,35 @@ const ticket = createSlice({
         seat: [],
         price: 0,
         number_ticket: 0,
-        gift_code: null
+        gift_code: null,
+        method: null,
+        pending: false,
+        payment: null,
     },
     reducers: {
+
+        clearTicket: () => {
+            return {
+                seat: [],
+                price: 0,
+                number_ticket: 0,
+                gift_code: null,
+                method: null,
+                payment: null,
+            }
+        },
+
+        payment: () => {
+            
+        },
+
+        addMethod: (state,action) => {
+            return {
+                ...state,
+                method: action.payload
+            }
+        },
+
         addSeat: (state,action) => {
             return {
                 ...state,
@@ -42,9 +68,30 @@ const ticket = createSlice({
                 number_ticket: state.number_ticket - 1
             }
         },
+        paymentPending: (state,action) => {
+            return {
+                ...state,
+                pending: true
+            }
+        },
+        
+        paymentError: (state,action) => {
+            return {
+                ...state,
+                error: action.payload
+            }
+        },
+        paymentSuccess: (state,action) => {
+            return {
+                ...state,
+                error: null,
+                pending: false,
+                payment: action.payload
+            }
+        }
     }
 })
 
 const {reducer,actions} = ticket
-export const {addSeat,removeSeat,addGiftCode,removeGift} = actions
+export const {addSeat,removeSeat,addGiftCode,removeGift,addMethod,payment,paymentPending,paymentError,paymentSuccess,clearTicket} = actions
 export default reducer

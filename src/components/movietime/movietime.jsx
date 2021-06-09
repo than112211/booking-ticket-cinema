@@ -4,7 +4,7 @@ import { useParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { HOST_SERVER } from '../../constants';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { addDate, addTheater, getMovietimeInit,addHour, resetDate, resetHour } from '../../redux/movietimeSlice';
+import { addDate, addTheater, getMovietimeInit,addHour, resetDate, resetHour ,getMovietime} from '../../redux/movietimeSlice';
 import './movietime.scss'
 import Seat from './seat/seat';
 import classNames from 'classnames';
@@ -55,10 +55,12 @@ function MovieTime(props) {
         if(movietime.hour){
             if(movietime.hour !== hour){
                 dispatch(addHour(hour))
+                dispatch(getMovietime())
             }
         }
         else{
             dispatch(addHour(hour))
+            dispatch(getMovietime())
         }
     }
 
@@ -118,6 +120,10 @@ function MovieTime(props) {
                                         </Dropdown>
                                     </div>
                                 </div>
+                            </div>
+                            <div className={classNames({'movietime__notify-active':movietime.movie_time ? false : true,
+                                                        'movietime__notify-disable':movietime.movie_time})}>
+                                <p>{t('movietime.notify')}</p>
                             </div>
                             <div className={classNames({'movietime__ticket-active': movietime.movie_time,
                                                         'movietime__ticket-disable': movietime.movie_time ? false : true})}>
