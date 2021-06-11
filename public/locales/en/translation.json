@@ -122,6 +122,28 @@
       "method":"Please select method payment",
       "seat":"Please select seat",
       "payment_success":"Payment success",
-      "payment_fail":"Payment fail"
+      "payment_fail":"Payment fail",
+      "login_success":"Login success",
+      "unpaid":"You have a order unpaid"
+   },
+   "detail_ticket":{
+      "theater":"Theater",
+      "date":"Date",
+      "hour":"Hour",
+      "seat":"Seat"
+   },
+   "history":{
+      "status_success":"Success",
+      "status_cancel":"Cancel",
+      "paid":"Paid",
+      "unpaid":"Unpaid",
+      "name":"Name movie",
+      "status":"Status",
+      "price":"Price",
+      "created_at":"Created at",
+      "payment":"Payment",
+      "time":"Time remaining",
+      "action":"Action",
+      "delete":"Delete"
    }
 }

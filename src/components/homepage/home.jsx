@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useHistory, useParams } from 'react-router';
+import { useHistory } from 'react-router';
 import EventSlide from './eventSlide/event';
 import './home.scss'
 import MovieShow from './movieShow/movieshow';

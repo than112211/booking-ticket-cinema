@@ -1,10 +1,5 @@
 import axiosClient from './axiosClient'
-const config = {
-    headers: {
-        'Content-Type': 'application/json',
-        'auth-token': localStorage.getItem('token')
-    }
-  }
+
 const userAPI = {
     userLogin: (body) => {
         const url = `/account/login`
@@ -17,7 +12,24 @@ const userAPI = {
     },
 
     userMe: () => {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': localStorage.getItem('token')
+            }
+          }
         const url = `/account/me`
+        return axiosClient.get(url,config)
+    },
+
+    getAllTicket: () => {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': localStorage.getItem('token')
+            }
+          }
+        const url = `/ticket/history`
         return axiosClient.get(url,config)
     }
 }

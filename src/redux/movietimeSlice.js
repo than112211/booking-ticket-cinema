@@ -7,6 +7,7 @@ const movietime = createSlice({
         theater: null,
         date_list: [],
         date: null,
+        date_server: null,
         hour_list: [],
         hour: null,
         movie: [],
@@ -36,6 +37,7 @@ const movietime = createSlice({
                 hour_list: action.payload
             }
         },
+        
         addHour: (state,action) => {
             return {
                 ...state,
@@ -68,7 +70,8 @@ const movietime = createSlice({
         addDate: (state,action) => {
             return {
                 ...state,
-                date: action.payload
+                date: new Date(action.payload).toLocaleDateString(),
+                date_server: action.payload
             }
         },
 

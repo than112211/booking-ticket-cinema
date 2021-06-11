@@ -1,0 +1,70 @@
+@import '../../base';
+@import '../../variables';
+
+.user__history{
+    margin: 4rem 0;
+    .history__table{
+        width: 60rem;
+        margin: 0 auto;
+        .table{
+            color: $text-color-white;
+            text-align: center;
+            tbody, td, tfoot, th, thead, tr{
+               border: none;
+            }
+            thead{
+                background-color: $movie-item-color;
+            }
+            tbody{
+                font-weight: 500;
+                tr{
+                    color: $text-color-black;
+                    background-color: $table-color-even;
+                    position: relative;
+                    transition: all .4s ease-in-out;
+                    &:hover{
+                        transform: translateX(2rem);
+                        .detail__history{
+                            opacity: 1;
+                        }
+                    }
+                }
+                .table__active{
+                    background-color: $table-color-odd;
+                }
+                td{
+                    svg{
+                        font-size: $font-size-m;
+                        margin-right: .4rem;
+                    }
+                    .icon_active,.icon_cancel,.icon_error{
+                        font-size: .8rem;
+                    }
+                    .icon_active{
+                        color: $icon-green;
+                    }
+                    .icon_error{
+                        color: $icon-red;
+                    }
+                    .icon_cancel{
+                        color: $icon-grey;
+                    }
+                    .btn__ticket-delete,.btn__ticket-payment{
+                        min-width: 6rem;
+                        padding: 0 .8rem;
+                        height: 1.6rem;
+                        font-size: .8rem;
+                        font-weight: 500;
+                        border: none;
+                    }
+                    .btn__ticket-delete{
+                        background-color: $icon-red;
+                    }
+                    .btn__ticket-payment{
+                        background-color: $icon-green;
+                    }
+                }
+            }
+        }
+    }
+}

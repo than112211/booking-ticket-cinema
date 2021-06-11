@@ -6,6 +6,7 @@ const user = createSlice({
     initialState: {
         tab: TAB_USER_INFOMATION,
         isLogin: false,
+        ticket: [],
         user: {},
         pending: false,
         error: null,
@@ -13,6 +14,32 @@ const user = createSlice({
         requireLogin: null,
     },
     reducers: {
+        getTicket: () => {
+            
+        },
+
+        addTicket: (state,action) => {
+            return {
+                ...state,
+                ticket: action.payload,
+                pending: false
+            }
+        },
+
+        getTicketPending: (state,action) => {
+            return {
+                ...state,
+                pending: true
+            }
+        },
+
+        getTicketError: (state,action) => {
+            return {
+                ...state,
+                error:  action.error,
+                pending: false
+            }
+        },
         requireLogin: (state,action) => {
             return {
                 ...state,
@@ -85,5 +112,5 @@ const user = createSlice({
 })
 
 const {reducer,actions} = user
-export const {loginUser,registerUser,loginError,loginPending,loginSuccess,getUser,loginStatus,logoutUser,chooseTab,requireLogin} = actions
+export const {loginUser,registerUser,loginError,loginPending,loginSuccess,getUser,loginStatus,logoutUser,chooseTab,requireLogin,addTicket,getTicket,getTicketError,getTicketPending} = actions
 export default reducer

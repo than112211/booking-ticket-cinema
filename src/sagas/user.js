@@ -1,7 +1,7 @@
-import {put,call,delay,takeEvery} from 'redux-saga/effects'
+import {put,call,delay,takeEvery, select} from 'redux-saga/effects'
 import userAPI from '../apis/user'
 import {FETCH_DATA_FAIL, FETCH_DATA_SUCCESS} from '../constants/index'
-import {loginUser,loginError,loginPending,loginSuccess, registerUser,getUser, loginStatus} from '../redux/userSlice'
+import {requireLogin,loginUser,loginError,loginPending,loginSuccess, registerUser,getUser, loginStatus, getTicket, addTicket, getTicketPending, getTicketError} from '../redux/userSlice'
 import {showLoading,hidenLoading} from '../redux/loadingSlice'
 
 function* trackingLogin(action){
@@ -12,6 +12,7 @@ function* trackingLogin(action){
         if(data.data.user){
             localStorage.setItem('token',data.data.token)
             yield put(loginSuccess(data.data.user))
+            yield put(loginStatus(data.data.message))
         }
         else {
             yield put(loginStatus(data.data.message))
@@ -57,9 +58,25 @@ function* trackingGetUser(){
     }
 }
 
+function* trackingGetHistoryTicket(){
+    yield put(showLoading())
+    const data = yield call(userAPI.getAllTicket)
+    yield put(getTicketPending())
+    if(data.status === FETCH_DATA_SUCCESS){
+            yield put(addTicket(data.data))
+        }
+    if(data.status === FETCH_DATA_FAIL){
+        yield put(getTicketError(data.error))
+    }
+    yield delay(300)
+    yield put(hidenLoading())
+}
+
 function* userSaga() {
     yield takeEvery(loginUser,trackingLogin)
     yield takeEvery(registerUser,trackingRegister)
     yield takeEvery(getUser,trackingGetUser)
+    yield takeEvery(getTicket,trackingGetHistoryTicket)
+
 }
 export default userSaga

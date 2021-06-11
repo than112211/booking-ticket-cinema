@@ -69,7 +69,7 @@ function MovieTime(props) {
     })
 
     const listDate = movietime.date_list.map((date,index) =>{
-        return <DropdownItem key={index} onClick={() => handleClickDate(date)} >{date.split('T').slice(0,1)}</DropdownItem>
+        return <DropdownItem key={index} onClick={() => handleClickDate(date)} >{new Date(date).toLocaleDateString()}</DropdownItem>
     })
 
     const listHour = movietime.hour_list.map((hour,index) =>{

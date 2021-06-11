@@ -1,18 +1,21 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { HOST_SERVER, TAB_USER_INFOMATION } from '../../../constants';
+import { HOST_SERVER, TAB_USER_HISTORY, TAB_USER_INFOMATION } from '../../../constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit,faCheckCircle,faTimesCircle} from '@fortawesome/free-solid-svg-icons'
 import './info.scss'
 import { Button } from 'reactstrap';
+import classNames from 'classnames';
 
 function Info(props) {
     const {t} = useTranslation();
     const tab = useSelector(state => state.user.tab)
     const user = useSelector(state => state.user.user)
     return (
-        <div className="user__info" style={{display: tab === TAB_USER_INFOMATION ? 'block' : 'none'}}>
+        <div className={classNames({'user__info':true,
+                                    'user__tab-active':tab === TAB_USER_INFOMATION,
+                                    'user__tab-disable':!(tab === TAB_USER_INFOMATION) })}>
             <div className="row">
                 <div className="col-4 col-sm-4">
                     <div className="info__left">

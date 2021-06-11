@@ -42,6 +42,12 @@
             margin-top: .1rem;
             padding: 1rem;
             background-color: $movie-show-active;
+            .user__tab-active{
+                display: block;
+            }
+            .user__tab-disable{
+                display: none;
+            }
         }
     }
 }

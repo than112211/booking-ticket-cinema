@@ -54,7 +54,7 @@ function* trackingGetMovietime(){
     yield put(showLoading())
     const idMovie = yield select(state => state.movietime.movie._id)
     const idTheater = yield select(state => state.movietime.theater._id)
-    const date = yield select(state => state.movietime.date)
+    const date = yield select(state => state.movietime.date_server)
     const hour = yield select(state => state.movietime.hour)
     const data = yield call(movietimeAPI.getMovietime,idMovie,idTheater,date,hour)
     yield put(getMovietimePending())     

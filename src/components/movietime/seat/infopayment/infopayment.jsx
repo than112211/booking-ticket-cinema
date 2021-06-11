@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Button } from 'reactstrap';
 import './infopayment.scss'
-import { addGiftCode,addMethod,clearTicket,payment,removeGift } from '../../../../redux/ticketSlice';
+import { addGiftCode,addMethod,checkTicketUnpaid,clearTicket,payment,removeGift } from '../../../../redux/ticketSlice';
 import classNames from 'classnames';
 import { ToastContainer, toast } from 'react-toastify';
 import { METHOD_PAYMENT_AIRPAY, METHOD_PAYMENT_MOMO, METHOD_PAYMENT_VIETTELPAY, METHOD_PAYMENT_ZALOPAY } from '../../../../constants';
@@ -25,6 +25,7 @@ function InfoPayment(props) {
     const togglemethodPayment = () => setdropmethodPayment(prevState => !prevState);
     const notifyMethod = () => toast.error(t('toast.method'));
     const notifySeat = () => toast.error(t('toast.seat'));
+    const notifyPayment = () => toast.error(t('toast.unpaid'));
 
     useEffect(() =>{
         if(ticket.payment){
@@ -33,6 +34,12 @@ function InfoPayment(props) {
            dispatch(clearTicket())
         }
     },[ticket.payment])
+
+    useEffect(() =>{
+        if(localStorage.getItem('token')){
+            dispatch(checkTicketUnpaid())
+        }
+    },[ticket.method,user.user])
 
     const methodPayment =   <Dropdown isOpen={dropmethodPayment} toggle={togglemethodPayment}>
                                 <DropdownToggle caret>
@@ -80,16 +87,19 @@ function InfoPayment(props) {
             else if(ticket.seat.length == 0){
                 notifySeat()
             }
-                else {
-                    const body = {
-                        gift: ticket.gift_code,
-                        number: ticket.number_ticket,
-                        price: ticket.price,
-                        seat: ticket.seat
-                    }
-                    const id = movietime.movie_time._id
-                    dispatch(payment({id,body}))
+                else if(ticket.pending == true) {
+                    notifyPayment()
                 }
+                    else {
+                        const body = {
+                            gift: ticket.gift_code,
+                            number: ticket.number_ticket,
+                            price: ticket.price,
+                            seat: ticket.seat
+                        }
+                        const id = movietime.movie_time._id
+                        dispatch(payment({id,body}))
+                    }
     }
 
     function handleAddMethod(method) {
@@ -97,6 +107,7 @@ function InfoPayment(props) {
             dispatch(addMethod(method))
         }
     }
+    
     return (
         <div className="info__ticket">
             <h1>{t('ticket.title')}</h1>

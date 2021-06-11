@@ -122,6 +122,28 @@
       "method":"Hãy chọn phương thức thanh toán",
       "seat":"Hãy chọn ghế",
       "payment_success":"Thanh toán thành công",
-      "payment_fail":"Thanh toán thất bại"
+      "payment_fail":"Thanh toán thất bại",
+      "login_success":"Đăng nhập thành công",
+      "unpaid":"Bạn có đơn hàng chưa thanh toán"
+   },
+   "detail_ticket":{
+      "theater":"Rạp",
+      "date":"Ngày",
+      "hour":"Giờ",
+      "seat":"Ghế"
+   },
+   "history":{
+      "status_success":"Thành công",
+      "status_cancel":"Đã hủy",
+      "paid":"Đã thanh toán",
+      "unpaid":"Chưa thanh toán",
+      "name":"Tên phim",
+      "status":"Trạng thái",
+      "price":"Tổng tiền",
+      "created_at":"Ngày tạo",
+      "payment":"Thanh toán",
+      "time":"Thời gian còn lại",
+      "action":"Hành động",
+      "delete":"Xóa"
    }
  }

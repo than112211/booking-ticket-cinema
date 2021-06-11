@@ -6,7 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import './user.scss';
 import { TAB_USER_CHANGEPASSWORD, TAB_USER_GIFT, TAB_USER_HISTORY, TAB_USER_INFOMATION } from '../../constants';
-import { chooseTab } from '../../redux/userSlice';
+import { chooseTab, getTicket } from '../../redux/userSlice';
+import HistoryTicket from './history/history';
 
 function UserPage(props) {
     const dispatch = useDispatch()
@@ -15,7 +16,11 @@ function UserPage(props) {
 
     function handleClickChangeTab(tab) {
         dispatch(chooseTab(tab))
+        if(tab === TAB_USER_HISTORY){
+            dispatch(getTicket())
+        }
     }
+    
     return (
         <div className="user">
             <div className="container movieshow__container user__container">
@@ -29,6 +34,7 @@ function UserPage(props) {
                 </div>
                 <div className="user__tab-item">
                     <Info></Info>
+                    <HistoryTicket></HistoryTicket>
                 </div>
             </div>
         </div>
