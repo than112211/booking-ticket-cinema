@@ -35,7 +35,7 @@ function Info(props) {
                         </div>
                         <div className="info__right-item">
                             <h2>{t('user.user_info.dob')}:</h2>
-                            <span>{user.date.split('T').slice(0,1)}</span>
+                            <span>{new Date(user.date).toLocaleDateString()}</span>
                         </div>
                         <div className="info__right-item">
                             <h2>{t('user.user_info.point')}:</h2>

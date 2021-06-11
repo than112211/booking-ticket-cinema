@@ -17,6 +17,10 @@ const ticket = createSlice({
     
         },
 
+        rePayment: () => {
+    
+        },
+
         paidAll: (state) => {
             return {
                 ...state,
@@ -104,5 +108,5 @@ const ticket = createSlice({
 })
 
 const {reducer,actions} = ticket
-export const {addSeat,removeSeat,addGiftCode,removeGift,addMethod,payment,paymentPending,paymentError,paymentSuccess,clearTicket,checkTicketUnpaid,paidAll} = actions
+export const {addSeat,removeSeat,addGiftCode,removeGift,addMethod,payment,paymentPending,paymentError,paymentSuccess,clearTicket,checkTicketUnpaid,paidAll,rePayment} = actions
 export default reducer

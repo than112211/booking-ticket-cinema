@@ -10,12 +10,21 @@ import { Table,Button } from 'reactstrap';
 import DetailHistory from './detail/detail';
 import Countdown from 'react-countdown';
 import { getTicket } from '../../../redux/userSlice';
+import { clearTicket, rePayment } from '../../../redux/ticketSlice';
 
 function HistoryTicket(props) {
     const {t} = useTranslation();
     const dispatch = useDispatch()
     const tab = useSelector(state => state.user.tab)
     const user = useSelector(state => state.user)
+    const ticket = useSelector(state => state.ticket)
+
+    useEffect(() =>{
+        if(ticket.payment){
+           window.open(ticket.payment.link)
+           dispatch(clearTicket())
+        }
+    },[ticket.payment])
 
     const renderTime = ({ minutes, seconds, completed }) => {
         if (completed) {
@@ -27,6 +36,9 @@ function HistoryTicket(props) {
         }
       }
     
+    function handleClickRepayment(ticket){
+        dispatch(rePayment(ticket))
+    }
     const itemTable = user.ticket.map((ticket,index) => {
         return  <tr className={classNames({'table__active':index % 2 == 0 })}>
                     <th key={ticket._id} scope="row">{index+1}</th>
@@ -42,7 +54,7 @@ function HistoryTicket(props) {
                         'icon_error': ticket.paid ? false : true
                     })} icon={faCircle}></FontAwesomeIcon>{ticket.paid ? t('history.paid') : t('history.unpaid')}</td>
                     <td><FontAwesomeIcon icon={faClock}></FontAwesomeIcon>{ ticket.status && ticket.paid == false ? <Countdown date={new Date(ticket.createdAt).getTime() + 300000} renderer={renderTime} /> : <span>00:00</span>}</td>
-                    <td>{(ticket.status && ticket.paid) || ticket.status == false ? <Button className="btn__ticket-delete">{t('history.delete')}</Button> : <Button className="btn__ticket-payment">{t('history.payment')}</Button>}</td>
+                    <td>{(ticket.status && ticket.paid) || ticket.status == false ? <Button className="btn__ticket-delete">{t('history.delete')}</Button> : <Button onClick={() => handleClickRepayment(ticket)} className="btn__ticket-payment">{t('history.payment')}</Button>}</td>
                     <DetailHistory ticket={ticket}></DetailHistory>
                 </tr>
     })

@@ -123,7 +123,7 @@ function InfoPayment(props) {
                 </div>
                 <div className="ticket__time-item">
                     <FontAwesomeIcon icon={faCalendarAlt}></FontAwesomeIcon>
-                    <h3>{movietime.date?.split('T').slice(0,1)}</h3>
+                    <h3>{movietime.date}</h3>
                 </div>
                 <div className="ticket__time-item">
                     <FontAwesomeIcon icon={faClock}></FontAwesomeIcon>

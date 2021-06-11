@@ -2,7 +2,7 @@ import {put,call,takeEvery, delay} from 'redux-saga/effects'
 import ticketAPI from '../apis/ticket'
 import {FETCH_DATA_FAIL, FETCH_DATA_SUCCESS} from '../constants/index'
 import { hidenLoading, showLoading } from '../redux/loadingSlice'
-import {  checkTicketUnpaid, paidAll, payment, paymentError, paymentPending, paymentSuccess } from '../redux/ticketSlice'
+import {  checkTicketUnpaid, paidAll, payment, paymentError, paymentPending, paymentSuccess, rePayment } from '../redux/ticketSlice'
 import { getTicket } from '../redux/userSlice'
 
 function* trackingPayment(action){
@@ -12,6 +12,19 @@ function* trackingPayment(action){
     if(data.status === FETCH_DATA_SUCCESS){
         yield put(paymentSuccess(data.data))
         yield put(getTicket())
+     }
+    if(data.status === FETCH_DATA_FAIL){
+        yield put(paymentError(data.error))
+    }
+    yield delay(300)
+    yield put(hidenLoading())
+}
+
+function* trachkingRePayment(action){
+    yield put(showLoading())
+    const data = yield call(ticketAPI.rePayment,action.payload)
+    if(data.status === FETCH_DATA_SUCCESS){
+        yield put(paymentSuccess(data.data))
      }
     if(data.status === FETCH_DATA_FAIL){
         yield put(paymentError(data.error))
@@ -36,6 +49,7 @@ function* trachkingCheckTicketUnpaid(){
 function* ticketSaga() {
     yield takeEvery(payment,trackingPayment)
     yield takeEvery(checkTicketUnpaid,trachkingCheckTicketUnpaid)
+    yield takeEvery(rePayment,trachkingRePayment)
 
 }
 
