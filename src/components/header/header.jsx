@@ -69,7 +69,7 @@ function Header(props) {
                     <li><Link to="/movie">{t('header.nav.movie')}</Link></li>
                     <li><Link>{t('header.nav.promotion')}</Link></li>
                     <li><Link>{t('header.nav.news')}</Link></li>
-                    <li><Link>{t('header.nav.gift')}</Link></li>
+                    <li><Link to="/gift">{t('header.nav.gift')}</Link></li>
                 </ul>
             </div>
         </Container>

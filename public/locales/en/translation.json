@@ -145,5 +145,13 @@
       "time":"Time remaining",
       "action":"Action",
       "delete":"Delete"
+   },
+   "gift":{
+      "modal-title":"Trade gift",
+      "modal-content-start":"Do you want to use ",
+      "modal-content-end":" point to trade this gift ?",
+      "modal-yes":"Yes",
+      "modal-no":"No",
+      "trade":"Trade"
    }
 }

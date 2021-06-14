@@ -8,8 +8,8 @@ import MoviePage from './components/moviepage/movie';
 import MovieDetail from './components/moviepage/moviedetail/moviedetail';
 import PrivateRoute from './routes/private/private';
 import UserPage from './components/userpage/user';
-import { useSelector } from 'react-redux';
 import MovieTime from './components/movietime/movietime';
+import Gift from './components/gift/gift';
 
 function App() {
   return (
@@ -32,6 +32,9 @@ function App() {
                 </Route>
                 <PrivateRoute exact path="/user" component={UserPage}>
                 </PrivateRoute>
+                <Route exact path="/gift">
+                    <Gift></Gift>
+                </Route>
             </Switch>
           <Footer></Footer>
         </Router>

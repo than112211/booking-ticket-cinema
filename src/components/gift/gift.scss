@@ -1,0 +1,60 @@
+@import '../base';
+@import '../variables';
+
+.gift{
+    margin: 4rem 0;
+    .gift__container{
+        .gift__item{
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            background-color: $movie-show-active;
+            @include displayFlex(start);
+            border-radius: 4px;
+            box-shadow: 5px 5px 10px rgb(0 0 0 / 80%);
+            &-img{
+                @include w-h(10%,100%);
+                border-radius: 50%;
+                background-color: $movie-show-color;
+                text-align: center;
+                padding: 1.6rem;
+                margin-right: 2rem;
+                img{
+                    @include w-h(100%,100%);
+                    
+                }
+            }
+            &-content{
+                @include w-h(70%,100%);
+                color: $text-color-black;
+                h1{
+                    font-size: $font-size-l;
+                    margin-bottom: .6rem;
+                }
+                span{
+                    color: $movie-item-color;
+                    background-color: $movie-item-boder;
+                    padding: .2rem 1.4rem;
+                    border-radius: 25px;
+                    font-size: $font-size-m;
+                    svg{
+                        margin-left: .4rem;
+                    }
+                }
+                p{
+                    margin-top: .6rem;
+                    font-size: $font-size-s;
+                    color: $text-color-black;
+                }
+            }
+            &-trade{
+                margin-left: auto;
+                button{
+                    min-width: 6rem;
+                    padding: .4rem 2rem;
+                    background-color: $movie-item-color;
+                    border-radius: 25px 0 25px 0;
+                }                
+            }
+        }
+    }
+}

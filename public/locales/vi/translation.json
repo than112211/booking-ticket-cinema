@@ -145,5 +145,13 @@
       "time":"Thời gian còn lại",
       "action":"Hành động",
       "delete":"Xóa"
+   },
+   "gift":{
+      "modal-title":"Đổi mã quà tặng",
+      "modal-content-start":"Bạn muốn sử dụng ",
+      "modal-content-end":" điểm để đổi mã quà tặng này ?",
+      "modal-yes":"Đồng ý",
+      "modal-no":"Hủy",
+      "trade":"Đổi"
    }
  }

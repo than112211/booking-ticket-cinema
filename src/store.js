@@ -11,6 +11,7 @@ import paginationReducer from './redux/paginationSlice'
 import movietimeReducer from './redux/movietimeSlice'
 import theaterReducer from './redux/theaterSlice'
 import ticketReducer from './redux/ticketSlice'
+import giftReducer from './redux/giftSlice'
 
 const rootReducer = {
     language: languageReducer,
@@ -23,6 +24,7 @@ const rootReducer = {
     movietime: movietimeReducer,
     theater: theaterReducer,
     ticket: ticketReducer,
+    gift: giftReducer,
 }
 const sagaMiddleware = createSagaMiddleware()
 const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
