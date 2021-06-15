@@ -7,7 +7,8 @@
           "movie":"Phim",
           "promotion":"Khuyến mãi",
           "news":"Tin tức",
-          "gift":"Đổi quà"
+          "gift":"Đổi quà",
+          "admin":"Quản trị"
        }
     },
     "footer":{
@@ -153,5 +154,13 @@
       "modal-yes":"Đồng ý",
       "modal-no":"Hủy",
       "trade":"Đổi"
+   },
+   "admin":{
+      "dashboard":"Tổng quát",
+      "user":"Quản lý người dùng",
+      "movie":"Quản lý phim",
+      "movietime":"Quản lý suất chiếu",
+      "gift":"Quản lý quà tặng",
+      "revenue":"Quản lý doanh thu"
    }
  }

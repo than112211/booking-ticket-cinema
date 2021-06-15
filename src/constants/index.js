@@ -16,3 +16,11 @@ export const METHOD_PAYMENT_MOMO = 'Momo'
 export const METHOD_PAYMENT_AIRPAY = 'AirPay'
 export const METHOD_PAYMENT_ZALOPAY = 'ZaloPay'
 export const METHOD_PAYMENT_VIETTELPAY = 'ViettelPay'
+export const TAB_ADMIN_MOVIE = 'ADMIN_MOVIE'
+export const TAB_ADMIN_USER = 'ADMIN_USER'
+export const TAB_ADMIN_GIFT = 'ADMIN_GIFT'
+export const TAB_ADMIN_MOVIETIME = 'ADMIN_MOVIETIME'
+export const TAB_ADMIN_REVENUE = 'ADMIN_REVENUE'
+export const TAB_ADMIN_DASHBOARD = 'ADMIN_DASHBOARD'
+
+

@@ -35,6 +35,9 @@ function Header(props) {
         localStorage.clear()
         dispatch(logoutUser())
     }
+
+    const admin = user.isLogin && user.user.role === false ? <li><Link to="/admin">{t('header.nav.admin')}</Link></li> : <></>
+
     return (
      <header className="header">
         <LoginModal modalLogin={modalLogin} toggleLogin={toggleLogin}></LoginModal>
@@ -70,6 +73,7 @@ function Header(props) {
                     <li><Link>{t('header.nav.promotion')}</Link></li>
                     <li><Link>{t('header.nav.news')}</Link></li>
                     <li><Link to="/gift">{t('header.nav.gift')}</Link></li>
+                    {admin}
                 </ul>
             </div>
         </Container>

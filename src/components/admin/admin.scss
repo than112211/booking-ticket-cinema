@@ -1,0 +1,43 @@
+@import '../base';
+@import '../variables';
+
+.admin {
+    background-color: $admin-color-main;
+    margin: 4rem 0;
+    .admin__menu{
+        color: $text-color-white;
+        font-size: $font-size-s;
+        font-weight: 500;
+        background: $admin-color-element;
+        margin: 4rem 0;
+        padding: 2rem 0;
+        border-radius: 8px;
+        &-tab{
+            padding: 1rem 0;
+            ul{
+                margin: 0;
+                padding: 0;
+                li{
+                    list-style: none;
+                    padding: .6rem 2rem;
+                    transition: .4s all ease-in;
+                    cursor: pointer;
+                    svg{
+                        margin-right: .6rem;
+                        font-size: $font-size-m;
+                    }
+                    &:hover{
+                        background-color: $admin-color-hover;
+                        color: $text-color-black;
+                        border-left: 6px solid $admin-color-border;
+                    }
+                }
+                .admin__tab-active{
+                    background-color: $admin-color-hover;
+                    color: $text-color-black;
+                    border-left: 6px solid $admin-color-border;
+                }
+            }
+        }
+    }
+}

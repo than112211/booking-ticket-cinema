@@ -7,7 +7,8 @@
          "movie":"Movie",
          "promotion":"Promotion",
          "news":"News",
-         "gift":"Gift"
+         "gift":"Gift",
+         "admin":"Administrator"
       }
    },
    "footer":{
@@ -153,5 +154,13 @@
       "modal-yes":"Yes",
       "modal-no":"No",
       "trade":"Trade"
+   },
+   "admin":{
+      "dashboard":"Dashboard",
+      "user":"User management",
+      "movie":"Movie management",
+      "movietime":"Movietime management",
+      "gift":"Gift management",
+      "revenue":"Revenue management"
    }
 }
