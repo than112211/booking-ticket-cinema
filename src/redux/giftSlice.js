@@ -5,6 +5,7 @@ const gift = createSlice({
     initialState: {
         pending: false,
         gift: [],
+        status: null,
         error: null,
     },
     reducers: {
@@ -18,6 +19,17 @@ const gift = createSlice({
 
         getGiftInit: () => {
             
+        },
+
+        tradeGift: (state,action) => {
+
+        },
+
+        tradeGiftStatus: (state,action) => {
+            return {
+                ...state,
+                status: action.payload
+            }
         },
 
         getGiftPending: (state,action) => {
@@ -38,5 +50,5 @@ const gift = createSlice({
 })
 
 const {reducer,actions} = gift
-export const {addGift,getGiftInit,getGiftPending,getGiftError} = actions
+export const {addGift,getGiftInit,getGiftPending,getGiftError,tradeGift,tradeGiftStatus} = actions
 export default reducer

@@ -2,6 +2,7 @@
 @import '../variables';
 
 .modal-content{
+    color: $text-color-white;
     background-color: $main-color;
     .modal-header{
         border-bottom: none;
@@ -14,14 +15,12 @@
     .modal-body{
         h1{
             font-size: $font-size-s;
-            color: $text-color-white;
             text-align: center;
             margin: 0;
         }
         .input-item{
             margin-bottom: 1rem;
             span{
-                color: $text-color-white;
                 font-size: $font-size-s;
             }
             label {

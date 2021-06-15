@@ -58,3 +58,14 @@
         }
     }
 }
+.btn__gift-yes,.btn__gift-no{
+    width: 6rem;
+    border: none;
+    border-radius: 25px;
+    &:hover {
+        background-color: $movie-show-color;
+    }
+}
+.btn__gift-yes{
+    background-color: $movie-item-color;
+}

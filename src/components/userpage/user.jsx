@@ -5,6 +5,7 @@ import Info from './info/info'
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import './user.scss';
+import GiftUser from './gift/gift';
 import { TAB_USER_CHANGEPASSWORD, TAB_USER_GIFT, TAB_USER_HISTORY, TAB_USER_INFOMATION } from '../../constants';
 import { chooseTab, getTicket } from '../../redux/userSlice';
 import HistoryTicket from './history/history';
@@ -35,6 +36,7 @@ function UserPage(props) {
                 <div className="user__tab-item">
                     <Info></Info>
                     <HistoryTicket></HistoryTicket>
+                    <GiftUser></GiftUser>
                 </div>
             </div>
         </div>

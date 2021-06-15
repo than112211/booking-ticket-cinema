@@ -1,0 +1,54 @@
+@import '../../base';
+@import '../../variables';
+
+.user__gift{
+    margin: 4rem 0;
+    padding: 0 10rem;
+    .gift__item{
+        &:nth-child(odd){
+            background-color: $movie-item-color;
+        }
+        &:nth-child(even){
+            background-color: $movie-show-color;
+        }
+        padding: .8rem 4rem;
+        margin-bottom: 2rem;
+        @include displayFlex(start);
+        border-radius: 25px;
+        box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
+        &-img{
+            @include w-h(3rem,3rem);
+            border-radius: 50%;
+            background-color: $movie-show-active;
+            text-align: center;
+            padding: .6rem;
+            margin-right: 2rem;
+            img{
+                @include w-h(100%,100%);
+            }
+        }
+        &-content{
+            @include w-h(50%,100%);
+            color: $text-color-white;
+            h1{
+                font-size: $font-size-s;
+                margin: 0;
+            }
+        }
+        &-code{
+            margin-left: auto;
+            span{
+                display: block;
+                min-width: 10rem;
+                color: $movie-item-color;
+                background-color: $movie-item-boder;
+                padding: .2rem 1.4rem;
+                border-radius: 25px;
+                font-size: $font-size-s;
+                svg{
+                    margin-right: .4rem;
+                }
+            }             
+        }
+    }
+}
