@@ -161,6 +161,27 @@
       "movie":"Quản lý phim",
       "movietime":"Quản lý suất chiếu",
       "gift":"Quản lý quà tặng",
-      "revenue":"Quản lý doanh thu"
+      "revenue":"Quản lý doanh thu",
+      "user_info":{
+         "title":"Thống kê người dùng",
+         "week":"Đã tạo trong tuần này",
+         "month":"Đã tạo trong tháng này",
+         "year":"Đã tạo trong năm này",
+         "name":"Tên",
+         "dob":"Ngày sinh",
+         "email":"Email",
+         "verify":"Xác minh",
+         "point":"Điểm",
+         "action":"Hành động",
+         "edit":"Chỉnh sửa",
+         "edit_title":"Chỉnh sửa tài khoản",
+         "edit_yes":"Chỉnh sửa",
+         "edit_no":"Hủy",
+         "delete":"Xóa",
+         "delete_title":"Xóa tài khoản",
+         "delete_question":"Bạn có muốn xóa tài khoản này ?",
+         "delete_yes":"Xóa",
+         "delete_no":"Hủy"
+      }
    }
  }
