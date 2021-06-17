@@ -17,6 +17,7 @@ axiosClient.interceptors.request.use(async (config) => {
 axiosClient.interceptors.response.use((response) => {
     if (response && response.data) {
         return {
+            statusCode: response.status,
             data:response.data,
             status:FETCH_DATA_SUCCESS
     };

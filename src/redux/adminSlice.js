@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import { LIMIT_USER_ADMIN, TAB_ADMIN_DASHBOARD } from '../constants';
+import { LIMIT_GIFT_ADMIN, LIMIT_USER_ADMIN, TAB_ADMIN_DASHBOARD } from '../constants';
 
 const admin = createSlice({
     name: 'admin',
@@ -19,9 +19,194 @@ const admin = createSlice({
                 page: 1,
                 limit: LIMIT_USER_ADMIN
             }
+        },
+        gifts:{
+            numberGetWeek: {},
+            numberGetMonth: {},
+            numberGetYear: {},
+            statusNew: null,
+            statusEdit: null,
+            statusDelete: null,
+            gift: [],
+            paginationGift:{
+                total: 0,
+                page: 1,
+                limit: LIMIT_GIFT_ADMIN
+            }
         }
     },
     reducers: {
+
+        getGiftStatistic: () => {
+
+        },
+
+        addGiftGetWeek: (state,action) => {
+            return {
+                ...state,
+                gifts: {
+                    ...state.gifts,
+                    numberGetWeek: action.payload
+                }
+            }
+        },
+
+        addGiftGetMonth: (state,action) => {
+            return {
+                ...state,
+                gifts: {
+                    ...state.gifts,
+                    numberGetMonth: action.payload
+                }
+            }
+        },
+
+        addGiftGetYear: (state,action) => {
+            return {
+                ...state,
+                gifts: {
+                    ...state.gifts,
+                    numberGetYear: action.payload
+                }
+            }
+        },
+
+        setStatusNewGift: (state,action) => {
+            return {
+                ...state,
+                gifts: {
+                    ...state.gifts,
+                    statusNew: action.payload
+                }
+            }
+        },
+
+        clearStatusNewGift: (state,action) => {
+            return {
+                ...state,
+                gifts: {
+                    ...state.gifts,
+                    statusNew: null
+                }
+            }
+        },
+
+        setStatusEditGift: (state,action) => {
+            return {
+                ...state,
+                gifts: {
+                    ...state.gifts,
+                    statusEdit: action.payload
+                }
+            }
+        },
+
+        clearStatusEditGift: (state,action) => {
+            return {
+                ...state,
+                gifts: {
+                    ...state.gifts,
+                    statusEdit: null
+                }
+            }
+        },
+
+        setStatusDeleteGift: (state,action) => {
+            return {
+                ...state,
+                gifts: {
+                    ...state.gifts,
+                    statusDelete: action.payload
+                }
+            }
+        },
+
+        clearStatusDeleteGift: (state,action) => {
+            return {
+                ...state,
+                gifts: {
+                    ...state.gifts,
+                    statusDelete: null
+                }
+            }
+        },
+
+        editGift: () => {
+
+        },
+
+        newGift: () => {
+
+        },
+
+        deleteGift: () => {
+
+        },
+
+        getListGift: () => {
+
+        },
+
+        addListGift: (state,action) => {
+            return {
+                ...state,
+                gifts: {
+                    ...state.gifts,
+                    gift: action.payload
+                }
+            }
+        },
+
+        increasePageGift: (state) => {
+            return {
+                ...state,
+                gifts: {
+                    ...state.gifts,
+                    paginationGift: {
+                        ...state.gifts.paginationGift,
+                        page: state.gifts.paginationGift.page + 1
+                    }
+                }
+            }
+         },
+        decreasePageGift: (state) => {
+            return {
+                ...state,
+                gifts: {
+                    ...state.gifts,
+                    paginationGift: {
+                        ...state.gifts.paginationGift,
+                        page: state.gifts.paginationGift.page - 1
+                    }
+                }
+            }
+        },
+ 
+        setPageGift: (state,action) => {
+            return {
+                ...state,
+                gifts: {
+                    ...state.gifts,
+                    paginationGift: {
+                        ...state.gifts.paginationGift,
+                        page: action.payload
+                    }
+                }
+            }
+        },
+ 
+        setTotalGift: (state,action) => {
+            return {
+                ...state,
+                gifts: {
+                    ...state.gifts,
+                    paginationGift: {
+                        ...state.gifts.paginationGift,
+                        total: action.payload
+                    }
+                }
+            }
+        },
 
         getUserStatistic: () => {
 
@@ -202,5 +387,44 @@ const admin = createSlice({
 })
 
 const {reducer,actions} = admin
-export const {getDataSuccess,getDataError,getDataPending,chooseTab,increasePageUser,decreasePageUser,setTotalUser,setPageUser,addListUser,getListUser,editUser,deleteUser,setStatusDeleteUser,setStatusEditUser,clearStatusEditUser,clearStatusDeleteUser,addUserCreatedMonth,addUserCreatedWeek,addUserCreatedYear,getUserStatistic} = actions
+export const {  getDataSuccess,
+                getDataError,
+                getDataPending,
+                chooseTab,
+                increasePageUser,
+                decreasePageUser,
+                setTotalUser,
+                setPageUser,
+                addListUser,
+                getListUser,
+                editUser,
+                deleteUser,
+                setStatusDeleteUser,
+                setStatusEditUser,
+                clearStatusEditUser,
+                clearStatusDeleteUser,
+                addUserCreatedMonth,
+                addUserCreatedWeek,
+                addUserCreatedYear,
+                getUserStatistic,
+                getListGift,
+                addListGift,
+                increasePageGift,
+                decreasePageGift,
+                setPageGift,
+                setStatusDeleteGift,
+                setStatusEditGift,
+                setTotalGift,
+                editGift,
+                deleteGift,
+                clearStatusDeleteGift,
+                clearStatusEditGift,
+                newGift,
+                setStatusNewGift,
+                clearStatusNewGift,
+                getGiftStatistic,
+                addGiftGetMonth,
+                addGiftGetWeek,
+                addGiftGetYear,
+            } = actions
 export default reducer

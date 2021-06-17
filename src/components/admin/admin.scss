@@ -43,6 +43,95 @@
         background-color: $admin-color-element;
         border-radius: 8px;
         padding: 1rem 2rem;
+        .admin__detail{
+            text-align: center;
+            h1{
+                text-align: center;
+                font-size: $font-size-xxl;
+                font-weight: 500;
+                margin-bottom: 1rem;
+                color: $text-color-white;
+            }
+            .add__new{
+                cursor: pointer;
+                display: inline-block;
+                color: $text-color-white;
+                font-size: $font-size-m;
+                font-weight: 500;
+                svg{
+                    color: $icon-green;
+                    margin-right: .4rem;
+                    font-size: $font-size-l;
+                }
+            }
+            .statistic{
+                margin: 2rem 0;
+                &-item{
+                    padding: 1rem;
+                    background-color: $admin-color-card;
+                    color: $text-color-white;
+                    font-weight: 500;
+                    border-radius: 8px;
+                    h1{
+                        text-align: center;
+                        font-size: $font-size-m;
+                        border-bottom: 1px solid $admin-color-border;
+                        margin: 0;
+                        padding-bottom: 1rem;
+                    }
+                    section{
+                        margin-top: 1rem;
+                        @include displayFlex(space-around);
+                        .statistic-icon{
+                            @include w-h(3rem,3rem);
+                            @include displayFlex(center);
+                            border-radius: 50%;
+                            background-color: $admin-color-main;
+                            svg{
+                                font-size: $font-size-xl;
+                            }
+                        }
+                        .statistic-number{
+                            font-size: $font-size-xl;
+                            span{
+                                display: block;
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
+            .table{
+                text-align: center;
+                td{
+                    position: relative;
+                    &:hover > .action {
+                        display: block;
+                    }
+                    .action{
+                        position: absolute;
+                        z-index: 1;
+                        display: none;
+                        background-color: $text-color-white;
+                        color: $text-color-black;
+                        border-radius: 4px;
+                        top: 100%;
+                        ul{
+                            margin: 0;
+                            padding: 0;
+                            li{
+                                list-style: none;
+                                padding: .2rem 1.4rem;
+                                cursor: pointer;
+                                &:hover{
+                                    background-color: $admin-color-hover;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         &-active{
             display: block;
         }

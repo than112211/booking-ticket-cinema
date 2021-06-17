@@ -1,9 +1,13 @@
 import axiosClient from './axiosClient'
 
 const giftAPI = {
-    getInit: () => {
+    getListGift: (pagination) => {
+        const params = {
+            page: pagination.page,
+            limit: pagination.limit,
+        }
         const url = `/gift/all`
-        return axiosClient.get(url)
+        return axiosClient.get(url,{params})
     },
 
     tradeGift: (id) => {

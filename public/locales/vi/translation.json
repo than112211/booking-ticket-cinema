@@ -125,7 +125,14 @@
       "payment_success":"Thanh toán thành công",
       "payment_fail":"Thanh toán thất bại",
       "login_success":"Đăng nhập thành công",
-      "unpaid":"Bạn có đơn hàng chưa thanh toán"
+      "unpaid":"Bạn có đơn hàng chưa thanh toán",
+      "gift":{
+         "edit_success":"Chỉnh sửa mã quà tặng thành công",
+         "delete_success":"Xóa mã quà tặng thành công",
+         "date_wrong":"Hãy chọn ngày phù hợp",
+         "new_success":"Tạo thành công",
+         "new_exist":"Tên đã tồn tại, hãy chọn tên khác"
+      }
    },
    "detail_ticket":{
       "theater":"Rạp",
@@ -153,7 +160,19 @@
       "modal-content-end":" điểm để đổi mã quà tặng này ?",
       "modal-yes":"Đồng ý",
       "modal-no":"Hủy",
-      "trade":"Đổi"
+      "trade":"Đổi",
+      "name":"Tên mã quà tặng",
+      "input_name":"Nhập tên mã quà tặng",
+      "description":"Mô tả",
+      "input_description":"Nhập mô tả",
+      "point":"Điểm",
+      "input_point":"Nhập điểm để lấy",
+      "value":"Giá trị",
+      "input_value":"Nhập giá trị",
+      "amount":"Số lượng",
+      "input_amount":"Nhập số lượng",
+      "date_start":"Ngày bắt đầu",
+      "date_end":"Ngày kết thúc"
    },
    "admin":{
       "dashboard":"Tổng quát",
@@ -182,6 +201,31 @@
          "delete_question":"Bạn có muốn xóa tài khoản này ?",
          "delete_yes":"Xóa",
          "delete_no":"Hủy"
+      },
+      "gift_info":{
+         "title":"Thống kê mã quà tặng",
+         "name":"Tên",
+         "remain":"Còn lại",
+         "date_start":"Ngày bắt đầu",
+         "date_end":"Ngày kết thúc",
+         "point":"Điểm",
+         "value":"Giá trị",
+         "action":"Hành động",
+         "edit_title":"Chỉnh sửa mã quà tặng",
+         "edit_yes":"Chỉnh sửa",
+         "edit_no":"Hủy",
+         "edit":"Chỉnh sửa",
+         "new_title":"Tạo mã quà tặng mới",
+         "new_yes":"Tạo mới",
+         "new_no":"Hủy",
+         "delete":"Xóa",
+         "delete_title":"Xóa mã quà tặng",
+         "delete_question":"Bạn muốn xóa mã quà tặng này ?",
+         "delete_yes":"Xóa",
+         "delete_no":"Hủy",
+         "week":"Số lượng đã lấy trong tuần này",
+         "month":"Số lượng đã lấy trong tháng này",
+         "year":"Số lượng đã lấy trong năm này"
       }
    }
  }

@@ -1,15 +1,17 @@
-import {put,call,takeEvery,delay} from 'redux-saga/effects'
+import {put,call,takeEvery,delay,select} from 'redux-saga/effects'
 import giftAPI from '../apis/gift'
 import {FETCH_DATA_FAIL, FETCH_DATA_SUCCESS} from '../constants/index'
-import { addGift, getGiftError, getGiftInit, getGiftPending, tradeGift, tradeGiftStatus } from '../redux/giftSlice'
+import { addListGift, decreasePageGift, getGiftError, getGiftPending, getListGift, increasePageGift, setPageGift, setTotalGift, tradeGift, tradeGiftStatus } from '../redux/giftSlice'
 import {showLoading,hidenLoading} from '../redux/loadingSlice'
 
 function* trackingGetGiftInit(){
     yield put(showLoading())
-    const data = yield call(giftAPI.getInit)
+    const pagination = yield select(state => state.gift.pagination)
+    const data = yield call(giftAPI.getListGift,pagination)
     yield put(getGiftPending())
     if(data.status === FETCH_DATA_SUCCESS){
-        yield put(addGift(data.data))
+        yield put(addListGift(data.data.gift))
+        yield put(setTotalGift(data.data.total))
      }
     if(data.status === FETCH_DATA_FAIL){
         yield put(getGiftError(data.error))
@@ -33,7 +35,7 @@ function* trachkingTradeGift(action){
 }
 
 function* giftSaga() {
-    yield takeEvery(getGiftInit,trackingGetGiftInit)
+    yield takeEvery([getListGift,increasePageGift,decreasePageGift,setPageGift],trackingGetGiftInit)
     yield takeEvery(tradeGift,trachkingTradeGift)
 }
 

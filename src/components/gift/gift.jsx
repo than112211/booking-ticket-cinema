@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getGiftInit, tradeGift } from '../../redux/giftSlice';
+import { clearGiftStatus, getListGift, tradeGift } from '../../redux/giftSlice';
 import gift_img from '../../resourses/img/icon-promotion.png'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,6 +8,7 @@ import {faGift} from '@fortawesome/free-solid-svg-icons'
 import { useTranslation } from 'react-i18next';
 import { ToastContainer, toast } from 'react-toastify';
 import './gift.scss'
+import PaginationGift from './pagination/pagination';
 
 function Gift(props) {
     const {t} = useTranslation();
@@ -18,15 +19,16 @@ function Gift(props) {
     const [gift,setGift] = useState({})
     const toggle = () => setModal(!modal);
     const notifyTradeGift = () => toast.success(gifts.status);
-    
+
     useEffect(() => {
-        dispatch(getGiftInit())
+        dispatch(getListGift())
     },[])
 
     useEffect(() => {
         if(gifts.status){
             toggle()
             notifyTradeGift()
+            dispatch(clearGiftStatus())
         }
     },[gifts.status])
     
@@ -52,6 +54,7 @@ function Gift(props) {
                                 <Button color="secondary" className="btn__gift-no" onClick={toggle}>{t('gift.modal-no')}</Button>
                                 </ModalFooter>
                             </Modal>
+                            
     const renderGifts = gifts.gift.map(gift => {
         return  <div key={gift._id} className="gift__item">
                     <div className="gift__item-img">
@@ -73,6 +76,7 @@ function Gift(props) {
             <div className="container gift__container">
                 {renderGifts}
                 {modalTradeGift}
+                <PaginationGift></PaginationGift>
             </div>
             <ToastContainer
                 position="top-right"

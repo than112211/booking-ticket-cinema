@@ -8,6 +8,7 @@ import { chooseTab } from '../../redux/adminSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGift,faFilm,faUserAlt,faChartPie,faVideo,faDollarSign} from '@fortawesome/free-solid-svg-icons'
 import UserManagement from './user/user';
+import GiftManagement from './gift/gift';
 
 function AdminPage(props) {
     const dispatch = useDispatch()
@@ -40,6 +41,7 @@ function AdminPage(props) {
                     <div className="col-9 col-sm-9">
                         <div className="admin__content">
                             <UserManagement></UserManagement>
+                            <GiftManagement></GiftManagement>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import { LITMIT_GIFT } from '../constants';
 
 const gift = createSlice({
     name: 'gift',
@@ -7,9 +8,54 @@ const gift = createSlice({
         gift: [],
         status: null,
         error: null,
+        pagination: {
+            page:1,
+            limit: LITMIT_GIFT,
+            total: null,
+        }
     },
     reducers: {
-        addGift: (state,action) => {
+        increasePageGift: (state,action) => {
+            return {
+                ...state,
+                pagination: {
+                    ...state.pagination,
+                    page: state.pagination.page + 1
+                }
+            }
+        },
+
+        decreasePageGift: (state,action) => {
+            return {
+                ...state,
+                pagination: {
+                    ...state.pagination,
+                    page: state.pagination.page - 1
+                }
+            }
+        },
+
+        setPageGift: (state,action) => {
+            return {
+                ...state,
+                pagination: {
+                    ...state.pagination,
+                    page: action.payload
+                }
+            }
+        },
+
+        setTotalGift: (state,action) => {
+            return {
+                ...state,
+                pagination: {
+                    ...state.pagination,
+                    total: action.payload
+                }
+            }
+        },
+
+        addListGift: (state,action) => {
             return {
                 ...state,
                 pending: false,
@@ -17,7 +63,7 @@ const gift = createSlice({
             }
         },
 
-        getGiftInit: () => {
+        getListGift: () => {
             
         },
 
@@ -29,6 +75,13 @@ const gift = createSlice({
             return {
                 ...state,
                 status: action.payload
+            }
+        },
+
+        clearGiftStatus: (state,action) => {
+            return {
+                ...state,
+                status: null
             }
         },
 
@@ -50,5 +103,5 @@ const gift = createSlice({
 })
 
 const {reducer,actions} = gift
-export const {addGift,getGiftInit,getGiftPending,getGiftError,tradeGift,tradeGiftStatus} = actions
+export const {addListGift,getListGift,clearGiftStatus,getGiftPending,getGiftError,tradeGift,tradeGiftStatus,increasePageGift,decreasePageGift,setPageGift,setTotalGift} = actions
 export default reducer

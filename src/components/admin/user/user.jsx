@@ -8,7 +8,6 @@ import { getListUser, getUserStatistic } from '../../../redux/adminSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimesCircle,faCheckCircle,faEllipsisV,faUserAlt} from '@fortawesome/free-solid-svg-icons'
 import { useTranslation } from 'react-i18next';
-import './user.scss'
 import EditUser from './edit/edit';
 import DeleteUser from './delete/delete';
 
@@ -54,7 +53,7 @@ function UserManagement(props) {
                     <td>{user.isVerified ? <FontAwesomeIcon className="icon__check" icon={faCheckCircle}></FontAwesomeIcon> : <FontAwesomeIcon className="icon__times" icon={faTimesCircle}></FontAwesomeIcon>}</td>
                     <td>{user.point}</td>
                     <td><FontAwesomeIcon icon={faEllipsisV}></FontAwesomeIcon>
-                        <div className="user__action">
+                        <div className="action">
                             <ul>
                                 <li onClick={() => toggleEditUser(user)}>{t('admin.user_info.edit')}</li>
                                 <li onClick={() => toggleDeleteUser(user)}>{t('admin.user_info.delete')}</li>
@@ -64,48 +63,54 @@ function UserManagement(props) {
                 </tr>
     })
     return (
-        <div className={classNames({'admin__user': true,
+        <div className={classNames({'admin__detail': true,
                                     'admin__content-active': tab === TAB_ADMIN_USER,
                                     'admin__content-disable': !(tab === TAB_ADMIN_USER)})}>
             <h1>{t('admin.user_info.title')}</h1>
-            <div className="user__statistic">
+            <div className="statistic">
                 <div className="row">
                     <div className="col-12 col-sm-12 col-md-4">
-                        <div className="user__statistic-item">
+                        <div className="statistic-item">
                             <h1>{t('admin.user_info.week')}</h1>
                             <section>
-                                <div className="user__statistic-icon">
+                                <div className="statistic-icon">
                                     <FontAwesomeIcon icon={faUserAlt}></FontAwesomeIcon>
                                 </div>
-                                <span>+{numberCreatedWeek}</span>
+                                <div className="statistic-number">
+                                    <span>+{numberCreatedWeek}</span>
+                                </div>
                             </section>
                         </div>
                     </div>
                     <div className="col-12 col-sm-12 col-md-4">
-                        <div className="user__statistic-item">
+                        <div className="statistic-item">
                             <h1>{t('admin.user_info.month')}</h1>
                             <section>
-                                <div className="user__statistic-icon">
+                                <div className="statistic-icon">
                                     <FontAwesomeIcon icon={faUserAlt}></FontAwesomeIcon>
                                 </div>
-                                <span>+{numberCreatedMonth}</span>
+                                <div className="statistic-number">
+                                    <span>+{numberCreatedMonth}</span>
+                                </div>
                             </section>
                         </div>
                     </div>
                     <div className="col-12 col-sm-12 col-md-4">
-                        <div className="user__statistic-item">
+                        <div className="statistic-item">
                             <h1>{t('admin.user_info.year')}</h1>
                             <section>
-                                <div className="user__statistic-icon">
+                                <div className="statistic-icon">
                                     <FontAwesomeIcon icon={faUserAlt}></FontAwesomeIcon>
                                 </div>
-                                <span>+{numberCreatedYear}</span>
+                                <div className="statistic-number">
+                                    <span>+{numberCreatedYear}</span>
+                                </div>
                             </section>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="user__table">
+            <div className="table">
                 <Table dark>
                     <thead>
                         <tr>

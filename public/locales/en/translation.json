@@ -125,7 +125,14 @@
       "payment_success":"Payment success",
       "payment_fail":"Payment fail",
       "login_success":"Login success",
-      "unpaid":"You have a order unpaid"
+      "unpaid":"You have a order unpaid",
+      "gift":{
+         "edit_success":"Edit gift success",
+         "delete_success":"Delete gift success",
+         "date_wrong":"Please select suitable date",
+         "new_success":"Create new gift success",
+         "new_exist":"Name of gift is exist"
+      }
    },
    "detail_ticket":{
       "theater":"Theater",
@@ -153,7 +160,19 @@
       "modal-content-end":" point to trade this gift ?",
       "modal-yes":"Yes",
       "modal-no":"No",
-      "trade":"Trade"
+      "trade":"Trade",
+      "name":"Name of gift",
+      "input_name":"Enter name of gift",
+      "description":"Description",
+      "input_description":"Enter description",
+      "point":"Point",
+      "input_point":"Enter point to get",
+      "value":"Value",
+      "input_value":"Enter value",
+      "amount":"Amount",
+      "input_amount":"Enter amount",
+      "date_start":"Start date",
+      "date_end":"End date"
    },
    "admin":{
       "dashboard":"Dashboard",
@@ -182,6 +201,31 @@
          "delete_question":"Do you want to delete this user ?",
          "delete_yes":"Delete",
          "delete_no":"Cancel"
+      },
+      "gift_info":{
+         "title":"Gift statistic",
+         "name":"Name",
+         "remain":"Remain",
+         "date_start":"Start date",
+         "date_end":"End date",
+         "point":"Point",
+         "value":"Value",
+         "action":"Action",
+         "edit_title":"Edit gift",
+         "edit_yes":"Edit",
+         "edit_no":"Cancel",
+         "edit":"Edit",
+         "new_title":"Create new gift",
+         "new_yes":"Create",
+         "new_no":"Cancel",
+         "delete":"Delete",
+         "delete_title":"Delete gift",
+         "delete_question":"Do you want to delete this gift ?",
+         "delete_yes":"Delete",
+         "delete_no":"Cancel",
+         "week":"Quantity taken in this week",
+         "month":"Quantity taken in this month",
+         "year":"Quantity taken in this year"
       }
    }
 }
