@@ -4,7 +4,7 @@ import EventSlide from './eventSlide/event';
 import './home.scss'
 import MovieShow from './movieShow/movieshow';
 import News from './news/news';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import Promotion from './promotion/promotion';
 import { useTranslation } from 'react-i18next';
 
@@ -41,18 +41,6 @@ function Home(props) {
                     <News></News>
                 </div>
             </div>
-            <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            >
-            </ToastContainer>
         </div>
     );
 }

@@ -6,39 +6,51 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faGift} from '@fortawesome/free-solid-svg-icons'
 import { useTranslation } from 'react-i18next';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import './gift.scss'
 import PaginationGift from './pagination/pagination';
+import { TRADE_GIFT_NOT_ENOUGH_POINT, TRADE_GIFT_SUCCESS } from '../../constants';
 
 function Gift(props) {
     const {t} = useTranslation();
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
-    const gifts = useSelector(state => state.gift)
+    const gifts = useSelector(state => state.gift.gift)
+    const status = useSelector(state => state.gift.status)
     const [modal, setModal] = useState(false);
     const [gift,setGift] = useState({})
     const toggle = () => setModal(!modal);
-    const notifyTradeGift = () => toast.success(gifts.status);
+    const notifyTradeGiftSuccess = () => toast.success(t('toast.gift.get_success'));
+    const notifyTradeGiftNotEnoughtPoint = () => toast.error(t('toast.gift.get_notenoughpoint'));
+    const notifyTradeGiftOutOfCode = () => toast.error(t('toast.gift.get_outofcode'));
 
     useEffect(() => {
         dispatch(getListGift())
     },[])
 
     useEffect(() => {
-        if(gifts.status){
+        if(status === TRADE_GIFT_SUCCESS){
             toggle()
-            notifyTradeGift()
+            notifyTradeGiftSuccess()
             dispatch(clearGiftStatus())
         }
-    },[gifts.status])
+        if(status === TRADE_GIFT_NOT_ENOUGH_POINT){
+            toggle()
+            notifyTradeGiftNotEnoughtPoint()
+            dispatch(clearGiftStatus())
+        }
+    },[status])
     
     function handleClickTradeGift(gift){
-        if(user.isLogin){
+        if(gift.available <= 0){
+            notifyTradeGiftOutOfCode()
+        }
+        else if(user.isLogin){
             setGift(gift)
             toggle()
-        }
-        else user.requireLogin()
-    }   
+            }
+            else user.requireLogin()
+        }   
 
     function handleClickYesTradeGift(){
         dispatch(tradeGift(gift._id))
@@ -50,12 +62,12 @@ function Gift(props) {
                                     {t('gift.modal-content-start')}{gift.point_to_get}{t('gift.modal-content-end')}
                                 </ModalBody>
                                 <ModalFooter>
-                                <Button color="primary" className="btn__gift-yes" onClick={handleClickYesTradeGift}>{t('gift.modal-yes')}</Button>
-                                <Button color="secondary" className="btn__gift-no" onClick={toggle}>{t('gift.modal-no')}</Button>
+                                <Button color="primary" className="btn__yes" onClick={handleClickYesTradeGift}>{t('gift.modal-yes')}</Button>
+                                <Button color="secondary" className="btn__no" onClick={toggle}>{t('gift.modal-no')}</Button>
                                 </ModalFooter>
                             </Modal>
                             
-    const renderGifts = gifts.gift.map(gift => {
+    const renderGifts = gifts.map(gift => {
         return  <div key={gift._id} className="gift__item">
                     <div className="gift__item-img">
                         <img src={gift_img} alt="Anh quà tặng" />
@@ -66,7 +78,7 @@ function Gift(props) {
                         <p>{gift.description}</p>
                     </div>
                     <div className="gift__item-trade">
-                        <Button onClick={() => handleClickTradeGift(gift)}>{t('gift.trade')}</Button>
+                        <Button onClick={() => handleClickTradeGift(gift)}>{gift.available > 0 ? t('gift.trade') : t('gift.outofcode')}</Button>
                     </div>
                 </div>
     })
@@ -78,17 +90,6 @@ function Gift(props) {
                 {modalTradeGift}
                 <PaginationGift></PaginationGift>
             </div>
-            <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            ></ToastContainer>
         </div>
     );
 }

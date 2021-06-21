@@ -60,6 +60,8 @@
       "input_password":"Enter password",
       "repassword":"Re-password",
       "input_repassword":"Enter repassword",
+      "point":"Point",
+      "input_point":"Enter point",
       "require":"This field is required",
       "cancel":"Cancel"
    },
@@ -70,7 +72,30 @@
    },
    "movie":{
       "buy":"Buy ticket",
-      "see_more":"See more"
+      "see_more":"See more",
+      "name":"Name of movie",
+      "input_name":"Enter name of movie",
+      "description":"Description",
+      "input_description":"Enter description",
+      "director":"Director",
+      "input_director":"Enter director",
+      "actor":"Actor",
+      "input_actor":"Enter actor",
+      "length":"Length",
+      "input_length":"Enter length ( minute )",
+      "rating":"Rating",
+      "input_rating":"Enter rating",
+      "language":"Language",
+      "input_language":"Enter language",
+      "type":"Type",
+      "input_type":"Enter type",
+      "status":"Status",
+      "trailer":"Trailer",
+      "image":"Select image",
+      "date_start":"Start date",
+      "date_end":"End date",
+      "playing":"Playing",
+      "comming":"Comming soon"
    },
    "movie_detail":{
       "start":"Start",
@@ -124,14 +149,34 @@
       "seat":"Please select seat",
       "payment_success":"Payment success",
       "payment_fail":"Payment fail",
-      "login_success":"Login success",
       "unpaid":"You have a order unpaid",
+      "user":{
+         "incorrect_password":"Incorrect password",
+         "not_found":"Not found user",
+         "login_success":"Login success",
+         "register_success":"Register success",
+         "register_exist":"Account is exist",
+         "register_password_notmatch":"Password does not match"
+      },
       "gift":{
          "edit_success":"Edit gift success",
          "delete_success":"Delete gift success",
          "date_wrong":"Please select suitable date",
          "new_success":"Create new gift success",
-         "new_exist":"Name of gift is exist"
+         "new_exist":"Name of gift is exist",
+         "get_success":"Trade code success",
+         "get_notenoughpoint":"Not enough point to trade code",
+         "get_outofcode":"Out of code"
+      },
+      "movie":{
+         "edit_success":"Edit movie success",
+         "delete_success":"Delete movie success",
+         "date_wrong":"Please select suitable date",
+         "new_success":"Create new movie success",
+         "new_exist":"Name of movie is exist",
+         "video_wrong":"Please select suitable video",
+         "image_wrong":"Please select suitable image",
+         "delete_isplaying":"Movie is playing, you can't delete"
       }
    },
    "detail_ticket":{
@@ -161,6 +206,7 @@
       "modal-yes":"Yes",
       "modal-no":"No",
       "trade":"Trade",
+      "outofcode":"Out of code",
       "name":"Name of gift",
       "input_name":"Enter name of gift",
       "description":"Description",
@@ -226,6 +272,32 @@
          "week":"Quantity taken in this week",
          "month":"Quantity taken in this month",
          "year":"Quantity taken in this year"
+      },
+      "movie_info":{
+         "title":"Movie statistic",
+         "name":"Name",
+         "date_start":"Start date",
+         "director":"Director",
+         "language":"Language",
+         "length":"Length",
+         "minute":"Minute",
+         "playing":"Playing",
+         "action":"Action",
+         "edit_yes":"Edit",
+         "edit_no":"Cancel",
+         "edit":"Edit",
+         "edit_title":"Edit movie",
+         "new_title":"Create new movie",
+         "new_yes":"Create",
+         "new_no":"Cancel",
+         "delete":"Delete",
+         "delete_title":"Delete movie",
+         "delete_question":"Do you want to delete this movie ?",
+         "delete_yes":"Delete",
+         "delete_no":"Cancel",
+         "number_playing":"Number of movies playing",
+         "number_commingsoon":"Number of movies comming soon",
+         "number_all":"Number of all movies"
       }
    }
 }

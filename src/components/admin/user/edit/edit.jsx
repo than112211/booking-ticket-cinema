@@ -1,11 +1,11 @@
-import React, { useState,useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { useForm } from "react-hook-form";
 import { useDispatch,useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { clearStatusEditUser, editUser } from '../../../../redux/adminSlice';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 EditUser.propTypes = {
     modalEditUser: PropTypes.bool,
@@ -76,22 +76,11 @@ function EditUser(props) {
                         </div>
                     </ModalBody>
                     <ModalFooter>
-                        <Button className="btn__gift-yes" type="submit">{t('admin.user_info.edit_yes')}</Button>
-                        <Button color="secondary" className="btn__gift-no" onClick={toggleEditUser}>{t('admin.user_info.edit_no')}</Button>
+                        <Button className="btn__yes" type="submit">{t('admin.user_info.edit_yes')}</Button>
+                        <Button color="secondary" className="btn__no" onClick={toggleEditUser}>{t('admin.user_info.edit_no')}</Button>
                     </ModalFooter>
                 </form>
             </Modal>
-            <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            ></ToastContainer>
         </div>
     );
 }

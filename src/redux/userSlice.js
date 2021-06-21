@@ -10,7 +10,8 @@ const user = createSlice({
         user: {},
         pending: false,
         error: null,
-        status: null,
+        statusLogin: null,
+        statusRegister: null,
         requireLogin: null,
     },
     reducers: {
@@ -84,14 +85,14 @@ const user = createSlice({
                 error: null,
             }
         },
-        loginPending: (state,action) => {
+        userPending: (state,action) => {
             return {
                 ...state,
                 pending: true
             }
         },
 
-        loginError: (state,action) => {
+        userError: (state,action) => {
             return {
                 ...state,
                 error: action.payload,
@@ -102,15 +103,35 @@ const user = createSlice({
         loginStatus: (state,action) => {
             return {
                 ...state,
-                status: action.payload,
+                statusLogin: action.payload,
                 pending: false
             }
-        }
-        
+        },
 
+        registerStatus: (state,action) => {
+            return {
+                ...state,
+                statusRegister: action.payload,
+                pending: false
+            }
+        },
+
+        clearLoginStatus: (state,action) => {
+            return {
+                ...state,
+                statusLogin: null,
+            }
+        },
+
+        clearRegisterStatus: (state,action) => {
+            return {
+                ...state,
+                statusRegister: null,
+            }
+        }
     }
 })
 
 const {reducer,actions} = user
-export const {loginUser,registerUser,loginError,loginPending,loginSuccess,getUser,loginStatus,logoutUser,chooseTab,requireLogin,addTicket,getTicket,getTicketError,getTicketPending} = actions
+export const {loginUser,registerUser,userError,userPending,loginSuccess,getUser,loginStatus,logoutUser,chooseTab,requireLogin,addTicket,getTicket,getTicketError,getTicketPending,registerStatus,clearLoginStatus,clearRegisterStatus} = actions
 export default reducer

@@ -38,7 +38,7 @@ function MoviePage(props) {
                     <div className="movie__item">
                         <Link to={`/movie/${movie.slug}`}>
                             <div className="movie__img">
-                                <img src={`${HOST_SERVER}/${movie.image}`} alt="" />
+                                <img src={movie.image} alt="anh phim" />
                             </div>
                         </Link>
                         <div className="movie__info">

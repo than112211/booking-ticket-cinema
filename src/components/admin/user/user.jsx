@@ -50,7 +50,7 @@ function UserManagement(props) {
                     <td>{user.name}</td>
                     <td>{new Date(user.date).toLocaleDateString()}</td>
                     <td>{user.email}</td>
-                    <td>{user.isVerified ? <FontAwesomeIcon className="icon__check" icon={faCheckCircle}></FontAwesomeIcon> : <FontAwesomeIcon className="icon__times" icon={faTimesCircle}></FontAwesomeIcon>}</td>
+                    <td>{user.isVerified ? <FontAwesomeIcon className="table__icon-active" icon={faCheckCircle}></FontAwesomeIcon> : <FontAwesomeIcon className="table__icon-disable" icon={faTimesCircle}></FontAwesomeIcon>}</td>
                     <td>{user.point}</td>
                     <td><FontAwesomeIcon icon={faEllipsisV}></FontAwesomeIcon>
                         <div className="action">

@@ -27,13 +27,20 @@
                 display: block;
                 margin-bottom: .4rem;
             }
+            ::-webkit-file-upload-button{
+                border-radius: 25px;
+                border: none;
+                @include w-h(6rem,1.6rem);
+            }
             input{
+                background-color: $text-color-white;
                 display: block;
                 width: 100%;
                 padding: .4rem 1rem;
                 border-radius: 25px;
                 outline: none;
                 border: none;
+                color: $text-color-black;
             }
         }
     }

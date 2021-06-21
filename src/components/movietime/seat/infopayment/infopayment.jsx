@@ -8,7 +8,7 @@ import { Button } from 'reactstrap';
 import './infopayment.scss'
 import { addGiftCode,addMethod,checkTicketUnpaid,clearTicket,payment,removeGift } from '../../../../redux/ticketSlice';
 import classNames from 'classnames';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { METHOD_PAYMENT_AIRPAY, METHOD_PAYMENT_MOMO, METHOD_PAYMENT_VIETTELPAY, METHOD_PAYMENT_ZALOPAY } from '../../../../constants';
 import { getMovietime } from '../../../../redux/movietimeSlice';
 
@@ -162,17 +162,6 @@ function InfoPayment(props) {
             <div className="btn__payment">
                 <Button onClick={handleClickPayment}>{t('ticket.payment')}</Button>
             </div>
-            <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            ></ToastContainer>
         </div>
     );
 }

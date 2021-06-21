@@ -1,6 +1,6 @@
 import {put,call,takeEvery,delay,select} from 'redux-saga/effects'
 import giftAPI from '../apis/gift'
-import {FETCH_DATA_FAIL, FETCH_DATA_SUCCESS} from '../constants/index'
+import {FETCH_DATA_FAIL, FETCH_DATA_SUCCESS, TRADE_GIFT_SUCCESS} from '../constants/index'
 import { addListGift, decreasePageGift, getGiftError, getGiftPending, getListGift, increasePageGift, setPageGift, setTotalGift, tradeGift, tradeGiftStatus } from '../redux/giftSlice'
 import {showLoading,hidenLoading} from '../redux/loadingSlice'
 
@@ -25,7 +25,10 @@ function* trachkingTradeGift(action){
     const data = yield call(giftAPI.tradeGift,action.payload)
     yield put(getGiftPending())
     if(data.status === FETCH_DATA_SUCCESS){
-        yield put(tradeGiftStatus(data.data.message))
+        yield put(tradeGiftStatus(data.statusCode))
+        if(data.statusCode === TRADE_GIFT_SUCCESS){
+            yield put(getListGift())
+        } 
      }
     if(data.status === FETCH_DATA_FAIL){
         yield put(getGiftError(data.error))

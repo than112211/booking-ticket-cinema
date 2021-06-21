@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGift,faFilm,faUserAlt,faChartPie,faVideo,faDollarSign} from '@fortawesome/free-solid-svg-icons'
 import UserManagement from './user/user';
 import GiftManagement from './gift/gift';
+import MovieManagement from './movie/movie';
 
 function AdminPage(props) {
     const dispatch = useDispatch()
@@ -42,6 +43,7 @@ function AdminPage(props) {
                         <div className="admin__content">
                             <UserManagement></UserManagement>
                             <GiftManagement></GiftManagement>
+                            <MovieManagement></MovieManagement>
                         </div>
                     </div>
                 </div>

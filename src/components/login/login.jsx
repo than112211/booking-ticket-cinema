@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { useForm } from "react-hook-form";
-import {loginUser} from '../../redux/userSlice'
+import {clearLoginStatus, loginUser} from '../../redux/userSlice'
 import './login.scss'
 import ModalRegister from '../register/register';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { ToastContainer, toast } from 'react-toastify';
-import { LOGIN_SUCCESS } from '../../constants';
+import { toast } from 'react-toastify';
+import { LOGIN_INCORRECT_PASSWORD, LOGIN_NOT_FOUND, LOGIN_SUCCESS } from '../../constants';
 
 LoginModal.propTypes = {
     modalLogin: PropTypes.bool,
@@ -20,10 +20,10 @@ function LoginModal(props) {
     const dispatch = useDispatch();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const {modalLogin,toggleLogin} = props
-    const notifyLogin = () => toast.success(t('toast.login_success'));
+    const notifyLoginSuccess = () => toast.success(t('toast.user.login_success'));
     const [modalRegister, setModalRegister] = useState(false);
-    const user = useSelector(state => state.user)
-
+    const status = useSelector(state => state.user.statusLogin)
+    const [notify,setNotify] = useState(null)
     const toggleRegister = () => {
         setModalRegister(!modalRegister)
         if(modalLogin) {
@@ -32,11 +32,18 @@ function LoginModal(props) {
     }
 
     useEffect(() => {
-        if(user.status === LOGIN_SUCCESS) {
+        if(status === LOGIN_SUCCESS) {
             toggleLogin()
-            notifyLogin()
+            notifyLoginSuccess()
+            dispatch(clearLoginStatus())
         }
-    },[user.status])
+        if(status === LOGIN_INCORRECT_PASSWORD) {
+            setNotify(t('toast.user.incorrect_password'))
+        }
+        if(status === LOGIN_NOT_FOUND) {
+            setNotify(t('toast.user.not_found'))
+        }
+    },[status])
 
     function onSubmit(data){
         dispatch(loginUser(data))
@@ -60,7 +67,7 @@ function LoginModal(props) {
                             {errors.password && <span>{t('login.require')}</span>}
 
                         </div>
-                        <h1 style={{display:user.status ? 'block' : 'none'}}>{user.status}</h1>
+                        <h1 style={{display:notify ? 'block' : 'none'}}>{notify}</h1>
                     </ModalBody>
                     <ModalFooter>
                         <Button color="primary" className="btn__login" type="submit">{t('login.login')}</Button>
@@ -68,17 +75,6 @@ function LoginModal(props) {
                     </ModalFooter>
                 </form>
             </Modal>
-            <ToastContainer
-                position="top-right"
-                autoClose={2000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            ></ToastContainer>
         </div>
     );
 }

@@ -1,25 +1,25 @@
 import {put,call,delay,takeEvery, select} from 'redux-saga/effects'
 import userAPI from '../apis/user'
 import {FETCH_DATA_FAIL, FETCH_DATA_SUCCESS} from '../constants/index'
-import {requireLogin,loginUser,loginError,loginPending,loginSuccess, registerUser,getUser, loginStatus, getTicket, addTicket, getTicketPending, getTicketError} from '../redux/userSlice'
+import {loginUser,loginSuccess, registerUser,getUser, loginStatus, getTicket, addTicket, getTicketPending, getTicketError, userError, userPending, registerStatus} from '../redux/userSlice'
 import {showLoading,hidenLoading} from '../redux/loadingSlice'
 
 function* trackingLogin(action){
     yield put(showLoading())
     const data = yield call(userAPI.userLogin,action.payload)
-    yield put(loginPending())
+    yield put(userPending())
     if(data.status === FETCH_DATA_SUCCESS){
         if(data.data.user){
             localStorage.setItem('token',data.data.token)
             yield put(loginSuccess(data.data.user))
-            yield put(loginStatus(data.data.message))
+            yield put(loginStatus(data.statusCode))
         }
         else {
-            yield put(loginStatus(data.data.message))
+            yield put(loginStatus(data.statusCode))
         }
      }
     if(data.status === FETCH_DATA_FAIL){
-        yield put(loginError(data.error))
+        yield put(userError(data.error))
     }
     yield delay(300)
     yield put(hidenLoading())
@@ -28,18 +28,19 @@ function* trackingLogin(action){
 function* trackingRegister(action){
     yield put(showLoading())
     const data = yield call(userAPI.userRegister,action.payload)
-    yield put(loginPending())
+    yield put(userPending())
     if(data.status === FETCH_DATA_SUCCESS){
         if(data.data.user){
             localStorage.setItem('token',data.data.token)
             yield put(loginSuccess(data.data.user))
+            yield put(registerStatus(data.statusCode))
         }
         else {
-            yield put(loginStatus(data.data.message))
+            yield put(registerStatus(data.statusCode))
         }
      }
     if(data.status === FETCH_DATA_FAIL){
-        yield put(loginError(data.error))
+        yield put(userError(data.error))
     }
     yield delay(300)
     yield put(hidenLoading())
@@ -47,14 +48,14 @@ function* trackingRegister(action){
 
 function* trackingGetUser(){
     const data = yield call(userAPI.userMe)
-    yield put(loginPending())
+    yield put(userPending())
     if(data.status === FETCH_DATA_SUCCESS){
         if(data.data){
             yield put(loginSuccess(data.data))
         }
      }
     if(data.status === FETCH_DATA_FAIL){
-        yield put(loginError(data.error))
+        yield put(userError(data.error))
     }
 }
 

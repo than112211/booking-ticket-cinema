@@ -60,6 +60,8 @@
       "input_password":"Nhập mật khẩu",
       "repassword":"Xác nhận mật khẩu",
       "input_repassword":"Nhập lại mật khẩu",
+      "point":"Điểm",
+      "input_point":"Nhập điểm",
       "require":"Bắt buộc nhập trường này",
       "cancel":"Hủy"
    },
@@ -70,7 +72,30 @@
    },
    "movie":{
       "buy":"Mua vé",
-      "see_more":"Xem thêm"
+      "see_more":"Xem thêm",
+      "name":"Tên phim",
+      "input_name":"Nhập tên phim",
+      "description":"Mô tả",
+      "input_description":"Nhập Mô tả",
+      "director":"Đạo diễn",
+      "input_director":"Nhập đạo diễn",
+      "actor":"Diễn viên",
+      "input_actor":"Nhập diễn viên",
+      "length":"Độ dài phim",
+      "input_length":"Nhập độ dài phim ( phút )",
+      "rating":"Đánh giá",
+      "input_rating":"Nhập số sao",
+      "language":"Ngôn ngữ",
+      "input_language":"Nhập ngôn ngữ",
+      "type":"Thể loại",
+      "input_type":"Nhập thể loại",
+      "status":"Trạng thái",
+      "trailer":"Trailer",
+      "image":"Chọn ảnh",
+      "date_start":"Ngày khởi chiếu",
+      "date_end":"Ngày kết thúc",
+      "playing":"Đang chiếu",
+      "comming":"Sắp chiếu"
    },
    "movie_detail":{
       "start":"Khởi chiếu",
@@ -126,12 +151,33 @@
       "payment_fail":"Thanh toán thất bại",
       "login_success":"Đăng nhập thành công",
       "unpaid":"Bạn có đơn hàng chưa thanh toán",
+      "user":{
+         "incorrect_password":"Sai mật khẩu",
+         "not_found":"Không tìm thấy tài khoản",
+         "login_success":"Đăng nhập thành công",
+         "register_success":"Đăng kí thành công",
+         "register_exist":"Tài khoản đã tồn tại",
+         "register_password_notmatch":"Mật khẩu không trùng khớp"
+      },
       "gift":{
          "edit_success":"Chỉnh sửa mã quà tặng thành công",
          "delete_success":"Xóa mã quà tặng thành công",
          "date_wrong":"Hãy chọn ngày phù hợp",
          "new_success":"Tạo thành công",
-         "new_exist":"Tên đã tồn tại, hãy chọn tên khác"
+         "new_exist":"Tên đã tồn tại, hãy chọn tên khác",
+         "get_success":"Đổi mã quà tặng thành công",
+         "get_notenoughpoint":"Không đủ điểm để đổi",
+         "get_outofcode":"Hết mã quà tặng"
+      },
+      "movie":{
+         "edit_success":"Chỉnh sửa phim thành công",
+         "delete_success":"Xóa phim thành công",
+         "date_wrong":"Hãy chọn ngày phù hợp",
+         "new_success":"Tạo thành công",
+         "new_exist":"Tên đã tồn tại, hãy chọn tên khác",
+         "video_wrong":"Sai định dạng tệp video",
+         "image_wrong":"Sai định dạng tệp ảnh",
+         "delete_isplaying":"Phim đang chiếu, bạn không thể xóa"
       }
    },
    "detail_ticket":{
@@ -161,6 +207,7 @@
       "modal-yes":"Đồng ý",
       "modal-no":"Hủy",
       "trade":"Đổi",
+      "outofcode":"Hết mã",
       "name":"Tên mã quà tặng",
       "input_name":"Nhập tên mã quà tặng",
       "description":"Mô tả",
@@ -226,6 +273,32 @@
          "week":"Số lượng đã lấy trong tuần này",
          "month":"Số lượng đã lấy trong tháng này",
          "year":"Số lượng đã lấy trong năm này"
+      },
+      "movie_info":{
+         "title":"Thống kê phim",
+         "name":"Tên phim",
+         "date_start":"Ngày khởi chiếu",
+         "director":"Đạo diễn",
+         "language":"Ngôn ngữ",
+         "length":"Độ dài",
+         "minute":"Phút",
+         "playing":"Đang chiếu",
+         "action":"Hành động",
+         "edit_title":"Chỉnh sửa phim",
+         "edit_yes":"Chỉnh sửa",
+         "edit_no":"Hủy",
+         "edit":"Chỉnh sửa",
+         "new_title":"Tạo phim mới",
+         "new_yes":"Tạo mới",
+         "new_no":"Hủy",
+         "delete":"Xóa",
+         "delete_title":"Xóa phim",
+         "delete_question":"Bạn muốn xóa phim này ?",
+         "delete_yes":"Xóa",
+         "delete_no":"Hủy",
+         "number_playing":"Số lượng phim đang chiếu",
+         "number_commingsoon":"Số lượng phim sắp chiếu",
+         "number_all":"Số lượng tất cả phim"
       }
    }
  }

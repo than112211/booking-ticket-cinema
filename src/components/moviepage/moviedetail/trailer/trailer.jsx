@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 import './trailer.scss'
+import { HOST_SERVER } from '../../../../constants';
 
 Trailer.propTypes = {
     toggleTrailer: PropTypes.func,

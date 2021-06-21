@@ -74,5 +74,54 @@ const adminAPI = {
         const url = `/gift/statistic/year`
         return axiosClient.get(url)
     },
+
+    getListMovie: (pagination) => {
+        const params = {
+            page: pagination.page,
+            limit: pagination.limit,
+        }
+        const url = `/movie/all`
+        return axiosClient.get(url,{params})
+    },
+
+    newMovie: (body) => {
+        const url = `/movie/create`
+        return axiosClient.post(url,body)
+    },
+
+    editMovie: (id,body) => {
+        const url = `/movie/edit/${id}`
+        return axiosClient.put(url,body)
+    },
+
+    changeToPlayingMovie: (id) => {
+        const url = `/movie/${id}/playing`
+        return axiosClient.put(url)
+    },
+
+    changeToCommingSoonMovie: (id) => {
+        const url = `/movie/${id}/comming`
+        return axiosClient.put(url)
+    },
+
+    deleteMovie: (id) => {
+        const url = `/movie/${id}`
+        return axiosClient.delete(url)
+    },
+
+    numberMoviePlaying: () => {
+        const url = `/movie/all/playing`
+        return axiosClient.get(url)
+    },
+
+    numberMovieCommingSoon: () => {
+        const url = `/movie/all/commingsoon`
+        return axiosClient.get(url)
+    },
+
+    numberMovieAll: () => {
+        const url = `/movie/all/total`
+        return axiosClient.get(url)
+    },
 }
 export default adminAPI

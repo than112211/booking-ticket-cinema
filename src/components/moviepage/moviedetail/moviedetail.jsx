@@ -35,7 +35,7 @@ function MovieDetail(props) {
                 <div className="row moviedetail__row">
                     <div className="col-12 col-sm-12 col-md-4 moviedetail__col">
                         <div className="moviedetail__img">
-                            <img src={`${HOST_SERVER}/${movie.image}`} alt="Anh phim" />
+                            <img src={movie.image} alt="Anh phim" />
                             <div className="view__trailer">
                                 <FontAwesomeIcon onClick={toggleTrailer} icon={faPlayCircle}></FontAwesomeIcon>
                             </div>
@@ -46,7 +46,7 @@ function MovieDetail(props) {
                             <h1 className="moviedetail__title">{movie.name}</h1>
                             <div className="moviedetail__info-item">
                                 <h2>{t('movie_detail.start')}:</h2>
-                                <span>{movie.date_start}</span>
+                                <span>{new Date(movie.date?.date_start).toLocaleDateString()}</span>
                             </div>
                             <div className="moviedetail__info-item">
                                 <h2>{t('movie_detail.type')}:</h2>

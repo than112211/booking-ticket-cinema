@@ -108,6 +108,15 @@
                     &:hover > .action {
                         display: block;
                     }
+                    svg{
+                        font-size: $font-size-m
+                    }
+                    .table__icon-active{
+                        color: $icon-green;
+                    }
+                    .table__icon-disable{
+                        color: $icon-red;
+                    }
                     .action{
                         position: absolute;
                         z-index: 1;

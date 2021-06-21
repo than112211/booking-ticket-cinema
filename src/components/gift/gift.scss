@@ -58,7 +58,7 @@
         }
     }
 }
-.btn__gift-yes,.btn__gift-no{
+.btn__yes,.btn__no{
     width: 6rem;
     border: none;
     border-radius: 25px;
@@ -66,6 +66,6 @@
         background-color: $movie-show-color;
     }
 }
-.btn__gift-yes{
+.btn__yes{
     background-color: $movie-item-color;
 }
