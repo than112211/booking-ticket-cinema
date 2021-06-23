@@ -1,4 +1,4 @@
-export const HOST_SERVER = 'http://localhost:8080' 
+export const HOST_SERVER = 'https://naht-cinema-api.herokuapp.com' 
 export const NOW_MOVIE = 'NOW' 
 export const COMMING_SOON_MOVIE = 'COMMING' 
 export const FETCH_DATA_SUCCESS = 'SUCCESS' 
