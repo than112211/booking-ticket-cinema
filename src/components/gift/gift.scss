@@ -18,9 +18,11 @@
                 text-align: center;
                 padding: 1.6rem;
                 margin-right: 2rem;
+                @media only screen and ( max-width: 64rem ){
+                    @include w-h(15%,100%)
+                }
                 img{
                     @include w-h(100%,100%);
-                    
                 }
             }
             &-content{
@@ -53,6 +55,9 @@
                     padding: .4rem 2rem;
                     background-color: $movie-item-color;
                     border-radius: 25px 0 25px 0;
+                    @media only screen and ( max-width: 64rem ){
+                        padding: .4rem 1rem;
+                    }
                 }                
             }
         }

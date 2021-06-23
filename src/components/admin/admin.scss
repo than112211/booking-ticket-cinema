@@ -11,6 +11,11 @@
         font-weight: 500;
         background-color: $admin-color-element;
         border-radius: 8px;
+        @media only screen and ( max-width: 64rem ){
+            width: 20rem;
+            margin: 0 auto;
+            margin-bottom: 1rem;
+        }
         &-tab{
             padding: 2rem 0;
             ul{

@@ -1,0 +1,18 @@
+@import '../base';
+@import '../variables';
+
+.search{
+    &__notify{
+        font-size: $font-size-m;
+        color: $text-color-white;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: 2rem;
+    }
+    &__notify-active{
+        display: block;
+    }
+    &__notify-disable{
+        display: none;
+    }
+}

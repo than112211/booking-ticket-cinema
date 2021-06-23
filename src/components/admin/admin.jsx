@@ -10,6 +10,7 @@ import { faGift,faFilm,faUserAlt,faChartPie,faVideo,faDollarSign} from '@fortawe
 import UserManagement from './user/user';
 import GiftManagement from './gift/gift';
 import MovieManagement from './movie/movie';
+import MovietimeManagement from './movietime/movietime';
 
 function AdminPage(props) {
     const dispatch = useDispatch()
@@ -25,7 +26,7 @@ function AdminPage(props) {
         <div className="admin">
             <div className="container">
                 <div className="row">
-                    <div className="col-3 col-sm-3">
+                    <div className="col-12 col-md-12 col-lg-3">
                         <div className="admin__menu">
                             <div className="admin__menu-tab">
                                 <ul>
@@ -39,11 +40,12 @@ function AdminPage(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="col-9 col-sm-9">
+                    <div className="col-12 col-md-12 col-lg-9">
                         <div className="admin__content">
                             <UserManagement></UserManagement>
                             <GiftManagement></GiftManagement>
                             <MovieManagement></MovieManagement>
+                            <MovietimeManagement></MovietimeManagement>
                         </div>
                     </div>
                 </div>

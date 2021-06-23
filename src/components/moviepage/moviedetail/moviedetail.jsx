@@ -33,7 +33,7 @@ function MovieDetail(props) {
             <Trailer video={movie.trailer} toggleTrailer={toggleTrailer} modalTrailer={modalTrailer}></Trailer>
             <div className="container moviedetail__container">
                 <div className="row moviedetail__row">
-                    <div className="col-12 col-sm-12 col-md-4 moviedetail__col">
+                    <div className="col-12 col-sm-12 col-md-12 col-lg-4 moviedetail__col">
                         <div className="moviedetail__img">
                             <img src={movie.image} alt="Anh phim" />
                             <div className="view__trailer">
@@ -41,7 +41,7 @@ function MovieDetail(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 col-sm-12 col-md-8 moviedetail__col">
+                    <div className="col-12 col-sm-12 col-md-12 col-lg-8 moviedetail__col">
                         <div className="moviedetail__info">
                             <h1 className="moviedetail__title">{movie.name}</h1>
                             <div className="moviedetail__info-item">

@@ -58,7 +58,7 @@ function Promotion(props) {
                                     <div className="row">
                                     {
                                       event.slice(index*NUMBER_EVENT_HOME,(index*NUMBER_EVENT_HOME)+NUMBER_EVENT_HOME).map(event =>{
-                                          return  <div className="col-6 col-sm-3 col-md-4">
+                                          return  <div className="col-6 col-sm-3 col-md-6 col-lg-4">
                                                       <div className="event__item">
                                                           <img src={`${HOST_SERVER}/${event.image}`} alt="Anh sự kiện" />
                                                       </div>

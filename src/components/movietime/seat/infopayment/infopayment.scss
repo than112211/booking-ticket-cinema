@@ -11,6 +11,9 @@
     border-radius: 4px;
     box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
     border: 4px solid $movie-item-boder;
+    @media only screen and ( max-width:46.2rem ){
+        width: 100%;
+    } 
     h1{
         font-size: $font-size-xxl;
         margin: 0;
@@ -30,10 +33,13 @@
     }
     .ticket__time{
         @include displayFlex(space-around);
-        padding: 1rem 1rem;
+        padding: 1rem;
         border-bottom: 4px solid $movie-item-boder;
         &-item{
             @include displayFlex(start);
+            @media only screen and ( max-width:46.2rem ){
+                display: block;
+            } 
             h3{
                 font-size: $font-size-s;
                 margin: 0;
@@ -99,6 +105,7 @@
         padding-bottom: 1rem;
         h3{
             font-size: $font-size-s;
+            text-align: left;
         }
         .dropdown{
             button{

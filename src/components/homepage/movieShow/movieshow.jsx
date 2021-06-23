@@ -42,7 +42,7 @@ function MovieShow(props) {
                 <div className="container">
                     <div className="row">
                         {movies.movie && movies.movie.length ? movies.movie.map((movie,index) => {
-                            return <div className="col-6 col-sm-4 col-md-3 col-lg-2">
+                            return <div className="col-12 col-sm-12 col-md-6 col-lg-2">
                                         <div className="movie__show-item">
                                             <Link to={`/movie/${movie.slug}`}><img src={movie.image} alt="Anh phim" /></Link>
                                             <h1>{movie.name}</h1>

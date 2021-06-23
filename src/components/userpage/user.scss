@@ -6,9 +6,17 @@
     .user__container{
         .user__tab{
             ul{
+                li{
+                    @media only screen and ( max-width: 64rem ){
+                        width: 10rem;
+                    }
+                }
                 li:nth-child(2) ,li:nth-child(3) ,li:nth-child(4){
-                        margin-left: -40px;
-                        box-shadow: 10px 0 0 rgb(0 0 0 / 10%);
+                    margin-left: -40px;
+                    box-shadow: 10px 0 0 rgb(0 0 0 / 10%);
+                    @media only screen and ( max-width: 46.2rem ){
+                        margin-left: -18px;
+                    }
                 }
                 li:nth-child(1){
                     z-index: 4;
@@ -28,6 +36,17 @@
                 }
                 a{
                     font-size: $font-size-m;
+                    @media only screen and ( max-width: 64rem ){
+                        display: none;
+                    }
+                }
+                svg{
+                    display: none;
+                    font-size: $font-size-xl;
+                    color: $text-color-black;
+                    @media only screen and ( max-width: 64rem ){
+                        display: block;
+                    }
                 }
                 .user__info-active{
                     background-color: $movie-show-active;

@@ -5,6 +5,9 @@
     margin-top: 4rem;
     .movie__content{
         margin-top: 4rem;
+        @media only screen and ( max-width: 64rem ){
+            margin-top: 1rem;
+        }
         .movie__item{
             box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
             background-color: $movie-item-color;
@@ -12,6 +15,10 @@
             margin-bottom: 1rem;
             @include displayFlex(center);
             @include w-h(100%,30rem);
+            @media only screen and ( max-width: 64rem ){
+                display: block;
+                padding: 1rem;
+            }
             a{
                 @include w-h(50%,100%);
                 .movie__img{
@@ -29,6 +36,9 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                @media only screen and ( max-width: 64rem ){
+                    display: none;
+                }
                 .movie__text{
                     color: $text-color-white;
                     @include w-h(100%,50%);
@@ -47,6 +57,9 @@
                     margin-top: auto;
                     @include w-h(10rem,3rem);
                     border-radius: 30px 0 30px 0;
+                    @media only screen and ( max-width: 64rem ){
+                        @include w-h(8rem,2.5rem);
+                    }
                     a{
                         color: $text-color-black;
                         font-size: $font-size-m;

@@ -4,6 +4,9 @@
 .user__gift{
     margin: 4rem 0;
     padding: 0 10rem;
+    @media only screen and ( max-width: 64rem ){
+        padding: 0;
+    }
     .gift__item{
         &:nth-child(odd){
             background-color: $movie-item-color;
@@ -12,6 +15,11 @@
             background-color: $movie-show-color;
         }
         padding: .8rem 4rem;
+        @media only screen and ( max-width: 46.2rem ){
+            padding: .2rem .4rem;
+            display: block;
+            text-align: center;
+        }
         margin-bottom: 2rem;
         @include displayFlex(start);
         border-radius: 25px;
@@ -23,12 +31,15 @@
             text-align: center;
             padding: .6rem;
             margin-right: 2rem;
+            @media only screen and ( max-width: 46.2rem ){
+                margin: .4rem auto;
+            }
             img{
                 @include w-h(100%,100%);
             }
         }
         &-content{
-            @include w-h(50%,100%);
+            @include w-h(100%,100%);
             color: $text-color-white;
             h1{
                 font-size: $font-size-s;
@@ -36,7 +47,9 @@
             }
         }
         &-code{
-            margin-left: auto;
+            @media only screen and ( max-width: 46.2rem ){
+                margin: 1rem auto;
+            }
             span{
                 display: block;
                 min-width: 10rem;
@@ -45,6 +58,9 @@
                 padding: .2rem 1.4rem;
                 border-radius: 25px;
                 font-size: $font-size-s;
+                @media only screen and ( max-width: 46.2rem ){
+                    display: inline;
+                }
                 svg{
                     margin-right: .4rem;
                 }

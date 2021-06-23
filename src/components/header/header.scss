@@ -1,9 +1,17 @@
 @import '../base';
 @import '../variables';
+
 .header__nav{
     height: 70px;
     @include displayFlex(space-between);
+    @media only screen and ( max-width : 64rem ){
+        display: block;
+        height: auto;
+    }
     .header__logo{
+        @media only screen and ( max-width : 64rem ){
+            margin: 1rem auto;
+        }
         @include w-h(10rem,5rem);
         img{
             @include w-h(100%,100%)
@@ -14,6 +22,12 @@
         background-color: black;
         @include w-h(25rem,2.5rem);
         border-radius: 25px;
+        @media only screen and ( max-width : 64rem ){
+            margin: 0 auto;
+        }
+        @media only screen and ( max-width:46.2rem ){
+            width: 15rem;
+        }
         input{
             width: 80%;
             background-color:transparent;
@@ -31,6 +45,62 @@
     }
     .header__btn{
         @include displayFlex(flex-end);
+        @media only screen and ( max-width : 64rem ){
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .icon__bars{
+            margin-right: 1rem;
+            position: relative;
+            display: none;
+            svg{
+                font-size: $font-size-xl;
+                color: $main-color;
+            }
+            @media only screen and ( max-width:46.2rem ){
+                display: block;
+            }
+            &:hover > .header__bars{
+                display: block;
+            }
+            .header__bars{
+                display: none;
+                position: absolute;
+                padding: 3px; 
+                border: 1px solid $main-color;
+                border-radius: 25px;
+                z-index: 10;
+                top: 200%;
+                @media only screen and ( max-width:46.2rem ){
+                    display: none;
+                }
+                ul{
+                    margin: 0;
+                    padding: 0;
+                    background-color: $main-color;
+                    border-radius: 25px;
+                    width: 15rem;
+                    li{
+                        font-weight: 600;
+                        color: $text-color-white;
+                        font-size: $font-size-m;
+                        padding: .6rem 1rem;
+                        cursor: pointer;
+                        list-style: none;
+                        text-transform: uppercase;
+                        border-radius: 25px;
+                        text-align: center;
+                        &:hover {
+                            background-color:orange ;
+                        }
+                        a{
+                            text-decoration: none;
+                            color: $text-color-white;
+                        }
+                    }
+                }
+            }
+        }
         .btn__changelanguage{
             border-radius: 50%;
             @include w-h(2.5rem,2.5rem);
@@ -68,8 +138,8 @@
                 position: absolute;
                 background-color: $movie-show-active;
                 border-radius: 4px;
-                top: 40px;
-                left: 100px;
+                top: 90%;
+                left: 90%;
                 display: none;
                 transition: all 2s ease-in;
                 ul{
@@ -101,6 +171,9 @@
     border: 1px solid $main-color;
     border-radius: 25px;
     margin-top: 2rem;
+    @media only screen and ( max-width:46.2rem ){
+        display: none;
+    }
     ul{
         @include displayFlex(center);
         margin: 0;

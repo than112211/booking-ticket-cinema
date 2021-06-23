@@ -4,11 +4,20 @@
 .news__container{
     margin-top: 4rem;
     @include displayFlex(start);
+    @media only screen and ( max-width : 64rem ){
+        display: block;
+        height: auto;
+    }
     .news__title{
         transform: rotate(270deg);
         @include displayFlex(space-between);
         margin-bottom: auto;
         margin-top: 8rem;
+        @media only screen and ( max-width : 64rem ){
+            margin: 0;
+            transform: rotate(0);
+            justify-content: center;
+        }
         h1{
             color: $text-color-white;
             font-size: $font-size-xxl;

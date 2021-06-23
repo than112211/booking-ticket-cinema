@@ -123,5 +123,32 @@ const adminAPI = {
         const url = `/movie/all/total`
         return axiosClient.get(url)
     },
+
+    getListNameMovie: () => {
+        const url = `/movie/name`
+        return axiosClient.get(url)
+    },
+
+    getListMovietime: (pagination,filter) => {
+        const params = {
+            page: pagination.page,
+            limit: pagination.limit,
+            theater: filter.theater ? filter.theater._id : null,
+            movie: filter.movie.id,
+            date: filter.date ? filter.date : null,
+        }
+        const url = `/movietime/all`
+        return axiosClient.get(url,{params})
+    },
+
+    newMovietime : ({movie,theater,data}) => {
+        const url = `/movietime/create/${movie}/${theater}`
+        return axiosClient.post(url,data)
+    },
+
+    deleteMovietime : (id) => {
+        const url = `/movietime/${id}`
+        return axiosClient.delete(url)
+    }
 }
 export default adminAPI

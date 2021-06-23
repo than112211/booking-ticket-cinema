@@ -17,6 +17,8 @@ function UserManagement(props) {
     const numberCreatedWeek = useSelector(state => state.admin.users.numberUserWeek)
     const numberCreatedMonth = useSelector(state => state.admin.users.numberUserMonth)
     const numberCreatedYear = useSelector(state => state.admin.users.numberUserYear)
+    console.log(numberCreatedMonth)
+
     const [userSelected,setUserSelected] = useState({})
     const dispatch = useDispatch()
     const {t} = useTranslation();

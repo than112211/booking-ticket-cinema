@@ -122,7 +122,13 @@
       "choose_date":"Select date",
       "choose_theater":"Select theater",
       "choose_hour":"Select hour",
-      "notify":"Please select theater,date,hour to show the movietime"
+      "notify":"Please select theater,date,hour to show the movietime",
+      "select_movie":"Select movie",
+      "select_theater":"Select theater",
+      "select_date":"Select date",
+      "hour":"Hour",
+      "price":"Price",
+      "input_price":"Input price"
    },
    "seat":{
       "picked":"Selected chair",
@@ -143,6 +149,12 @@
       "payment":"Payment",
       "method":"Method payment",
       "select":"Select"
+   },
+   "search":{
+      "search_start":"Key word ",
+      "search_center":" found ",
+      "search_end":" result",
+      "nothing":"Nothing to search"
    },
    "toast":{
       "method":"Please select method payment",
@@ -177,6 +189,14 @@
          "video_wrong":"Please select suitable video",
          "image_wrong":"Please select suitable image",
          "delete_isplaying":"Movie is playing, you can't delete"
+      },
+      "movietime":{
+         "edit_success":"Edit movietime success",
+         "delete_success":"Delete movietime success",
+         "date_wrong":"Please select suitable date",
+         "new_success":"Create new movietime success",
+         "new_exist":"Name of movietime is exist",
+         "select_theater":"Please select theater"
       }
    },
    "detail_ticket":{
@@ -298,6 +318,31 @@
          "number_playing":"Number of movies playing",
          "number_commingsoon":"Number of movies comming soon",
          "number_all":"Number of all movies"
+      },
+      "movietime_info":{
+         "title":"Movietime statistic",
+         "name":"Name",
+         "date":"Date",
+         "hour":"Hour",
+         "price":"Price",
+         "action":"Action",
+         "edit_yes":"Edit",
+         "edit_no":"Cancel",
+         "edit":"Edit",
+         "edit_title":"Edit movietime",
+         "new_title":"Create new movietime",
+         "new_yes":"Create",
+         "new_no":"Cancel",
+         "delete":"Delete",
+         "delete_title":"Delete movietime",
+         "delete_question":"Do you want to delete this movietime ?",
+         "delete_yes":"Delete",
+         "delete_no":"Cancel",
+         "number_playing":"Number of movietimes playing",
+         "number_commingsoon":"Number of movietimes comming soon",
+         "number_all":"Total movietimes",
+         "select_theater":"Select theater",
+         "select_date":"Select date"
       }
    }
 }

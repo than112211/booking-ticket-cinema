@@ -4,6 +4,7 @@ import {showLoading,hidenLoading} from '../redux/loadingSlice'
 import {FETCH_DATA_FAIL, FETCH_DATA_SUCCESS } from '../constants/index'
 import theaterAPI from '../apis/theater'
 import { addTheaterList, getTheaterError, getTheaterPending } from '../redux/theaterSlice'
+import { getListNameMovie } from '../redux/adminSlice'
 
 function* trackingGetTheater(){
     yield put(showLoading())
@@ -20,7 +21,7 @@ function* trackingGetTheater(){
 }
 
 function* theaterSaga() {
-    yield takeEvery(getMovietimeInit,trackingGetTheater)
+    yield takeEvery([getMovietimeInit,getListNameMovie],trackingGetTheater)
 }
 
 export default theaterSaga

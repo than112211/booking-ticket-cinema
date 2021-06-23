@@ -19,6 +19,11 @@ const movieAPI = {
     getMovieDetail: (slug) => {
         const url = `/movie/${slug}`
         return axiosClient.get(url)
+    },
+
+    getMovieSearch: (query) => {
+        const url = `/movie/search?name=${query}`
+        return axiosClient.get(url)
     }
 }
 export default movieAPI

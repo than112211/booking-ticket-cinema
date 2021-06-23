@@ -3,6 +3,9 @@
 
 .ticket{
     padding-left: 2rem;
+    @media only screen and ( max-width: 64rem ){
+        padding: 0;
+    }
     .seat{
         margin-bottom: 1rem;
         .seat__row{
@@ -21,6 +24,9 @@
                 svg{
                     cursor: pointer;
                     font-size: $font-size-xxl;
+                    @media only screen and ( max-width:46.2rem ){
+                        font-size: $font-size-m;
+                    } 
                     :hover{
                         color: $movie-item-boder;
                     }
@@ -32,9 +38,16 @@
             border: 4px solid $movie-item-color;
             margin-top: 2rem;
             background-color: $movie-show-color; 
-            padding: 1rem 0;  
+            padding: 1rem 0; 
+            @media only screen and ( max-width:46.2rem ){
+                display: block;
+            } 
             &-item{
                 @include displayFlex(start);
+                @media only screen and ( max-width:46.2rem ){
+                    margin-bottom: 1rem;
+                    justify-content: center;
+                } 
                 h1{
                     font-size: $font-size-m;
                     color: $text-color-black;
@@ -43,6 +56,9 @@
                 svg{
                     font-size: $font-size-xxl;
                     margin-right: 1rem;
+                    @media only screen and ( max-width: 64rem ){
+                        margin-right: .4rem;
+                    }
                 }
                 .seat__choosed{
                     color: $seat-choosed;

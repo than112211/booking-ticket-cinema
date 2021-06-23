@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import { LIMIT_GIFT_ADMIN, LIMIT_MOVIE_ADMIN, LIMIT_USER_ADMIN, TAB_ADMIN_DASHBOARD } from '../constants';
+import { LIMIT_GIFT_ADMIN, LIMIT_MOVIE_ADMIN, LIMIT_USER_ADMIN, LITMIT_MOVIETIME_ADMIN, TAB_ADMIN_DASHBOARD } from '../constants';
 
 const admin = createSlice({
     name: 'admin',
@@ -47,9 +47,293 @@ const admin = createSlice({
                 page: 1,
                 limit: LIMIT_MOVIE_ADMIN
             }
+        },
+        movietimes:{
+            numberMovietimesDay: 0,
+            numberMovietimesWeek: 0,
+            numberMovietimesMonth: 0,
+            filter:{
+                theater: null,
+                movie: null,
+                date: null,
+                hour: null,
+            },
+            listDate: [],
+            listNameMovie: [],
+            statusNew: null,
+            statusEdit: null,
+            statusDelete: null,
+            movietime: [],
+            paginationMovietime:{
+                total: 0,
+                page: 1,
+                limit: LITMIT_MOVIETIME_ADMIN
+            }
         }
     },
     reducers: {
+        
+        clearDate: (state,action) =>{
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    listDate: [],
+                    filter: {
+                        ...state.movietimes.filter,
+                        date: null
+                    }
+                }
+            }
+        },
+
+        clearTheater: (state,action) =>{
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    filter: {
+                        ...state.movietimes.filter,
+                        theater: null
+                    }
+                }
+            }
+        },
+
+        addFilterMovie: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    filter: {
+                        ...state.movietimes.filter,
+                        movie: action.payload
+                    }
+                }
+            }
+        },
+
+        addFilterTheater: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    filter: {
+                        ...state.movietimes.filter,
+                        theater: action.payload
+                    }
+                }
+            }
+        },
+
+        addFilterDate: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    filter: {
+                        ...state.movietimes.filter,
+                        date: action.payload
+                    }
+                }
+            }
+        },
+
+        addListNameMovie: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    listNameMovie: action.payload
+                }
+            }
+        },
+
+        addListDate: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    listDate: action.payload
+                }
+            }
+        },
+
+        getListNameMovie: () => {
+
+        },
+
+        getMovietimeStatistic: () => {
+
+        },
+
+        addMovietimeDay: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    numberMovietimesDay: action.payload
+                }
+            }
+        },
+
+        addMovietimeWeek: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    numberMovietimesWeek: action.payload
+                }
+            }
+        },
+
+        addMovietimeMonth: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    numberMovietimesMonth: action.payload
+                }
+            }
+        },
+
+        setStatusNewMovietime: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    statusNew: action.payload
+                }
+            }
+        },
+
+        clearStatusNewMovietime: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    statusNew: null
+                }
+            }
+        },
+
+        setStatusEditMovietime: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    statusEdit: action.payload
+                }
+            }
+        },
+
+        clearStatusEditMovietime: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    statusEdit: null
+                }
+            }
+        },
+
+        setStatusDeleteMovietime: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    statusDelete: action.payload
+                }
+            }
+        },
+
+        clearStatusDeleteMovietime: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    statusDelete: null
+                }
+            }
+        },
+
+        editMovietime: () => {
+
+        },
+
+        newMovietime: () => {
+
+        },
+
+        deleteMovietime: () => {
+
+        },
+
+        getListMovietime: () => {
+
+        },
+
+        addListMovietime: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    movietime: action.payload
+                }
+            }
+        },
+
+        increasePageMovietime: (state) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    paginationMovietime: {
+                        ...state.movietimes.paginationMovietime,
+                        page: state.movietimes.paginationMovietime.page + 1
+                    }
+                }
+            }
+         },
+        decreasePageMovietime: (state) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    paginationMovietime: {
+                        ...state.movietimes.paginationMovietime,
+                        page: state.movietimes.paginationMovietime.page - 1
+                    }
+                }
+            }
+        },
+ 
+        setPageMovietime: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    paginationMovietime: {
+                        ...state.movietimes.paginationMovietime,
+                        page: action.payload
+                    }
+                }
+            }
+        },
+ 
+        setTotalMovietime: (state,action) => {
+            return {
+                ...state,
+                movietimes: {
+                    ...state.movietimes,
+                    paginationMovietime: {
+                        ...state.movietimes.paginationMovietime,
+                        total: action.payload
+                    }
+                }
+            }
+        },
+
         changeToPlayingMovie: () =>{
 
         },
@@ -638,6 +922,33 @@ export const {  getDataSuccess,
                 increasePageMovie,
                 decreasePageMovie,
                 changeToCommingSoonMovie,
-                changeToPlayingMovie
+                changeToPlayingMovie,
+                getListMovietime,
+                getMovietimeStatistic,
+                setPageMovietime,
+                setStatusDeleteMovietime,
+                setStatusEditMovietime,
+                setStatusNewMovietime,
+                setTotalMovietime,
+                clearStatusDeleteMovietime,
+                clearStatusEditMovietime,
+                clearStatusNewMovietime,
+                addListMovietime,
+                addMovietimeDay,
+                addMovietimeMonth,
+                addMovietimeWeek,
+                newMovietime,
+                editMovietime,
+                decreasePageMovietime,
+                deleteMovietime,
+                increasePageMovietime,
+                getListNameMovie,
+                addListNameMovie,
+                addFilterMovie,
+                addFilterTheater,
+                addFilterDate,
+                addListDate,
+                clearDate,
+                clearTheater
             } = actions
 export default reducer

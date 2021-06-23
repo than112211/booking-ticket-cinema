@@ -17,7 +17,7 @@ function Info(props) {
                                     'user__tab-active':tab === TAB_USER_INFOMATION,
                                     'user__tab-disable':!(tab === TAB_USER_INFOMATION) })}>
             <div className="row">
-                <div className="col-4 col-sm-4">
+                <div className="col-12 col-sm-12 col-md-4">
                     <div className="info__left">
                         <div className="info__left-img">
                             <img src={`${HOST_SERVER}/${user.avartar}`} alt="Anh dai dien" />
@@ -26,7 +26,7 @@ function Info(props) {
                         <h1>{user.name}</h1>
                     </div>
                 </div>
-                <div className="col-8 col-sm-8">
+                <div className="col-12 col-sm-12 col-md-8">
                     <div className="info__right">
                         <h1>{t('user.info')}</h1>
                         <div className="info__right-item">

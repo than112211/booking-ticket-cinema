@@ -4,8 +4,7 @@
 .user__info{
     .info__left{
         width: 100%;
-        &-img{
-            
+        &-img{        
             @include w-h(10rem,10rem);
             margin: 2rem auto;
             position: relative;
@@ -27,7 +26,14 @@
     }
     .info__right{
         width: 100%;
+        @media only screen and ( max-width: 46.2rem ){
+            text-align: center;
+        }
         h1{
+            @media only screen and ( max-width: 46.2rem ){
+                text-align: center;
+                margin: 2rem 0;
+            }
             font-size: $font-size-xxl;
             margin-bottom: 2rem;
             color: $text-color-black;

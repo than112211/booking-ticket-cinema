@@ -13,6 +13,8 @@ import MovieTime from './components/movietime/movietime';
 import Gift from './components/gift/gift';
 import AdminPage from './components/admin/admin';
 import PrivateRouteAdmin from './routes/private/private_admin';
+import Search from './components/search/search';
+import Page404 from './components/404page/404page';
 
 function App() {
   return (
@@ -40,6 +42,12 @@ function App() {
                 </Route>
                 <PrivateRouteAdmin exact path="/admin" component={AdminPage}>
                 </PrivateRouteAdmin>
+                <Route exact path="/search">
+                    <Search></Search>
+                </Route>
+                <Route exact path="*">
+                    <Page404></Page404>
+                </Route>
             </Switch>
           <Footer></Footer>
         </Router>

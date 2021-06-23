@@ -17,6 +17,9 @@
     margin: 4rem 0;
     @include displayFlex(space-between);
     align-items: flex-start;
+    @media only screen and ( max-width : 64rem ){
+        display: block;
+    }
     &-item {
         margin: 0;
         padding: 0;

@@ -1,0 +1,40 @@
+@import '../../base';
+@import '../../variables';
+
+.select__filter{
+    @include displayFlex(center);
+    margin-bottom: 2rem;
+    &-item{
+        margin: 0 .6rem;
+        .dropdown{
+            button{
+                width: 12rem;
+                color: $text-color-white;
+                font-size: $font-size-s;
+                background-color: $admin-color-main;
+                border-radius: 30px 0 30px 0;
+                padding: .6rem 2rem;
+                font-weight: 500;
+            }
+            &-menu{
+                padding: 0;
+                box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
+                button{
+                    width: 100%;
+                    border-radius: 0;
+                    padding: .4rem 1rem;
+                    background-color: $movie-item-boder;
+                    color: $text-color-black;
+                    transition:  all .2s ease-in;
+                    text-align: left;
+                    &:hover{
+                        background-color: $movie-item-color;
+                    }
+                }
+            }
+        }
+    }
+}
+.item__row{
+    justify-content: center;
+}

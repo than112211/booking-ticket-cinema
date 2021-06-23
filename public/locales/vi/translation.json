@@ -122,7 +122,13 @@
       "choose_date":"Chọn ngày",
       "choose_theater":"Chọn rạp",
       "choose_hour":"Chọn giờ",
-      "notify":"Hãy chọn rạp,ngày,giờ để hiển thị suất chiếu"
+      "notify":"Hãy chọn rạp,ngày,giờ để hiển thị suất chiếu",
+      "select_movie":"Chọn phim",
+      "select_theater":"Chọn rạp",
+      "select_date":"Chọn ngày",
+      "hour":"Giờ chiếu",
+      "price":"Giá vé",
+      "input_price":"Nhập giá vé"
    },
    "seat":{
       "picked":"Ghế đã chọn",
@@ -143,6 +149,12 @@
       "payment":"Thanh toán",
       "method":"Phương thức thanh toán",
       "select":"Select"
+   },
+   "search":{
+      "search_start":"Từ khóa ",
+      "search_center":" đã tìm thấy ",
+      "search_end":" kết quả",
+      "nothing":"Không có gì để tìm kiếm"
    },
    "toast":{
       "method":"Hãy chọn phương thức thanh toán",
@@ -178,6 +190,14 @@
          "video_wrong":"Sai định dạng tệp video",
          "image_wrong":"Sai định dạng tệp ảnh",
          "delete_isplaying":"Phim đang chiếu, bạn không thể xóa"
+      },
+      "movietime":{
+         "edit_success":"Chỉnh sửa suất chiếu thành công",
+         "delete_success":"Xóa suất chiếu thành công",
+         "date_wrong":"Chọn ngày phù hợp",
+         "new_success":"Tạo suất chiếu thành công",
+         "new_exist":"Suất chiếu đã tồn tại",
+         "select_theater":"Hãy chọn rạp"
       }
    },
    "detail_ticket":{
@@ -299,6 +319,31 @@
          "number_playing":"Số lượng phim đang chiếu",
          "number_commingsoon":"Số lượng phim sắp chiếu",
          "number_all":"Số lượng tất cả phim"
+      },
+      "movietime_info":{
+         "title":"Thống kê suất chiếu",
+         "name":"Tên phim",
+         "date":"Ngày",
+         "hour":"Giờ",
+         "price":"Giá tiền",
+         "action":"Hành động",
+         "edit_title":"Chỉnh sửa suất chiếu",
+         "edit_yes":"Chỉnh sửa",
+         "edit_no":"Hủy",
+         "edit":"Chỉnh sửa",
+         "new_title":"Tạo suất chiếu mới",
+         "new_yes":"Tạo mới",
+         "new_no":"Hủy",
+         "delete":"Xóa",
+         "delete_title":"Xóa suất chiếu",
+         "delete_question":"Bạn muốn xóa suất chiếu này ?",
+         "delete_yes":"Xóa",
+         "delete_no":"Hủy",
+         "number_playing":"Số lượng suất chiếu đang chiếu",
+         "number_commingsoon":"Số lượng suất chiếu sắp chiếu",
+         "number_all":"Tổng suất chiếu",
+         "select_theater":"Chọn rạp",
+         "select_date":"Chọn ngày"
       }
    }
  }

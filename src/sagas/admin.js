@@ -1,7 +1,8 @@
 import {put,call,takeEvery,delay, select} from 'redux-saga/effects'
 import adminAPI from '../apis/admin'
+import movietimeAPI from '../apis/movietime'
 import {FETCH_DATA_FAIL, FETCH_DATA_SUCCESS} from '../constants/index'
-import { addGiftGetMonth, addGiftGetWeek, addGiftGetYear, addListGift, addListMovie, addListUser, addMovieAll, addMovieCommingSoon, addMoviePlaying, addUserCreatedMonth, addUserCreatedWeek, addUserCreatedYear, changeToCommingSoonMovie, changeToPlayingMovie, decreasePageGift, decreasePageMovie, decreasePageUser, deleteGift, deleteMovie, deleteUser, editGift, editMovie, editUser, getDataError, getDataPending, getDataSuccess, getGiftStatistic, getListGift, getListMovie, getListUser, getMovieStatistic, getUserStatistic, increasePageGift, increasePageMovie, increasePageUser, newGift, newMovie, setPageGift, setPageMovie, setPageUser, setStatusDeleteGift, setStatusDeleteMovie, setStatusDeleteUser, setStatusEditGift, setStatusEditMovie, setStatusEditUser, setStatusNewGift, setStatusNewMovie, setTotalGift, setTotalMovie, setTotalUser } from '../redux/adminSlice'
+import { addFilterDate, addFilterMovie, addFilterTheater, addGiftGetMonth, addGiftGetWeek, addGiftGetYear, addListDate, addListGift, addListMovie, addListMovietime, addListNameMovie, addListUser, addMovieAll, addMovieCommingSoon, addMoviePlaying, addUserCreatedMonth, addUserCreatedWeek, addUserCreatedYear, changeToCommingSoonMovie, changeToPlayingMovie, decreasePageGift, decreasePageMovie, decreasePageMovietime, decreasePageUser, deleteGift, deleteMovie, deleteMovietime, deleteUser, editGift, editMovie, editUser, getDataError, getDataPending, getDataSuccess, getGiftStatistic, getListGift, getListMovie, getListMovietime, getListNameMovie, getListUser, getMovieStatistic, getUserStatistic, increasePageGift, increasePageMovie, increasePageMovietime, increasePageUser, newGift, newMovie, newMovietime, setPageGift, setPageMovie, setPageMovietime, setPageUser, setStatusDeleteGift, setStatusDeleteMovie, setStatusDeleteMovietime, setStatusDeleteUser, setStatusEditGift, setStatusEditMovie, setStatusEditUser, setStatusNewGift, setStatusNewMovie, setStatusNewMovietime, setTotalGift, setTotalMovie, setTotalMovietime, setTotalUser } from '../redux/adminSlice'
 import {showLoading,hidenLoading} from '../redux/loadingSlice'
 
 function* trackingGetListUser(){
@@ -62,8 +63,8 @@ function* trackingUserStatistic(){
     if(numberCreatedWeek.status && numberCreatedMonth.status && numberCreatedYear.status === FETCH_DATA_SUCCESS){
         yield put(getDataSuccess())
         yield put(addUserCreatedWeek(numberCreatedWeek.data))
-        yield put(addUserCreatedMonth(numberCreatedWeek.data))
-        yield put(addUserCreatedYear(numberCreatedWeek.data))
+        yield put(addUserCreatedMonth(numberCreatedMonth.data))
+        yield put(addUserCreatedYear(numberCreatedYear.data))
     }
     if(numberCreatedWeek.status || numberCreatedMonth.status || numberCreatedYear.status === FETCH_DATA_FAIL){
         yield put(getDataError(FETCH_DATA_FAIL))
@@ -146,8 +147,8 @@ function* trackingGiftStatistic(){
     if(numberGiftWeek.status && numberGiftMonth.status && numberGiftYear.status === FETCH_DATA_SUCCESS){
         yield put(getDataSuccess())
         yield put(addGiftGetWeek(numberGiftWeek.data))
-        yield put(addGiftGetMonth(numberGiftWeek.data))
-        yield put(addGiftGetYear(numberGiftWeek.data))
+        yield put(addGiftGetMonth(numberGiftMonth.data))
+        yield put(addGiftGetYear(numberGiftYear.data))
     }
     if(numberGiftWeek.status || numberGiftMonth.status || numberGiftYear.status === FETCH_DATA_FAIL){
         yield put(getDataError(FETCH_DATA_FAIL))
@@ -270,6 +271,89 @@ function* trackingMovieStatistic(){
     yield put(hidenLoading())
 }
 
+function* trackingGetListMovietime(){
+    yield put(showLoading())
+    const pagination = yield select(state => state.admin.movietimes.paginationMovietime)
+    const filter = yield select(state => state.admin.movietimes.filter)
+    const data = yield call(adminAPI.getListMovietime,pagination,filter)
+    yield put(getDataPending())
+    if(data.status === FETCH_DATA_SUCCESS){
+        yield put(getDataSuccess())
+        yield put(addListMovietime(data.data.movie))
+        yield put(setTotalMovietime(data.data.total))
+    }
+    if(data.status === FETCH_DATA_FAIL){
+        yield put(getDataError(data.error))
+    }
+    yield delay(300)
+    yield put(hidenLoading())
+}
+
+function* trackingGetListNameMovie(){
+    yield put(showLoading())
+    const data = yield call(adminAPI.getListNameMovie)
+    yield put(getDataPending())
+    if(data.status === FETCH_DATA_SUCCESS){
+        yield put(getDataSuccess())
+        yield put(addListNameMovie(data.data))
+        yield put(addFilterMovie(data.data[0]))
+    }
+    if(data.status === FETCH_DATA_FAIL){
+        yield put(getDataError(data.error))
+    }
+    yield delay(300)
+    yield put(hidenLoading())
+}
+
+function* trackingGetDateList(action){
+    yield put(showLoading())
+    const idMovie = yield select(state => state.admin.movietimes.filter.movie.id)
+    const data = yield call(movietimeAPI.getDateMovietime,idMovie,action.payload._id)
+    yield put(getDataPending())     
+    if(data.status === FETCH_DATA_SUCCESS){
+        yield put(getDataSuccess())
+        yield put(addListDate([...new Set(data.data)]))
+     }
+    if(data.status === FETCH_DATA_FAIL){
+        yield put(getDataError(data.error))
+    }
+    yield delay(300)
+    yield put(hidenLoading())
+}
+
+
+function* trackingNewMovietime(action){
+    yield put(showLoading())
+    const data = yield call(adminAPI.newMovietime,action.payload)
+    yield put(getDataPending())
+    if(data.status === FETCH_DATA_SUCCESS){
+        yield put(getDataSuccess())
+        yield put(getListMovietime())
+        yield put(setStatusNewMovietime(data.statusCode))
+    }
+    if(data.status === FETCH_DATA_FAIL){
+        yield put(getDataError(data.error))
+    }
+    yield delay(300)
+    yield put(hidenLoading())
+}
+
+function* trackingDeleteMovietime(action){
+    yield put(showLoading())
+    const data = yield call(adminAPI.deleteMovietime,action.payload)
+    yield put(getDataPending())
+    if(data.status === FETCH_DATA_SUCCESS){
+        yield put(getDataSuccess())
+        yield put(getListMovietime())
+        yield put(setStatusDeleteMovietime(data.statusCode))
+    }
+    if(data.status === FETCH_DATA_FAIL){
+        yield put(getDataError(data.error))
+    }
+    yield delay(300)
+    yield put(hidenLoading())
+}
+
 function* adminSaga() {
     yield takeEvery([getListUser,increasePageUser,decreasePageUser,setPageUser],trackingGetListUser)
     yield takeEvery(editUser,trackingEditUser)
@@ -287,6 +371,11 @@ function* adminSaga() {
     yield takeEvery(changeToPlayingMovie,trackingChangeToPlayingMovie)
     yield takeEvery(deleteMovie,trackingDeleteMovie)
     yield takeEvery(getMovieStatistic,trackingMovieStatistic)
+    yield takeEvery([getListMovietime,addFilterDate,addFilterTheater,addFilterMovie,increasePageMovietime,decreasePageMovietime,setPageMovietime],trackingGetListMovietime)
+    yield takeEvery(getListNameMovie,trackingGetListNameMovie)
+    yield takeEvery(addFilterTheater,trackingGetDateList)
+    yield takeEvery(newMovietime,trackingNewMovietime)
+    yield takeEvery(deleteMovietime,trackingDeleteMovietime)
 
 }
 

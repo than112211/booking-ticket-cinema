@@ -80,12 +80,12 @@ function MovieTime(props) {
         <div className="movietime">
             <div className="container">
                 <div className="row">
-                        <div className="col-12 col-sm-12 col-md-4">
+                        <div className="col-12 col-sm-12 col-md-12 col-lg-4">
                             <div className="movietime__img">
-                                <img src={`${HOST_SERVER}/${movietime.movie.image}`} alt="Anh phim" />
+                                <img src={movietime.movie.image} alt="Anh phim" />
                             </div>
                         </div>
-                        <div className="col-12 col-sm-12 col-md-8">
+                        <div className="col-12 col-sm-12 col-md-12 col-lg-8">
                             <div className="movietime__info">
                                 <h1>{movietime.movie.name}</h1>
                                 <div className="movietime__select">

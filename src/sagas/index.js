@@ -9,6 +9,7 @@ import theaterSaga from './theater'
 import ticketSaga from './ticket'
 import giftSaga from './gift'
 import adminSaga from './admin'
+import searchSaga from './search'
 
 function* rootSaga() {
     yield all([
@@ -22,6 +23,7 @@ function* rootSaga() {
         ticketSaga(),
         giftSaga(),
         adminSaga(),
+        searchSaga(),
     ]);
 }
 export default rootSaga

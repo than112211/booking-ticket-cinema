@@ -13,6 +13,7 @@ import theaterReducer from './redux/theaterSlice'
 import ticketReducer from './redux/ticketSlice'
 import giftReducer from './redux/giftSlice'
 import adminRedecer from './redux/adminSlice'
+import searchReducer from './redux/searchSlice'
 
 const rootReducer = {
     language: languageReducer,
@@ -27,6 +28,7 @@ const rootReducer = {
     ticket: ticketReducer,
     gift: giftReducer,
     admin: adminRedecer,
+    search: searchReducer
 }
 const sagaMiddleware = createSagaMiddleware()
 const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
