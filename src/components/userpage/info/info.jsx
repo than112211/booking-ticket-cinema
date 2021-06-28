@@ -1,7 +1,7 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { HOST_SERVER, TAB_USER_HISTORY, TAB_USER_INFOMATION } from '../../../constants';
+import { HOST_SERVER, TAB_USER_INFOMATION } from '../../../constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit,faCheckCircle,faTimesCircle} from '@fortawesome/free-solid-svg-icons'
 import './info.scss'

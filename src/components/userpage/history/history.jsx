@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import {  TAB_USER_HISTORY } from '../../../constants';
@@ -40,7 +40,7 @@ function HistoryTicket(props) {
         dispatch(rePayment(ticket))
     }
     const itemTable = user.ticket.map((ticket,index) => {
-        return  <tr className={classNames({'table__active':index % 2 == 0 })}>
+        return  <tr className={classNames({'table__active':index % 2 === 0 })}>
                     <th key={ticket._id} scope="row">{index+1}</th>
                     <td>{ticket.namemovie}</td>
                     <td><FontAwesomeIcon className={classNames({
@@ -53,8 +53,8 @@ function HistoryTicket(props) {
                         'icon_active': ticket.paid,
                         'icon_error': ticket.paid ? false : true
                     })} icon={faCircle}></FontAwesomeIcon>{ticket.paid ? t('history.paid') : t('history.unpaid')}</td>
-                    <td><FontAwesomeIcon icon={faClock}></FontAwesomeIcon>{ ticket.status && ticket.paid == false ? <Countdown date={new Date(ticket.createdAt).getTime() + 300000} renderer={renderTime} /> : <span>00:00</span>}</td>
-                    <td>{(ticket.status && ticket.paid) || ticket.status == false ? <Button className="btn__ticket-delete">{t('history.delete')}</Button> : <Button onClick={() => handleClickRepayment(ticket)} className="btn__ticket-payment">{t('history.payment')}</Button>}</td>
+                    <td><FontAwesomeIcon icon={faClock}></FontAwesomeIcon>{ ticket.status && ticket.paid === false ? <Countdown date={new Date(ticket.createdAt).getTime() + 300000} renderer={renderTime} /> : <span>00:00</span>}</td>
+                    <td>{(ticket.status && ticket.paid) || ticket.status === false ? <Button className="btn__ticket-delete">{t('history.delete')}</Button> : <Button onClick={() => handleClickRepayment(ticket)} className="btn__ticket-payment">{t('history.payment')}</Button>}</td>
                     <DetailHistory ticket={ticket}></DetailHistory>
                 </tr>
     })

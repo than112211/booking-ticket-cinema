@@ -1,7 +1,7 @@
-import React, { useState,useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
-import {COMMING_SOON_MOVIE,NOW_MOVIE,HOST_SERVER} from '../../constants/index'
+import {COMMING_SOON_MOVIE,NOW_MOVIE} from '../../constants/index'
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import {statusMoviePage} from '../../redux/movieSlice'

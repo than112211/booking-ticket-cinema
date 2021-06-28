@@ -4,12 +4,12 @@
 .header__nav{
     height: 70px;
     @include displayFlex(space-between);
-    @media only screen and ( max-width : 64rem ){
+    @media only screen and ( max-width : 63.9375em ){
         display: block;
         height: auto;
     }
     .header__logo{
-        @media only screen and ( max-width : 64rem ){
+        @media only screen and ( max-width : 63.9375em ){
             margin: 1rem auto;
         }
         @include w-h(10rem,5rem);
@@ -22,10 +22,10 @@
         background-color: black;
         @include w-h(25rem,2.5rem);
         border-radius: 25px;
-        @media only screen and ( max-width : 64rem ){
+        @media only screen and ( max-width : 63.9375em ){
             margin: 0 auto;
         }
-        @media only screen and ( max-width:46.2rem ){
+        @media only screen and ( max-width:46.1875em ){
             width: 15rem;
         }
         input{
@@ -45,7 +45,7 @@
     }
     .header__btn{
         @include displayFlex(flex-end);
-        @media only screen and ( max-width : 64rem ){
+        @media only screen and ( max-width : 63.9375em ){
             justify-content: center;
             margin-top: 1rem;
         }
@@ -57,7 +57,7 @@
                 font-size: $font-size-xl;
                 color: $main-color;
             }
-            @media only screen and ( max-width:46.2rem ){
+            @media only screen and ( max-width:46.1875em ){
                 display: block;
             }
             &:hover > .header__bars{
@@ -71,7 +71,7 @@
                 border-radius: 25px;
                 z-index: 10;
                 top: 200%;
-                @media only screen and ( max-width:46.2rem ){
+                @media only screen and ( max-width:46.1875em ){
                     display: none;
                 }
                 ul{
@@ -171,7 +171,7 @@
     border: 1px solid $main-color;
     border-radius: 25px;
     margin-top: 2rem;
-    @media only screen and ( max-width:46.2rem ){
+    @media only screen and ( max-width:46.1875em ){
         display: none;
     }
     ul{

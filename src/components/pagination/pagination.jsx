@@ -32,7 +32,7 @@ function PaginationPage(props) {
                 </PaginationItem>
                 {
                     [...Array(totalPages)].map((page,index) => {
-                        return <PaginationItem active={pagination.page == index+1} >
+                        return <PaginationItem active={pagination.page === index+1} >
                                     <PaginationLink onClick={() => handleClickSetPage(index+1)}>
                                     {index+1}
                                     </PaginationLink>

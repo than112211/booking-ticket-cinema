@@ -5,14 +5,14 @@
     margin-top: 4rem;
     @include displayFlex(flex-start);
     @include w-h(100%,14rem);
-    @media only screen and ( max-width : 64rem ){
+    @media only screen and ( max-width : 63.9375em ){
         display: block;
         height: auto;
     }
     .promotion__title{
         transform: rotate(270deg);
         @include displayFlex(space-between);
-        @media only screen and ( max-width : 64rem ){
+        @media only screen and ( max-width : 63.9375em ){
             transform: rotate(0);
             justify-content: center;
             margin-bottom: 1rem;
@@ -27,7 +27,7 @@
         img{
             transform: rotate(90deg);
             @include w-h(6rem,6rem);
-            @media only screen and ( max-width : 64rem ){
+            @media only screen and ( max-width : 63.9375em ){
                 transform: rotate(0);
             
             }

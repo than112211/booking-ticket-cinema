@@ -19,19 +19,19 @@
             margin-bottom: 1rem;
             font-size: $font-size-xxl;
             color: $text-color-black;
-            @media only screen and ( max-width: 64rem ){
+            @media only screen and ( max-width: 63.9375em ){
                 margin-top: 1rem;
             }
         }
         .movietime__select{
             @include displayFlex(center);
-            @media only screen and ( max-width:46.2rem ){
+            @media only screen and ( max-width:46.1875em ){
                 display: block;
                 text-align: center;
             } 
             .movietime__item{
                 margin: 0 .6rem;
-                @media only screen and ( max-width:46.2rem ){
+                @media only screen and ( max-width:46.1875em ){
                     margin-bottom: 1rem;
                 } 
                 .dropdown{

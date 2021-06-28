@@ -7,14 +7,14 @@
         .user__tab{
             ul{
                 li{
-                    @media only screen and ( max-width: 64rem ){
+                    @media only screen and ( max-width: 63.9375em ){
                         width: 10rem;
                     }
                 }
                 li:nth-child(2) ,li:nth-child(3) ,li:nth-child(4){
                     margin-left: -40px;
                     box-shadow: 10px 0 0 rgb(0 0 0 / 10%);
-                    @media only screen and ( max-width: 46.2rem ){
+                    @media only screen and ( max-width: 46.1875em ){
                         margin-left: -18px;
                     }
                 }
@@ -36,7 +36,7 @@
                 }
                 a{
                     font-size: $font-size-m;
-                    @media only screen and ( max-width: 64rem ){
+                    @media only screen and ( max-width: 63.9375em ){
                         display: none;
                     }
                 }
@@ -44,7 +44,7 @@
                     display: none;
                     font-size: $font-size-xl;
                     color: $text-color-black;
-                    @media only screen and ( max-width: 64rem ){
+                    @media only screen and ( max-width: 63.9375em ){
                         display: block;
                     }
                 }

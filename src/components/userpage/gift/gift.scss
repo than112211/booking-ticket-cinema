@@ -4,7 +4,7 @@
 .user__gift{
     margin: 4rem 0;
     padding: 0 10rem;
-    @media only screen and ( max-width: 64rem ){
+    @media only screen and ( max-width: 63.9375em ){
         padding: 0;
     }
     .gift__item{
@@ -15,7 +15,7 @@
             background-color: $movie-show-color;
         }
         padding: .8rem 4rem;
-        @media only screen and ( max-width: 46.2rem ){
+        @media only screen and ( max-width: 46.1875em ){
             padding: .2rem .4rem;
             display: block;
             text-align: center;
@@ -31,7 +31,7 @@
             text-align: center;
             padding: .6rem;
             margin-right: 2rem;
-            @media only screen and ( max-width: 46.2rem ){
+            @media only screen and ( max-width: 46.1875em ){
                 margin: .4rem auto;
             }
             img{
@@ -47,7 +47,7 @@
             }
         }
         &-code{
-            @media only screen and ( max-width: 46.2rem ){
+            @media only screen and ( max-width: 46.1875em ){
                 margin: 1rem auto;
             }
             span{
@@ -58,7 +58,7 @@
                 padding: .2rem 1.4rem;
                 border-radius: 25px;
                 font-size: $font-size-s;
-                @media only screen and ( max-width: 46.2rem ){
+                @media only screen and ( max-width: 46.1875em ){
                     display: inline;
                 }
                 svg{

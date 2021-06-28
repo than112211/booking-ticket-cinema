@@ -14,7 +14,7 @@
                 padding: .6rem 6rem;
                 background-color: $movie-show-color;
                 transition: all 0.3s ease-in-out;
-                @media only screen and ( max-width:46.2rem ){
+                @media only screen and ( max-width:46.1875em ){
                     padding: .2rem 1.6rem;
                 }
                 &:nth-child(1){
@@ -25,7 +25,7 @@
                     border-radius: 50px 30px 0 50px;
                     margin-left: -80px;
                     box-shadow: -10px 0 0 rgb(0 0 0 / 10%);
-                    @media only screen and ( max-width:46.2rem ){
+                    @media only screen and ( max-width:46.1875em ){
                         margin-left: -24px;
                     }
                 }
@@ -34,7 +34,7 @@
                     font-size: $font-size-xl;
                     font-weight: 500;
                     text-decoration: none;
-                    @media only screen and ( max-width:46.2rem ){
+                    @media only screen and ( max-width:46.1875em ){
                         font-size: .8rem;
                     }
                 }

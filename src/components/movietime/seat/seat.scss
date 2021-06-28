@@ -3,7 +3,7 @@
 
 .ticket{
     padding-left: 2rem;
-    @media only screen and ( max-width: 64rem ){
+    @media only screen and ( max-width: 63.9375em ){
         padding: 0;
     }
     .seat{
@@ -24,7 +24,7 @@
                 svg{
                     cursor: pointer;
                     font-size: $font-size-xxl;
-                    @media only screen and ( max-width:46.2rem ){
+                    @media only screen and ( max-width:46.1875em ){
                         font-size: $font-size-m;
                     } 
                     :hover{
@@ -39,12 +39,12 @@
             margin-top: 2rem;
             background-color: $movie-show-color; 
             padding: 1rem 0; 
-            @media only screen and ( max-width:46.2rem ){
+            @media only screen and ( max-width:46.1875em ){
                 display: block;
             } 
             &-item{
                 @include displayFlex(start);
-                @media only screen and ( max-width:46.2rem ){
+                @media only screen and ( max-width:46.1875em ){
                     margin-bottom: 1rem;
                     justify-content: center;
                 } 
@@ -56,7 +56,7 @@
                 svg{
                     font-size: $font-size-xxl;
                     margin-right: 1rem;
-                    @media only screen and ( max-width: 64rem ){
+                    @media only screen and ( max-width: 63.9375em ){
                         margin-right: .4rem;
                     }
                 }

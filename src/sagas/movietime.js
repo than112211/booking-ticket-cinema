@@ -1,5 +1,5 @@
 import {put, delay,call, takeEvery, select} from 'redux-saga/effects'
-import { addMovieToMovietime, getMovietimeInit, getMovietimeError, getMovietimePending, addHourList,addTheater,addDateList, addDate, addHour, addMovietime, getMovietime } from '../redux/movietimeSlice'
+import { addMovieToMovietime, getMovietimeInit, getMovietimeError, getMovietimePending, addHourList,addTheater,addDateList, addDate, addMovietime, getMovietime } from '../redux/movietimeSlice'
 import {showLoading,hidenLoading} from '../redux/loadingSlice'
 import movieAPI from '../apis/movie'
 import {FETCH_DATA_FAIL, FETCH_DATA_SUCCESS} from '../constants/index'

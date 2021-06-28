@@ -9,7 +9,7 @@
                     @include w-h(100%,auto);
                     border: 8px solid $movie-show-color;
                     position: relative;
-                    @media only screen and ( max-width: 64rem ){
+                    @media only screen and ( max-width: 63.9375em ){
                         margin-bottom: 1rem;
                     }
                     img{

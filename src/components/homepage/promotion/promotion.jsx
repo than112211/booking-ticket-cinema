@@ -1,12 +1,10 @@
-import React, { useState,useEffect } from 'react';
-import {COMMING_SOON_MOVIE,NUMBER_EVENT_HOME,NOW_MOVIE,HOST_SERVER,NUMBER_MOVIE_HOME} from '../../../constants/index'
+import React, { useState } from 'react';
+import {NUMBER_EVENT_HOME,HOST_SERVER} from '../../../constants/index'
 import icon_promotion from '../../../resourses/img/icon-promotion.png'
 import {
     Carousel,
     CarouselItem,
-    CarouselControl,
     CarouselIndicators,
-    CarouselCaption
   } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
@@ -14,7 +12,6 @@ import './promotion.scss'
 
 function Promotion(props) {
     const {t} = useTranslation();
-    const dispatch = useDispatch()
     const event = useSelector(state => state.event.event)
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);

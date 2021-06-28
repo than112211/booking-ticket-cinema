@@ -5,7 +5,7 @@
     margin-top: 4rem;
     .movie__content{
         margin-top: 4rem;
-        @media only screen and ( max-width: 64rem ){
+        @media only screen and ( max-width: 63.9375em ){
             margin-top: 1rem;
         }
         .movie__item{
@@ -15,7 +15,7 @@
             margin-bottom: 1rem;
             @include displayFlex(center);
             @include w-h(100%,30rem);
-            @media only screen and ( max-width: 64rem ){
+            @media only screen and ( max-width: 63.9375em ){
                 display: block;
                 padding: 1rem;
             }
@@ -36,7 +36,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                @media only screen and ( max-width: 64rem ){
+                @media only screen and ( max-width: 63.9375em ){
                     display: none;
                 }
                 .movie__text{
@@ -57,7 +57,7 @@
                     margin-top: auto;
                     @include w-h(10rem,3rem);
                     border-radius: 30px 0 30px 0;
-                    @media only screen and ( max-width: 64rem ){
+                    @media only screen and ( max-width: 63.9375em ){
                         @include w-h(8rem,2.5rem);
                     }
                     a{

@@ -18,7 +18,7 @@
                 text-align: center;
                 padding: 1.6rem;
                 margin-right: 2rem;
-                @media only screen and ( max-width: 64rem ){
+                @media only screen and ( max-width: 63.9375em ){
                     @include w-h(15%,100%)
                 }
                 img{
@@ -55,7 +55,7 @@
                     padding: .4rem 2rem;
                     background-color: $movie-item-color;
                     border-radius: 25px 0 25px 0;
-                    @media only screen and ( max-width: 64rem ){
+                    @media only screen and ( max-width: 63.9375em ){
                         padding: .4rem 1rem;
                     }
                 }                

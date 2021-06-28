@@ -1,5 +1,5 @@
-import {createSlice, current} from '@reduxjs/toolkit';
-import {NOW_MOVIE,NUMBER_MOVIE_HOME} from '../constants/index'
+import {createSlice} from '@reduxjs/toolkit';
+import {NOW_MOVIE} from '../constants/index'
 
 const movie = createSlice({
     name: 'movie',

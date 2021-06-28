@@ -4,7 +4,7 @@
 .news__container{
     margin-top: 4rem;
     @include displayFlex(start);
-    @media only screen and ( max-width : 64rem ){
+    @media only screen and ( max-width : 63.9375em ){
         display: block;
         height: auto;
     }
@@ -13,7 +13,7 @@
         @include displayFlex(space-between);
         margin-bottom: auto;
         margin-top: 8rem;
-        @media only screen and ( max-width : 64rem ){
+        @media only screen and ( max-width : 63.9375em ){
             margin: 0;
             transform: rotate(0);
             justify-content: center;

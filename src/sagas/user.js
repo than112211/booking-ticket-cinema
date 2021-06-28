@@ -1,4 +1,4 @@
-import {put,call,delay,takeEvery, select} from 'redux-saga/effects'
+import {put,call,delay,takeEvery} from 'redux-saga/effects'
 import userAPI from '../apis/user'
 import {FETCH_DATA_FAIL, FETCH_DATA_SUCCESS} from '../constants/index'
 import {loginUser,loginSuccess, registerUser,getUser, loginStatus, getTicket, addTicket, getTicketPending, getTicketError, userError, userPending, registerStatus} from '../redux/userSlice'
